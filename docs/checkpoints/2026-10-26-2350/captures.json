@@ -1,0 +1,42 @@
+[
+  {
+    "file": "01-composing.png",
+    "caption": "Saved compositions with separate Idea/Create navigation; supporting-copy fit warnings remain.",
+    "at": "2026-10-27T06:51:17.023Z",
+    "route": "/studio-review?generation=ec8da9e1a56d51236c8d6486e9a79c871558b6ead02beeadccfde18a8bc0815c",
+    "viewport": "1280×720",
+    "selection": "OLIPOP / Caramel Apple / 12 Pack",
+    "sourceRevision": "a616b9ce5608fc46517b5e0e4664e108b7ae3829",
+    "dirty": true
+  },
+  {
+    "file": "02-brand-context.png",
+    "caption": "Cached brand popover in the currently saved dark theme; no preference or context edits.",
+    "at": "2026-10-27T06:51:28.342Z",
+    "route": "/studio-review?generation=ec8da9e1a56d51236c8d6486e9a79c871558b6ead02beeadccfde18a8bc0815c",
+    "viewport": "1280×720",
+    "selection": "OLIPOP / Caramel Apple / 12 Pack",
+    "sourceRevision": "a616b9ce5608fc46517b5e0e4664e108b7ae3829",
+    "dirty": true
+  },
+  {
+    "file": "03-product-context.png",
+    "caption": "Current exact-image product picker in dark theme; one reference retained, no submission.",
+    "at": "2026-10-27T06:51:39.058Z",
+    "route": "/studio-review?generation=ec8da9e1a56d51236c8d6486e9a79c871558b6ead02beeadccfde18a8bc0815c",
+    "viewport": "1280×720",
+    "selection": "OLIPOP / Caramel Apple / 12 Pack",
+    "sourceRevision": "a616b9ce5608fc46517b5e0e4664e108b7ae3829",
+    "dirty": true
+  },
+  {
+    "file": "04-context-menu.png",
+    "caption": "Composer menu browses cached product context and media action; no option selected or upload.",
+    "at": "2026-10-27T06:51:53.356Z",
+    "route": "/studio-review?generation=ec8da9e1a56d51236c8d6486e9a79c871558b6ead02beeadccfde18a8bc0815c",
+    "viewport": "1280×720",
+    "selection": "OLIPOP / Caramel Apple / 12 Pack",
+    "sourceRevision": "a616b9ce5608fc46517b5e0e4664e108b7ae3829",
+    "dirty": true
+  }
+]

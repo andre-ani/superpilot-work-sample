@@ -4,7 +4,7 @@ Local checkpoints only. Never infer that a documentation checkpoint verifies or 
 
 ## Latest checkpoint
 
-Last successful commit: `541ff48690478ab9298e901d24b994d5cabca594`, 2026-10-26T22:52:44-07:00 (America/Vancouver). [Foreground geometry checkpoint and composing state](2026-10-26-2250/README.md). Previous: `c1435f4`. Post-commit receipt retained locally for the next checkpoint.
+Last successful commit: `a616b9ce5608fc46517b5e0e4664e108b7ae3829`, 2026-10-26T23:23:32-07:00 (America/Vancouver). [Typography checkpoint and navigation limitation](2026-10-26-2320/README.md). Previous: `541ff48`. Post-commit receipt retained locally for the next checkpoint.
 
 ## Deferred groups
 
@@ -85,3 +85,11 @@ Keep cached OLIPOP / Caramel Apple / 12 Pack / photo 1 at 1280×720 for comparis
 | Conversation/composing | Full-width composing | Brand context | Product context |
 | --- | --- | --- | --- |
 | [![Composing with unified left conversation/context/composer panel; body-fit warnings remain.](2026-10-26-2320/01-composing.png)](2026-10-26-2320/01-composing.png) | [![Full-width composition after review reset to Create; intended Brand view was not captured.](2026-10-26-2320/02-composing-wide.png)](2026-10-26-2320/02-composing-wide.png) | [![Available brand context popover over saved composition; typography identity retained, no edits.](2026-10-26-2320/03-brand-context.png)](2026-10-26-2320/03-brand-context.png) | [![Available product context popover over saved composition; one selected image, no changes submitted.](2026-10-26-2320/04-product-context.png)](2026-10-26-2320/04-product-context.png) |
+
+### 2026-10-26 23:50 — planning grammar and conversation recovery
+
+[Comparison and scoped verification](2026-10-26-2350/README.md). Four dark-theme available states; six offline checks passed; no preference change.
+
+| Composing | Brand context | Product references | Composer menu |
+| --- | --- | --- | --- |
+| [![Saved compositions with separate Idea/Create navigation; supporting-copy fit warnings remain.](2026-10-26-2350/01-composing.png)](2026-10-26-2350/01-composing.png) | [![Cached brand popover in the currently saved dark theme; no preference or context edits.](2026-10-26-2350/02-brand-context.png)](2026-10-26-2350/02-brand-context.png) | [![Current exact-image product picker in dark theme; one reference retained, no submission.](2026-10-26-2350/03-product-context.png)](2026-10-26-2350/03-product-context.png) | [![Composer menu browses cached product context and media action; no option selected or upload.](2026-10-26-2350/04-context-menu.png)](2026-10-26-2350/04-context-menu.png) |

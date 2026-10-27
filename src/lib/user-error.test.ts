@@ -25,3 +25,13 @@ test('does not encourage retrying a paid generation failure', () => {
   assert.equal(result.retryable, false)
   assert.doesNotMatch(result.message, /provider|schema|internal/i)
 })
+
+
+test('ended conversations preserve history and require a separate conversation', () => {
+  const error = Object.assign(new Error('This session is no longer available.'), { name: 'session_stranded' })
+  const notice = userError(error, 'chat')
+  assert.equal(notice.title, 'This conversation has ended')
+  assert.equal(notice.retryable, false)
+  assert.match(notice.message, /history is saved/)
+  assert.equal(userError(new Error('connection interrupted'), 'chat').retryable, true)
+})

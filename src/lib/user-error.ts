@@ -91,8 +91,13 @@ function rateLimited(context: UserErrorContext | undefined): UserError {
 }
 
 /** Convert unknown errors into concise, safe product copy. Raw error details are never returned. */
+export function isUnavailableConversation(error: unknown): boolean {
+  return /session_stranded|session_retired|session_ended|this session is no longer available|deployment (?:was )?retired/.test(signalFor(error))
+}
+
 export function userError(error: unknown, context?: UserErrorContext): UserError {
   const signal = signalFor(error)
+  if (context === 'chat' && isUnavailableConversation(error)) return { title: 'This conversation has ended', message: 'Its history is saved. Start a new conversation to continue with this brand.', retryable: false }
   const status = statusFor(error)
   const timedOut = timeoutPattern.test(signal) || status === 408 || status === 504
   const network = networkPattern.test(signal) || (status !== undefined && status >= 500 && status <= 599)
@@ -168,8 +173,8 @@ export function userError(error: unknown, context?: UserErrorContext): UserError
 
   if (context === 'chat') {
     return {
-      title: 'Conversation paused',
-      message: 'The assistant could not reconnect. Try again or continue without chat.',
+      title: 'Connection interrupted',
+      message: 'Your conversation is saved. Reconnect to continue where you left off.',
       retryable: true,
     }
   }
