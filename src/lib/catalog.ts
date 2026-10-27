@@ -16,6 +16,8 @@ export type CatalogProduct = {
   vendor: string
   tags: string[]
   images: string[]
+  /** Shopify image.src -> the Shopify variant IDs explicitly linked to that image. */
+  imageVariantIds?: Record<string, string[]>
   variants: ProductVariant[]
   minPrice: number | null
   maxPrice: number | null
@@ -32,6 +34,21 @@ export type CatalogPage = {
   skipped: number
 }
 export type CatalogResult = { ok: true; catalog: CatalogPage } | { ok: false; error: string }
+
+/**
+ * Return only images Shopify explicitly associates with a variant, plus that
+ * variant's resolved featured image. An unannotated product gallery is not a
+ * safe substitute for a variant-specific reference set.
+ */
+export function variantImages(product: CatalogProduct, variantId: string): string[] {
+  const variant = product.variants.find(item => item.id === variantId)
+  if (!variant) return []
+  const linked = product.images.filter(url => product.imageVariantIds?.[url]?.includes(variantId))
+  // A one-variant product has no competing variant whose images could be
+  // confused with this selection, so its unannotated gallery is in scope.
+  const unambiguousGallery = product.variants.length === 1 ? product.images : []
+  return [...new Set([variant.image, ...linked, ...unambiguousGallery].filter((url): url is string => !!url))]
+}
 
 export function normalizeStoreUrl(input: string): string {
   const text = input.trim()
@@ -81,10 +98,33 @@ export function normalizeProducts(payload: unknown, storeUrl: string): { product
   for (const item of raw) {
     const p = record(item), handle = string(p.handle)
     if (!id(p.id) || !string(p.title) || !/^[a-z\d][a-z\d-]*$/i.test(handle)) continue
-    const images = list(p.images).map(x => image(record(x).src, storeUrl)).filter((x): x is string => !!x).slice(0, 16)
+    const rawImages = list(p.images).map(value => {
+      const source = record(value)
+      return {
+        id: id(source.id),
+        url: image(source.src, storeUrl),
+        variantIds: list(source.variant_ids).map(id).filter(Boolean),
+      }
+    }).filter((value): value is { id: string; url: string; variantIds: string[] } => !!value.url)
+    const images = rawImages.map(value => value.url)
+    const imageVariantIds: Record<string, string[]> = {}
+    for (const source of rawImages) {
+      if (!source.variantIds.length) continue
+      imageVariantIds[source.url] = [...new Set([...(imageVariantIds[source.url] ?? []), ...source.variantIds])]
+    }
+    const imageById = new Map(rawImages.filter(value => value.id).map(value => [value.id, value.url]))
     const variants = list(p.variants).slice(0, 250).map(v => {
       const variant = record(v)
-      return { id: id(variant.id), title: string(variant.title) || 'Default', price: price(variant.price), available: typeof variant.available === 'boolean' ? variant.available : null, image: image(record(variant.featured_image).src, storeUrl) }
+      const featuredImage = record(variant.featured_image)
+      const featuredImageUrl = image(featuredImage.src, storeUrl)
+      const imageId = id(variant.image_id) || id(featuredImage.id)
+      return {
+        id: id(variant.id),
+        title: string(variant.title) || 'Default',
+        price: price(variant.price),
+        available: typeof variant.available === 'boolean' ? variant.available : null,
+        image: featuredImageUrl ?? (imageId ? imageById.get(imageId) ?? null : null),
+      }
     }).filter(v => v.id)
     const prices = variants.flatMap(v => v.price === null ? [] : [v.price])
     const tags = Array.isArray(p.tags) ? p.tags.map(t => string(t)) : string(p.tags, 2000).split(',').map(t => t.trim())
@@ -94,6 +134,7 @@ export function normalizeProducts(payload: unknown, storeUrl: string): { product
       type: string(p.product_type) || 'Uncategorized', vendor: string(p.vendor), tags: tags.filter(Boolean).slice(0, 50),
       images, variants, minPrice: prices.length ? Math.min(...prices) : null, maxPrice: prices.length ? Math.max(...prices) : null,
       available: variants.some(v => v.available === true) ? true : variants.length && variants.every(v => v.available === false) ? false : null,
+      ...(Object.keys(imageVariantIds).length ? { imageVariantIds } : {}),
     })
   }
   return { products, rawCount: raw.length, skipped: raw.length - products.length }

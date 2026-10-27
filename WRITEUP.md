@@ -24,7 +24,7 @@ In the [three-brand extraction comparison](docs/brand-comparison.json), custom e
 
 GPT Image 2 produced a 1024×1024 Caramel Apple creative for $0.070233. Reloading and revisiting brand settings did not interrupt it. That run retained requests, raw responses, and images locally; cached replay made no new generation. A recovery test restores a received image after worker exit. Visual product fidelity still needs systematic review.
 
-Saved-studio review replays a genuine completed OLIPOP execution with isolated local edits and inference disabled, so UX iteration can reuse real outputs without spending generation credits.
+Saved-studio review loads real outputs without starting inference; deliberate manual agent requests are now supported. A newer OLIPOP base has no added ad lettering, but its current review reports insufficient copy space and shows no composed variations. Final composition remains unverified.
 
 The runtime owner reports an updated Vercel deployment with release type/build checks, cloud agent response and private saved-image readback passing. Local UI/composition continues to change; the deployed upload includes source beyond the Git checkpoints.
 

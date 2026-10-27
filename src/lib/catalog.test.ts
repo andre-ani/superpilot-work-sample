@@ -1,6 +1,6 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
-import { normalizeStoreUrl, normalizeProducts, filterProducts } from './catalog.ts'
+import { normalizeStoreUrl, normalizeProducts, filterProducts, variantImages } from './catalog.ts'
 import { isPublicAddress, getCatalogPage } from './catalog.server.ts'
 
 test('normalizes storefront and product URLs, while rejecting unsafe destinations', () => {
@@ -34,6 +34,33 @@ test('normalizes untrusted catalogs without inventing prices, stock, or unsafe i
   assert.deepEqual(p.images, ['https://cdn.shopify.com/product.png'])
   assert.equal(p.description, 'A product & its details')
   assert.throws(() => normalizeProducts({ error: 'blocked' }, 'https://store.com'))
+})
+
+test('retains Shopify image-to-variant associations and resolves image_id fallbacks', () => {
+  const result = normalizeProducts({ products: [{
+    id: 99,
+    title: 'Pan',
+    handle: 'pan',
+    variants: [
+      { id: 901, title: 'Blue', price: '10', featured_image: null, image_id: 501, available: true },
+      { id: 902, title: 'Red', price: '10', featured_image: { id: 502, src: 'https://cdn.shopify.com/red.jpg' }, available: true },
+    ],
+    images: [
+      { id: 501, src: 'https://cdn.shopify.com/blue.jpg', variant_ids: [901] },
+      { id: 502, src: 'https://cdn.shopify.com/red.jpg', variant_ids: [902] },
+      { id: 503, src: 'https://cdn.shopify.com/unlinked.jpg', variant_ids: [] },
+    ],
+  }] }, 'https://store.com')
+  const product = result.products[0]
+  assert.deepEqual(product.imageVariantIds, {
+    'https://cdn.shopify.com/blue.jpg': ['901'],
+    'https://cdn.shopify.com/red.jpg': ['902'],
+  })
+  assert.equal(product.variants[0].image, 'https://cdn.shopify.com/blue.jpg')
+  assert.equal(product.variants[1].image, 'https://cdn.shopify.com/red.jpg')
+  assert.deepEqual(variantImages(product, '901'), ['https://cdn.shopify.com/blue.jpg'])
+  assert.deepEqual(variantImages(product, '902'), ['https://cdn.shopify.com/red.jpg'])
+  assert.deepEqual(variantImages(product, 'missing'), [])
 })
 
 test('combines search/type/stock filters and places unknown prices last in both directions', () => {

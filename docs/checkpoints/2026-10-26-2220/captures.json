@@ -1,0 +1,52 @@
+[
+  {
+    "file": "01-clean-base.png",
+    "caption": "New saved clean-base execution; status says artwork is saved and asks for more copy space; no composed variations visible. No agent request sent.",
+    "at": "2026-10-27T05:20:51.968Z",
+    "route": "/studio-review?generation=ec8da9e1a56d51236c8d6486e9a79c871558b6ead02beeadccfde18a8bc0815c",
+    "viewport": "1280×720",
+    "selection": "OLIPOP / Caramel Apple / 12 Pack / one reference",
+    "sourceRevision": "796c901a6146071ee60c3ffe90e4e6c3475a0624",
+    "dirty": true
+  },
+  {
+    "file": "02-brand.png",
+    "caption": "Updated brand card with font-role icons and Brand settings; selected product retained, no edits.",
+    "at": "2026-10-27T05:21:01.618Z",
+    "route": "/studio-review?generation=ec8da9e1a56d51236c8d6486e9a79c871558b6ead02beeadccfde18a8bc0815c",
+    "viewport": "1280×720",
+    "selection": "OLIPOP / Caramel Apple / 12 Pack / one reference",
+    "sourceRevision": "796c901a6146071ee60c3ffe90e4e6c3475a0624",
+    "dirty": true
+  },
+  {
+    "file": "03-brand-settings.png",
+    "caption": "Brand settings modal with saved visual context and references; no settings changed.",
+    "at": "2026-10-27T05:21:09.870Z",
+    "route": "/studio-review?generation=ec8da9e1a56d51236c8d6486e9a79c871558b6ead02beeadccfde18a8bc0815c",
+    "viewport": "1280×720",
+    "selection": "OLIPOP / Caramel Apple / 12 Pack / one reference",
+    "sourceRevision": "796c901a6146071ee60c3ffe90e4e6c3475a0624",
+    "dirty": true
+  },
+  {
+    "file": "04-products.png",
+    "caption": "Updated product grid selection styling and persistent context; cached catalog, no selection change.",
+    "at": "2026-10-27T05:21:19.440Z",
+    "route": "/studio-review?generation=ec8da9e1a56d51236c8d6486e9a79c871558b6ead02beeadccfde18a8bc0815c",
+    "viewport": "1280×720",
+    "selection": "OLIPOP / Caramel Apple / 12 Pack / one reference",
+    "sourceRevision": "796c901a6146071ee60c3ffe90e4e6c3475a0624",
+    "dirty": true
+  },
+  {
+    "file": "05-product-context.png",
+    "caption": "Current exact-image selection panel: one image selected; variant-aware helper checked offline, no panel choices changed.",
+    "at": "2026-10-27T05:21:29.054Z",
+    "route": "/studio-review?generation=ec8da9e1a56d51236c8d6486e9a79c871558b6ead02beeadccfde18a8bc0815c",
+    "viewport": "1280×720",
+    "selection": "OLIPOP / Caramel Apple / 12 Pack / one reference",
+    "sourceRevision": "796c901a6146071ee60c3ffe90e4e6c3475a0624",
+    "dirty": true
+  }
+]

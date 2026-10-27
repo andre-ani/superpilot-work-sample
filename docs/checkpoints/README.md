@@ -4,7 +4,7 @@ Local checkpoints only. Never infer that a documentation checkpoint verifies or 
 
 ## Latest checkpoint
 
-Last successful commit: `3ddcc4946c98c2ebe5f5b1056dab7ff593626fa0`, 2026-10-26T21:22:30-07:00 (America/Vancouver). [Runtime/storage checkpoint and five views](2026-10-26-2120/README.md). Previous: `eac777e`. Post-commit receipt retained locally for the next checkpoint.
+Last successful commit: `796c901a6146071ee60c3ffe90e4e6c3475a0624`, 2026-10-26T21:52:32-07:00 (America/Vancouver). [Catalog/recovery checkpoint and visual progression](2026-10-26-2150/README.md). Previous: `3ddcc49`. Post-commit receipt retained locally for the next checkpoint.
 
 ## Deferred groups
 
@@ -61,3 +61,11 @@ Keep cached OLIPOP / Caramel Apple / 12 Pack / photo 1 at 1280×720 for comparis
 | Composing base | Brand | Products | Product context |
 | --- | --- | --- | --- |
 | [![Large saved base artwork; DOM exposes three variation controls below the viewport. Active composition work; no edits/export.](2026-10-26-2150/01-composing.png)](2026-10-26-2150/01-composing.png) | [![Current brand card with compact fonts and context dock; review composer disabled.](2026-10-26-2150/02-brand.png)](2026-10-26-2150/02-brand.png) | [![Cached grid after shell updates, with current collected-product dock.](2026-10-26-2150/04-products.png)](2026-10-26-2150/04-products.png) | [![Selected product image/variant popover; 1 of 8 included, 12 Pack; no edits.](2026-10-26-2150/05-product-context.png)](2026-10-26-2150/05-product-context.png) |
+
+### 2026-10-26 22:20 — variant scope and genuine clean base
+
+[Comparison, source scope and missing-composition state](2026-10-26-2220/README.md). Five distinct views; new saved execution, same brand/product/viewport. Eight offline checks passed.
+
+| Clean base/status | Brand | Brand settings | Products | Product context |
+| --- | --- | --- | --- | --- |
+| [![New saved clean-base execution; status says artwork is saved and asks for more copy space; no composed variations visible. No agent request sent.](2026-10-26-2220/01-clean-base.png)](2026-10-26-2220/01-clean-base.png) | [![Updated brand card with font-role icons and Brand settings; selected product retained, no edits.](2026-10-26-2220/02-brand.png)](2026-10-26-2220/02-brand.png) | [![Brand settings modal with saved visual context and references; no settings changed.](2026-10-26-2220/03-brand-settings.png)](2026-10-26-2220/03-brand-settings.png) | [![Updated product grid selection styling and persistent context; cached catalog, no selection change.](2026-10-26-2220/04-products.png)](2026-10-26-2220/04-products.png) | [![Current exact-image selection panel: one image selected; variant-aware helper checked offline, no panel choices changed.](2026-10-26-2220/05-product-context.png)](2026-10-26-2220/05-product-context.png) |
