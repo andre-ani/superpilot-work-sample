@@ -1,0 +1,52 @@
+[
+  {
+    "file": "01-studio.png",
+    "caption": "Isolated saved-output review with explicit no-AI notice and disabled generation/composer.",
+    "at": "2026-10-27T03:21:00.024Z",
+    "viewport": "1280×720",
+    "route": "/studio-review?generation=781da36c0aef66bd0217b06f2b0cb99ba99789c351d93d16de484b73d16ae753",
+    "selection": "OLIPOP / Caramel Apple / 12 Pack / photo 1",
+    "sourceRevision": "6c10a54747631f447569f1b44755e985bbbffbf0",
+    "dirty": true
+  },
+  {
+    "file": "02-brand-context.png",
+    "caption": "Brand context popover with shortened read-only overview, palette, fonts and retained creative instructions.",
+    "at": "2026-10-27T03:21:23.905Z",
+    "viewport": "1280×720",
+    "route": "/studio-review?generation=781da36c0aef66bd0217b06f2b0cb99ba99789c351d93d16de484b73d16ae753",
+    "selection": "OLIPOP / Caramel Apple / 12 Pack / photo 1",
+    "sourceRevision": "6c10a54747631f447569f1b44755e985bbbffbf0",
+    "dirty": true
+  },
+  {
+    "file": "03-activity.png",
+    "caption": "Dark activity timeline drawer in isolated review; no live run started, cached product grid behind it.",
+    "at": "2026-10-27T03:21:45.407Z",
+    "viewport": "1280×720",
+    "route": "/studio-review?generation=781da36c0aef66bd0217b06f2b0cb99ba99789c351d93d16de484b73d16ae753",
+    "selection": "OLIPOP / Caramel Apple / 12 Pack / photo 1",
+    "sourceRevision": "6c10a54747631f447569f1b44755e985bbbffbf0",
+    "dirty": true
+  },
+  {
+    "file": "04-products.png",
+    "caption": "Image-first product grid: direct context actions, image/variant counts and Caramel Apple in-context marker.",
+    "at": "2026-10-27T03:21:58.574Z",
+    "viewport": "1280×720",
+    "route": "/studio-review?generation=781da36c0aef66bd0217b06f2b0cb99ba99789c351d93d16de484b73d16ae753",
+    "selection": "OLIPOP / Caramel Apple / 12 Pack / photo 1",
+    "sourceRevision": "6c10a54747631f447569f1b44755e985bbbffbf0",
+    "dirty": true
+  },
+  {
+    "file": "05-product-detail.png",
+    "caption": "Expanded Caramel Apple image/variant panel inside product grid; no selection or image refinement changed.",
+    "at": "2026-10-27T03:22:07.421Z",
+    "viewport": "1280×720",
+    "route": "/studio-review?generation=781da36c0aef66bd0217b06f2b0cb99ba99789c351d93d16de484b73d16ae753",
+    "selection": "OLIPOP / Caramel Apple / 12 Pack / photo 1",
+    "sourceRevision": "6c10a54747631f447569f1b44755e985bbbffbf0",
+    "dirty": true
+  }
+]

@@ -8,6 +8,7 @@ Follow the operator's installed personal working agreement; this file contains o
 - Use existing shadcn/ui components and helpers. Do not run routine browser interaction checks, screenshot loops, full test suites, design detectors, or broad audits. Do not add UI tests merely to mirror a reversible change.
 - Use a narrow check only for a concrete compile/runtime problem or a consequential data/security boundary. Do not repeatedly rebuild or rerun checks after every UI adjustment; report what remains for the owner to review.
 - Keep coordination and required handoffs brief. Defer routine OpenWiki refreshes, extra evidence reports, and optional cleanup. The explicitly requested scheduled checkpoint screenshot is an archival snapshot, not a UX test pass.
+- Paired UI actions must have paired motion: entering/exiting, opening/closing, focusing/blurring, and expanding/collapsing use matching reverse transitions. Keep them subtle, smooth, and fast; preserve layout/typography across states and respect reduced motion. Do not animate entry and snap the reverse action.
 
 ## Scope and stack
 

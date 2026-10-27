@@ -6,10 +6,30 @@ All human-facing times use America/Vancouver. The project clock is in `time-log.
 
 **Clock resumed:** the owner returned at **2026-10-26 19:04 America/Vancouver**. The 34-minute first interval remains recorded; the walking break is excluded.
 
+## Current UX ownership — October 26 split
+
+The owner split UX work into three chats sharing this checkout. This table supersedes older overlapping UI ownership entries; retain historical recaps below. No new implementation is implied by the split itself.
+
+| Chat | Scope | Primary ownership |
+| --- | --- | --- |
+| Context & product UX | First half: initial store input, progressive brand/context collection, brand review/editing, product/variant selection | `store-url-form.tsx`, `studio-brand.tsx` (including brand dock contents), `product-picker.tsx`, `product-details.tsx`, `product-image.tsx`, `use-brand-fonts.ts`. Extraction backend remains with Brand extraction & enrichment. |
+| Creative & studio UX (this implementation chat) | Second half: ad intent, creative brief/concepts, generated options, editable composition, image revisions, export | `studio-create.tsx`, `creative-controls.tsx`, `composition-preview.tsx`, `src/lib/creative*`, `src/lib/composition*`, creative subagent and creative/studio tools. Sonnet 5.5 remains pinned for creative and studio. |
+| Shell & composer (formerly UX & chat interface) | Overall application frame: header/home logo, persistent sidebar, navigation/transitions, composer, chat rendering, shared context docking, Eve activity presentation, integration of both halves | `app-header.tsx`, `studio-sidebar.tsx`, `agent-workspace.tsx`, `ai-elements/`, `studio.tsx` composition/state/action wiring, shared UI primitives/styles and root route presentation. Current logo/sidebar/activity work stays here. |
+
+`studio.tsx` and `agent-workspace.tsx` are integration bottlenecks: first/second-half chats use existing props/callbacks and request narrow integration changes from Shell & composer instead of editing those files concurrently. Brand dock contents belong to Context; its placement/visibility belongs to Shell. Shared primitives/styles belong to Shell. The existing Eve runtime & deployment chat retains backend/runtime/provider/storage/deployment ownership; frontend integration changes must preserve its contracts and in-flight fixes. No duplicate dev servers, broad refactors, or routine browser/test passes for this organizational split. Publication authority is unchanged.
+
 | Session | Started | Status | Ownership |
 | --- | --- | --- | --- |
+| 21 — Visible creative instructions | 2026-10-26 20:20 | checkpoint-ready | studio-brand.tsx: remove overflow menu/generic warning, expose existing saved direction inline |
+| 20 — Short brand overview | 2026-10-26 20:19 | checkpoint-ready | Brand description helper, extraction metadata preference, read-only card paragraph |
+| 19 — Live activity drawer | 2026-10-26 20:17 | active | Dark borderless drawer, reversed header chrome, chronological Eve agent/tool timeline; no navigation list/status filler |
+| 18 — Product context UX | 2026-10-26 20:10 | active — released Studio integration | Product picker/details/context dock and shared product-selection helper; integration handoff to Shell/runtime owners |
+| 18 — Saved creative/studio starting point | 2026-10-26 20:08 | checkpoint-ready | Creative saved-review helper, route, isolated draft/startup guards and narrow studio/composer integration (explicitly taken over from busy runtime/Shell); no sidebar changes |
+| 17 — Persistent workspace sidebar | 2026-10-26 20:03 | checkpoint-ready | Header home action/menu morph, fixed sidebar, streamed Eve activity bridge; preserve creative/runtime work |
+| 17 — Cached brand replay | 2026-10-26 20:02 | checkpoint-ready | Debug toolbar action and temporary Studio card presentation only |
+| 16 — Reversible inline editing | 2026-10-26 19:54 | checkpoint-ready | InlineEdit and its input/textarea variants, brand slot removal, project motion rule |
 | 15 — Checkpoint stewardship | 2026-10-26 19:48 | checkpoint-ready | Local Git checkpoints, checkpoint screenshots/notes, session/activity evidence, WRITEUP accuracy, scoped OpenWiki lifecycle; no app source |
-| 14 — Creative/studio implementation | 2026-10-26 19:44 | active | New creative schema/canvas/control files, creative subagent/tools; narrow Studio/AgentWorkspace integration and generation revision contract. Preserve concurrent composer/brand edits. |
+| 14 — Creative/studio implementation | 2026-10-26 19:43 | blocked — Eve runtime verification | New creative schema/canvas/control files, creative subagent/tools; narrow Studio/AgentWorkspace integration and generation revision contract. Preserve concurrent composer/brand edits. |
 | 13 — Agent responsibility map | 2026-10-26 19:39 | checkpoint-ready | PLAN agent/model mapping, focused WRITEUP update, own session/activity entries; no runtime edits |
 | 12 — Local progressive preview | 2026-10-26 19:39 | checkpoint-ready | Narrow local workflow configuration/start fixes and one live progressive scan; preserve UX/Eve work |
 | 12 — Context and creative workflow plan | 2026-10-26 19:38 | checkpoint-ready | docs/PLAN.md creative-flow sections, focused WRITEUP.md addition, own session/activity entries; no source changes |
@@ -166,3 +186,61 @@ Captured the current OLIPOP product workspace in a task-owned in-app tab without
 **Session 11 result:** vertical card fills real basics/enrichment sequentially, reserves palette and primary/secondary font slots, loads matched source fonts via FontFace, and minimizes into an editable popover above the composer. Debug controls are hidden until enabled in Settings, then float independently. AI Elements/shadcn composer is a rounded single row with aligned plus/up-arrow/stop controls and automatic multiline growth. Context/media sit bottom-left above it; product-only tools sit bottom-right. Pasted images use existing AI Elements handling, persist individually (three images, 2 MB each), then pass owned URLs through Eve. Failed sends retain text/files. Eve scan-request actions are wired. One narrow typecheck passed; no browser, screenshot, or full-suite run. Frontend source released to session 07 for its authorized deployment snapshot.
 
 **Expanded baseline (19:52):** owner requested visual progression rather than one screenshot. Preserved 19:48; captured five distinct OLIPOP/Caramel Apple desktop states with timestamps and dirty-source context. Updated persistent capture rules and chronological index. Independently reviewed catalog normalization, DNS-pinned transport and five existing safety/data tests (all passed); checkpoint this stable source subset without editing it. Active runtime/creative integration remains deferred. Studio controls render, but edits/export/agent parity were not verified.
+
+## 14 — Creative/studio implementation
+
+Implemented `agent/subagents/creative` pinned to `anthropic/claude-sonnet-5.5` through the project OpenRouter key; the same specialist handles studio interpretation. Existing Sol/Luna pins are unchanged. Root `creative_studio` delegates structured work; `studio_action` exposes explicit actions. Both return batches handled by the same validated state transition used by UI controls. The compact Create view includes brief fields, selectable concepts, headline/body/logo position/width/visibility/color controls, image revisions and canvas PNG export (1080 square or 1080×1920 story). Per-output composition/format edits persist in the existing browser workspace. Generation snapshots creative inputs; artwork-only jobs leave separate copy/logo overlays to the canvas. Revision jobs use the selected saved artwork plus the original product, with same-store/product/variant validation. Prior outputs remain available.
+
+**Checked:** strict TypeScript passes; six focused tests protect stale-context rejection, concept serialization/clear preservation, layout validation, paid-effect ordering, full prompt serialization, image-revision ownership, and Sonnet wire-schema compatibility. Live OpenRouter model catalog confirms the pin. Two successful small Sonnet checks used 330 and 2,379 tokens; the latter returned brief/layout actions and successfully applied through the shared reducer. Two provider-rejected attempts identified unsupported `oneOf`; replaced the discriminated wire union with supported `anyOf`, then confirmed live success. No paid image generation, browser UX pass, broad suite, publication, or deployment ran. Local HTTP remains 200; canvas/export appearance and interaction are for owner review.
+
+**Runtime handoff to session 07:** the full Eve composer probe failed before model execution with `WorkflowNotRegisteredError: Workflow "workflow//eve//workflowEntry" is not registered in the current deployment.` The failed local run is recorded under `.eve/.workflow-data/runs/`; its client stream waited without surfacing the terminal failure, so the task-owned probe process was stopped. Eve info discovers `creative`, `creative_studio`, and `studio_action`; direct Sonnet structured calls work. Do not mark composer integration live-verified until the active Eve/runtime owner repairs registration and exercises the root → creative → action-result path. Runtime configuration was not changed by this session. Checkpoint remains deferred for this verification gap.
+
+## 16 — Reversible inline editing
+
+Owner clarified the lanyard reference was not literal: remove the decorative slot. Make entering/leaving inline body editing subtle, fast, and symmetric. Preserve typography, footprint, focus behavior, and edit markers; record the paired-transition rule for the project. No broad UI testing.
+
+**Session 16 result:** removed the decorative slot. Shared InlineEdit now keeps read/edit layers in one footprint and crossfades both ways in 160 ms; editor text alignment/fonts match the display and inline focus rings are reduced to 1 px. Click-away uses the same reverse transition; Escape/Enter focus handling and explicit edit markers remain. Reduced motion disables the crossfade. Paired transitions are recorded in project AGENTS. One typecheck passed; no browser/screenshot or full-suite pass.
+
+## 17 — Cached brand replay
+
+Owner wants to see extraction loading from the debug toolbar if lightweight. Existing native extraction and saved snapshots work; the missing piece is a presentation-only replay. Add blank → cached basics → current draft stages without writing drafts or starting Firecrawl. Live refresh stays a distinct operation.
+
+**Session 17 result:** Debug tools now include Replay cached brand / Stop replay. Presentation runs blank skeleton → cached basics → current full draft over 2.4 seconds; no scan/provider call or brand-field mutation occurs. Navigation/store changes cancel playback. Live rescan is separately labelled. One typecheck passed; hands-on review remains with the owner.
+
+
+## 17 — Persistent workspace sidebar
+
+Requested: logo returns to the starting view; after progress, a menu immediately left of the logo morphs into a loader from real Eve status. Open a persistent left sidebar without moving the logo. Use existing shadcn surfaces and short reversible transitions; no routine UI QA.
+
+**Session 17 result:** logo now returns to the starting view while keeping saved work, and the selected start view survives reload. The menu has reserved header space so showing/opening it never shifts the logo. Its three SVG paths morph into a rotating loader from real Eve lifecycle state and back into menu/close shapes. A deduplicated activity bridge streams tool state into the sidebar. The nonmodal shadcn sheet stays open across steps, starts below the sticky header, restores toggle focus on close, and remembers its open state. Desktop content/composer make space; the logo/header do not move. Existing creative callbacks, replay controls, and generation history are preserved. One narrow typecheck passed; interactive review left to the owner.
+
+## 18 — Product context UX
+
+Owner requests one-action whole-product context addition, separate expanding/flipping image-first details, optional variant/image refinement, persistent selection alongside brand above composer, and matching agent actions. Building owned UI files and a shared selection helper. Shell owns Studio persistence/dock integration; runtime owns agent/generation contracts.
+
+## 18 — Saved creative/studio starting point
+
+Owner requested a direct repeatable review entry without spending inference or stepping through intake. Stored-data work was initially delegated to runtime, then explicitly taken back by this chat while runtime continued its other work; Shell owns the deep link and isolated browser draft. `getStudioPreview({data:{generationId?:string}})` returns `{snapshot,generation}` from actual storage only, checks the original product/variant/reference and image signature, rejects production use, and never starts/retries a job. Live read selected OLIPOP Caramel Apple job `781da36c0aef66bd0217b06f2b0cb99ba99789c351d93d16de484b73d16ae753`, created `2026-10-27T01:55:27.419Z` with GPT Image 2, snapshot `093dce63-5a34-4ab8-b2fc-f3cdacd7dab8`. It has no structured creative snapshot; copy stays empty, source direction is retained as captured context, logo overlay starts hidden, and the existing lettering remains part of the original bitmap. No manufactured concept or model output is introduced. Composition rendering reuses decoded images and skips fonts when no visible text needs them. **Completed entry:** `/studio-review?generation=781da36c0aef66bd0217b06f2b0cb99ba99789c351d93d16de484b73d16ae753`. Preview integration was explicitly taken over from Shell so it could continue the owner's sidebar design; no sidebar/header presentation changed here. The same Studio/StudioCreate components render the real saved execution. Review mode uses an isolated browser draft per generation, supports reset, preserves normal workspace/chat history, does not resume an old agent session, and blocks scan, pagination fetch, agent sends, creative inference, and image generation/revision. Local copy/layout/format edits and PNG export remain available. Empty visible text layers and a hidden logo avoid duplicating the original baked lettering. Reload uses stored context without new inference.
+
+**Verification:** direct replay succeeds with global network fetch blocked and leaves the saved job hash unchanged; invalid/missing IDs and production use are rejected. The registered route returns HTTP 200 with the real job/product in its loader payload; strict types pass after route-tree generation. No provider inference, image generation, browser interaction pass, or publication ran. Visual review is the owner's next step.
+
+**Session 18 UI:** direct card add plus a separate expanded, reversible image-first flip; variant and image inclusion edits apply immediately to an added product. ProductContext popover is ready for shell placement. Shared `product-selection.ts` treats null imageUrls as all product/variant images and explicit nonempty arrays as refinements. Strict types and the focused selection integrity/serialization test pass. Shell and runtime owners received authorized integration requests; persistence, dock placement, agent actions and generation reference wiring remain pending their changes. No browser or paid generation run.
+
+
+## 19 — Live activity drawer
+
+Owner correction: the persistent drawer is an activity timeline, not a navigation menu. Remove saved-store/Start items and Ready/state labels. Use a darker borderless surface, invert the logo/menu treatment over it, and show cleaned real tool calls and child-agent work from Eve events.
+
+## 20 — Short brand overview
+
+Owner flagged polluted, overlong marketing metadata and questioned its editing role. Use one short source-backed descriptive sentence, prefer clean Open Graph metadata, and make the overview read-only. Preserve original saved drafts/evidence. Visual identity corrections remain separate from audience/message/offer in the creative brief.
+
+**Session 20 result:** extraction now prefers clean Open Graph description and selects a single short complete descriptive sentence, omitting boilerplate and shopping/discovery preambles. Cached cards use the same deterministic cleanup without a provider call or rewriting stored drafts. The paragraph is read-only and retains the matched body font. OLIPOP now reads “Soda made with plant fiber and prebiotics.” Raw provider evidence remains intact. Typecheck and three retained-source examples passed; no browser/full-suite pass.
+
+## 21 — Visible creative instructions
+
+Removed the brand overflow menu and suppressed the generic seasonal-campaign warning, including cached snapshots. Existing saved direction is directly editable on the full brand card and beside its minimized context chip above the composer. Both reuse InlineEdit and the same direction edit marker/persistence callback; concrete extraction/font warnings remain visible. Source readback only; no build/browser pass for this reversible layout change.
+
+**Temporary Studio integration ownership:** Shell releases only selection persistence/restore, chooseProduct, agent product-selection handling, selectedProduct context, and ProductContext dock insertion to Context & product UX. Preserve the completed /studio-review startup/storage namespace and no-inference guards. Header/sidebar/activity/composer remain Shell-owned. This is a narrow handoff, not a new shared-file ownership sweep.
+
+**Checkpoint 20:20:** captured five distinct isolated saved-review views using OLIPOP/Caramel Apple and the prior viewport. Normal workspace selection had changed, so it was left untouched. Product-selection helper/test reviewed independently; integrity/serialization test passed. Observed new product/context/drawer UI; no inference, data edits, export or agent verification. Active integration remains deferred.
