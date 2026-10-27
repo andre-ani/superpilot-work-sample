@@ -29,3 +29,7 @@ The [activity journal](activity-log.jsonl) preserves timestamped milestones. The
 ## Final publication
 
 Production target: [Superpilot work sample](https://superpilot-work-sample.vercel.app). Final local verification includes strict TypeScript and 19 focused planning, retry, context, and review checks; deployment runs the configured type/build gate. Git history identifies the published revision. These checks do not replace human visual review. No submission email has been sent.
+
+## Production scan repair
+
+Production enrichment failed with “The saved scan is busy” because compressed private-Blob JSON reads returned weak HTTP ETags. The storage compare-and-swap sent the weak prefix to a strong conditional write; real large records reproduced the failure while small records passed. The fix removes only W/ and retains the object version condition. A network-disabled SDK regression covers weak and strong tags; five storage checks and a real isolated 140 KB cloud update pass. The reservation test now asserts the actual concurrent winner rather than assuming call order. No merchant scan was overwritten by diagnostics and no image generation was requested.

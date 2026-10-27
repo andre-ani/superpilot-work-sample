@@ -30,7 +30,7 @@ test('concurrent duplicate generation requests reserve exactly one job and prese
   const job = { id, storeUrl: 'https://store.example.com', createdAt: new Date().toISOString(), updatedAt: new Date().toISOString(), status: 'queued', images: [] } as unknown as Generation
   const results = await Promise.all([storage.reserveGeneration(job, 'Original prompt'), storage.reserveGeneration(job, 'Should not overwrite')])
   assert.equal(results.filter(value => value === null).length, 1)
-  assert.equal(await readFile(path.join(storage.jobDir(id), 'prompt.txt'), 'utf8'), 'Original prompt')
+  assert.equal(await readFile(path.join(storage.jobDir(id), 'prompt.txt'), 'utf8'), results[0] === null ? 'Original prompt' : 'Should not overwrite')
   await storage.atomicWrite(path.join(storage.jobDir(id), '0.png'), Buffer.from('retained image bytes'))
   await storage.saveGeneration({ ...job, status: 'complete', images: ['0.png'] })
   const replay = await storage.reserveGeneration(job, 'Must still not overwrite')
@@ -61,4 +61,41 @@ test('a journaled provider image is recovered after a worker exit without contac
   assert.equal(recovered?.cost, 0.01)
   assert.deepEqual(await readFile(path.join(storage.jobDir(id), '0.png')), Buffer.from(png, 'base64'))
   assert.ok(await stat(path.join(storage.jobDir(id), 'response.json')))
+})
+
+test('cloud scan updates keep conditional-write protection for compressed and uncompressed ETags', async () => {
+  const { createRequire } = await import('node:module')
+  const { MockAgent, getGlobalDispatcher, setGlobalDispatcher } = createRequire(import.meta.resolve('@vercel/blob'))('undici')
+  const previousDispatcher = getGlobalDispatcher()
+  const agent = new MockAgent()
+  agent.disableNetConnect()
+  setGlobalDispatcher(agent)
+  const previousMode = process.env.STUDIO_STORAGE
+  const previousToken = process.env.BLOB_READ_WRITE_TOKEN
+  process.env.STUDIO_STORAGE = 'blob'
+  process.env.BLOB_READ_WRITE_TOKEN = 'vercel_blob_rw_diagnostic_dummy'
+  const id = '33333333-3333-3333-3333-333333333333'
+  try {
+    for (const etag of ['W/"scan-version"', '"scan-version"']) {
+      const matches: string[] = []
+      agent.get('https://diagnostic.private.blob.vercel-storage.com').intercept({ path: () => true, method: 'GET' })
+        .reply(200, JSON.stringify({ id, storeUrl: 'https://store.example.com', version: 1 }), { headers: { etag, 'content-type': 'application/json' } })
+      agent.get('https://vercel.com').intercept({ path: () => true, method: 'PUT' }).reply((options: { headers: HeadersInit }) => {
+        const headers = new Headers(options.headers)
+        matches.push(headers.get('x-if-match') ?? '')
+        assert.equal(headers.get('x-allow-overwrite'), '1')
+        return { statusCode: 200, data: { url: 'https://diagnostic.private.blob.vercel-storage.com/scan.json', pathname: 'scan.json', contentType: 'application/json', contentDisposition: 'inline', etag: '"next-version"' } }
+      })
+      const updated = await storage.updateSnapshot(id, current => ({ ...current, version: 2 } as StoreSnapshot))
+      assert.equal((updated as StoreSnapshot & { version: number }).version, 2)
+      assert.deepEqual(matches, ['"scan-version"'])
+    }
+  } finally {
+    setGlobalDispatcher(previousDispatcher)
+    await agent.close()
+    if (previousMode === undefined) delete process.env.STUDIO_STORAGE
+    else process.env.STUDIO_STORAGE = previousMode
+    if (previousToken === undefined) delete process.env.BLOB_READ_WRITE_TOKEN
+    else process.env.BLOB_READ_WRITE_TOKEN = previousToken
+  }
 })

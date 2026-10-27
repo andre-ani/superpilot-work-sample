@@ -63,7 +63,8 @@ export async function updateSnapshot(id: string, update: (current: StoreSnapshot
       const current = await new Response(result.stream).json() as StoreSnapshot
       const next = update(current)
       if (next.id !== id || next.storeUrl !== current.storeUrl) throw new Error('A scan update cannot change its identity.')
-      try { await putBlob(blobPath(file), JSON.stringify(next), { access: 'private', addRandomSuffix: false, contentType: 'application/json', ifMatch: result.blob.etag }); return next }
+      // Compressed reads may add W/; Blob conditional writes need the same strong object tag.
+      try { await putBlob(blobPath(file), JSON.stringify(next), { access: 'private', addRandomSuffix: false, contentType: 'application/json', ifMatch: result.blob.etag.replace(/^W\//, '') }); return next }
       catch (error) { if (!(error instanceof BlobPreconditionFailedError)) throw error }
     }
     throw new Error('The saved scan is busy. Try again.')
