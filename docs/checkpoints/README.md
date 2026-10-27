@@ -4,7 +4,7 @@ Local checkpoints only. Never infer that a documentation checkpoint verifies or 
 
 ## Latest checkpoint
 
-Last successful commit: `c1435f4bd942df47bdd85d685a56705f7624ef49`, 2026-10-26T22:22:06-07:00 (America/Vancouver). [Variant checkpoint and clean-base review gap](2026-10-26-2220/README.md). Previous: `796c901`. Post-commit receipt retained locally for the next checkpoint.
+Last successful commit: `541ff48690478ab9298e901d24b994d5cabca594`, 2026-10-26T22:52:44-07:00 (America/Vancouver). [Foreground geometry checkpoint and composing state](2026-10-26-2250/README.md). Previous: `c1435f4`. Post-commit receipt retained locally for the next checkpoint.
 
 ## Deferred groups
 
@@ -77,3 +77,11 @@ Keep cached OLIPOP / Caramel Apple / 12 Pack / photo 1 at 1280×720 for comparis
 | Composing | Brand | Guidelines | Products | Reference picker |
 | --- | --- | --- | --- | --- |
 | [![Source reload recovered before capture: clean base left and four headline compositions right. Supporting-copy fit warnings remain visible.](2026-10-26-2250/01-composing.png)](2026-10-26-2250/01-composing.png) | [![Brand review now opens Brand guidelines; selected product and Create remain by composer.](2026-10-26-2250/02-brand.png)](2026-10-26-2250/02-brand.png) | [![Expanded Brand guidelines panel with section navigation and visual guidance; no edits.](2026-10-26-2250/03-guidelines.png)](2026-10-26-2250/03-guidelines.png) | [![Cached grid and selected-product dock; no merchant data changed.](2026-10-26-2250/04-products.png)](2026-10-26-2250/04-products.png) | [![Current product-reference picker with one context image and explicit Use these images action; no submission.](2026-10-26-2250/05-context.png)](2026-10-26-2250/05-context.png) |
+
+### 2026-10-26 23:20 — unified conversation and typography limits
+
+[Comparison, navigation-reset limitation and source scope](2026-10-26-2320/README.md). Four available useful states; three typography assertions passed.
+
+| Conversation/composing | Full-width composing | Brand context | Product context |
+| --- | --- | --- | --- |
+| [![Composing with unified left conversation/context/composer panel; body-fit warnings remain.](2026-10-26-2320/01-composing.png)](2026-10-26-2320/01-composing.png) | [![Full-width composition after review reset to Create; intended Brand view was not captured.](2026-10-26-2320/02-composing-wide.png)](2026-10-26-2320/02-composing-wide.png) | [![Available brand context popover over saved composition; typography identity retained, no edits.](2026-10-26-2320/03-brand-context.png)](2026-10-26-2320/03-brand-context.png) | [![Available product context popover over saved composition; one selected image, no changes submitted.](2026-10-26-2320/04-product-context.png)](2026-10-26-2320/04-product-context.png) |

@@ -1,0 +1,42 @@
+[
+  {
+    "file": "01-composing.png",
+    "caption": "Composing with unified left conversation/context/composer panel; body-fit warnings remain.",
+    "at": "2026-10-27T06:21:21.465Z",
+    "route": "/studio-review?generation=ec8da9e1a56d51236c8d6486e9a79c871558b6ead02beeadccfde18a8bc0815c",
+    "viewport": "1280\u00d7720",
+    "selection": "OLIPOP / Caramel Apple / 12 Pack",
+    "sourceRevision": "541ff48690478ab9298e901d24b994d5cabca594",
+    "dirty": true
+  },
+  {
+    "file": "02-composing-wide.png",
+    "caption": "Full-width composition after review reset to Create; intended Brand view was not captured.",
+    "at": "2026-10-27T06:21:49.327Z",
+    "route": "/studio-review?generation=ec8da9e1a56d51236c8d6486e9a79c871558b6ead02beeadccfde18a8bc0815c",
+    "viewport": "1280\u00d7720",
+    "selection": "OLIPOP / Caramel Apple / 12 Pack",
+    "sourceRevision": "541ff48690478ab9298e901d24b994d5cabca594",
+    "dirty": true
+  },
+  {
+    "file": "03-brand-context.png",
+    "caption": "Available brand context popover over saved composition; typography identity retained, no edits.",
+    "at": "2026-10-27T06:22:35.887Z",
+    "route": "/studio-review?generation=ec8da9e1a56d51236c8d6486e9a79c871558b6ead02beeadccfde18a8bc0815c",
+    "viewport": "1280\u00d7720",
+    "selection": "OLIPOP / Caramel Apple / 12 Pack",
+    "sourceRevision": "541ff48690478ab9298e901d24b994d5cabca594",
+    "dirty": true
+  },
+  {
+    "file": "04-product-context.png",
+    "caption": "Available product context popover over saved composition; one selected image, no changes submitted.",
+    "at": "2026-10-27T06:22:47.106Z",
+    "route": "/studio-review?generation=ec8da9e1a56d51236c8d6486e9a79c871558b6ead02beeadccfde18a8bc0815c",
+    "viewport": "1280\u00d7720",
+    "selection": "OLIPOP / Caramel Apple / 12 Pack",
+    "sourceRevision": "541ff48690478ab9298e901d24b994d5cabca594",
+    "dirty": true
+  }
+]
