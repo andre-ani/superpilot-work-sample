@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:135089b002a887a84d26a47280774ff33c9ab777577f03056bf2644a4d35a7a8",
+  "claims": [
+    {
+      "id": "claim_e94169aed85046d3802c77e8467dbc7d",
+      "statement": "The development command binds to 127.0.0.1:3000 with strictPort, and pnpm check runs TypeScript checking followed by a Vite production build.",
+      "evidence": [
+        {
+          "resource": "repo://package.json",
+          "version": "repo-file-v1:sha256:c04242bec0b4f6c598f823b49335b94df99cc0850949eb81a3bddbf5b40620f5"
+        }
+      ]
+    },
+    {
+      "id": "claim_4555253d2e8c49e5b8f5d8a2e418aace",
+      "statement": "The shared clock reports summed active intervals and provides idempotent start and pause commands; it does not infer idle intervals.",
+      "evidence": [
+        {
+          "resource": "repo://scripts/clock.mjs",
+          "version": "repo-file-v1:sha256:b0aaac3f2aff5554cd284165292703fd64111daa5c7bdb49e794d8dbd1bf6675"
+        }
+      ]
+    },
+    {
+      "id": "claim_8904c21053f14413976269ebdb41096d",
+      "statement": "The optional wiki runner requires an OpenRouter API key and model ID read directly from the project's .env.local, rejects missing local values even if ambient credentials exist, and explicitly selects OpenRouter for the installed CLI.",
+      "evidence": [
+        {
+          "resource": "repo://scripts/wiki.mjs",
+          "version": "repo-file-v1:sha256:91e887dde8e0aef138fd9ea8b7ac279e45151bb49ba426d9ed1dc3a2dad2d6c2"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.5.2",
+    "at": "2026-10-27T01:27:18.577Z"
+  }
+}

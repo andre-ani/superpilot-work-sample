@@ -14,7 +14,7 @@ The OpenRouter key stays server-side in a local environment file and will be sha
 
 ## What worked, and what did not
 
-The initial shell builds. The setup exposed two small integration problems: TypeScript 7 no longer supports `baseUrl`, and the shadcn CLI generated an incorrect utility import. Both were corrected locally. Output quality, product fidelity, text accuracy, and inference cost remain untested.
+The initial shell passes strict type checking and a production build. Browser checks cover prompt submission, empty-input handling, and persistent light/dark mode. The setup exposed two small integration issues: TypeScript 7 removed `baseUrl`, and the shadcn CLI added a separate utility package where a local helper was sufficient. Both were resolved. A compact OpenWiki documents the source. Output quality, product fidelity, text accuracy, and inference cost remain untested.
 
 ## Next
 

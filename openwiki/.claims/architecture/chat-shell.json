@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:7c0bfcd4c6cf49c54a0d7cc2ca303383f19b9a9d8d11b388f5cd36b454a226e8",
+  "claims": [
+    {
+      "id": "claim_3deedbfc8a3e4eee9441209895da2f88",
+      "statement": "The initial chat trims prompts, ignores empty submissions, stores submitted prompts only in component state, and displays an explicit acknowledgement that generation is not connected.",
+      "evidence": [
+        {
+          "resource": "repo://src/routes/index.tsx",
+          "version": "repo-file-v1:sha256:df92cb399eed61e6d9a2b9528b914cc81d9ba7e6dafd4e86d7114d158d44f3fc"
+        }
+      ]
+    },
+    {
+      "id": "claim_85e7c920ff8a476bb754c2ee98696d38",
+      "statement": "Light mode is the default; the document boot script and theme toggle persist an explicit dark preference under superpilot-theme-v1, and catch browser-storage failures.",
+      "evidence": [
+        {
+          "resource": "repo://src/components/theme-toggle.tsx",
+          "version": "repo-file-v1:sha256:ff36638cea787fb48c619066c23f368323ebd3c091e648f94f5c4845343d086a"
+        },
+        {
+          "resource": "repo://src/routes/__root.tsx",
+          "version": "repo-file-v1:sha256:50502c8c03efe91afe88e2bfb4739d949e981425ab7bfbaad9b4923705d701c9"
+        }
+      ]
+    },
+    {
+      "id": "claim_0cbcc686f94d4b338a718f778fce6153",
+      "statement": "The local shadcn Input owns a named composer variant for the single-line prompt geometry, while styles.css owns semantic light and dark theme tokens.",
+      "evidence": [
+        {
+          "resource": "repo://src/components/ui/input.tsx",
+          "version": "repo-file-v1:sha256:8ed368ac321719ce254c32757291ffd97fe40fdd3d473361eca9e369bf6814ba"
+        },
+        {
+          "resource": "repo://src/styles.css",
+          "version": "repo-file-v1:sha256:79a3ed96793459e5f08e8cab1b6b87aaed038936f0336b1f071de32192fe070b"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.5.2",
+    "at": "2026-10-27T01:25:32.177Z"
+  }
+}
