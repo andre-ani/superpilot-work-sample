@@ -33,3 +33,7 @@ Production target: [Superpilot work sample](https://superpilot-work-sample.verce
 ## Production scan repair
 
 Production enrichment failed with “The saved scan is busy” because compressed private-Blob JSON reads returned weak HTTP ETags. The storage compare-and-swap sent the weak prefix to a strong conditional write; real large records reproduced the failure while small records passed. The fix removes only W/ and retains the object version condition. A network-disabled SDK regression covers weak and strong tags; five storage checks and a real isolated 140 KB cloud update pass. The reservation test now asserts the actual concurrent winner rather than assuming call order. No merchant scan was overwritten by diagnostics and no image generation was requested.
+
+## Production product-dialog positioning
+
+Production render confirmed double centering: independent Tailwind translate and animation transform each shifted the dialog by half its size. The compiled CSS had removed the local reset. Product flip keyframes now animate only card-origin offset, rotation and scale; canonical DialogContent retains centering, including reduced motion. This is a CSS-only repair; production geometry will be checked after deployment.
