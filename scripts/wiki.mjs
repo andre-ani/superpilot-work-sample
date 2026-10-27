@@ -5,13 +5,13 @@ import { parseEnv } from 'node:util'
 
 let config
 try {
-  config = parseEnv(readFileSync(new URL('../.env.local', import.meta.url), 'utf8'))
+  config = parseEnv(readFileSync(new URL('../.env', import.meta.url), 'utf8'))
 } catch {
-  console.error('Create .env.local from .env.example before running OpenWiki.')
+  console.error('Create .env with OPENROUTER_API_KEY and OPENWIKI_MODEL_ID before running OpenWiki.')
   process.exit(1)
 }
 if (!config.OPENROUTER_API_KEY?.trim() || !config.OPENWIKI_MODEL_ID?.trim()) {
-  console.error('Set OPENROUTER_API_KEY and OPENWIKI_MODEL_ID in .env.local before running OpenWiki. No inference was requested.')
+  console.error('Set OPENROUTER_API_KEY and OPENWIKI_MODEL_ID in .env before running OpenWiki. No inference was requested.')
   process.exit(1)
 }
 

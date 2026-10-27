@@ -5,6 +5,7 @@ dist/
 .output/
 .tanstack/
 .work/
+.studio-data/
 tmp/
 *.log
 pnpm-lock.yaml
