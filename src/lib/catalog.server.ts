@@ -87,8 +87,26 @@ export async function getCatalogPage(storeInput: string, page: number, savedCata
     if (page === 1 && !normalized.products.length) throw new CatalogError('We reached the store, but couldn’t find usable public products. Check the address or try again.')
     const cartValue = cart?.value as { currency?: unknown } | undefined
     const currency = cart?.url.origin === response.url.origin && typeof cartValue?.currency === 'string' && /^[A-Z]{3}$/.test(cartValue.currency) ? cartValue.currency : null
-    return { ok: true, catalog: { storeUrl, catalogOrigin: response.url.origin, products: normalized.products, currency, page, hasMore: normalized.rawCount === pageSize, skipped: normalized.skipped } }
+    return { ok: true, catalog: { storeUrl, catalogOrigin: response.url.origin, products: normalized.products, currency, page, hasMore: normalized.rawCount === pageSize, ...(page === 1 && normalized.rawCount < pageSize ? {totalCount:normalized.products.length,totalCountStatus:'ready' as const} : {}), skipped: normalized.skipped } }
   } catch (error) {
     return { ok: false, error: error instanceof CatalogError ? error.message : error instanceof Error && /Enter |Use |usable public/.test(error.message) ? error.message : 'We couldn’t finish reading this store. Check the address or try again in a moment.' }
   }
+}
+
+/** Count the same usable public products as browsing; reject incomplete/repeated pages. */
+export async function countPublicProducts(storeInput: string, savedCatalogOrigin?: string): Promise<number> {
+  const storeUrl = normalizeStoreUrl(storeInput)
+  const origin = savedCatalogOrigin ? normalizeStoreUrl(savedCatalogOrigin) : storeUrl
+  if (origin !== storeUrl && !new URL(origin).hostname.endsWith('.myshopify.com')) throw new CatalogError('Invalid catalog source.')
+  const deadline = Date.now() + 30000, ids = new Set<string>()
+  for (let page = 1; page <= 50; page++) {
+    const response = await publicJson(new URL(`/products.json?limit=250&page=${page}`, origin), deadline)
+    if (response.url.origin !== origin) throw new CatalogError('Catalog source changed while counting.')
+    const normalized = normalizeProducts(response.value, storeUrl)
+    const before = ids.size
+    for (const product of normalized.products) ids.add(product.id)
+    if (normalized.rawCount > 0 && page > 1 && ids.size === before) throw new CatalogError('Catalog pagination repeated.')
+    if (normalized.rawCount < 250) return ids.size
+  }
+  throw new CatalogError('Catalog total could not be verified within this scan.')
 }

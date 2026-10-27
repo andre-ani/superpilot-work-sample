@@ -4,7 +4,7 @@ okf_version: "0.2"
 
 # Files
 
-- [Quickstart](quickstart.md) - Run the local ad-studio shell, find implementation owners, track active work, and configure optional OpenWiki inference.
+- [Run and review the work sample](quickstart.md) - Local setup, current ownership and evidence navigation for the Superpilot Instagram ad workspace.
 
 # Directories
 

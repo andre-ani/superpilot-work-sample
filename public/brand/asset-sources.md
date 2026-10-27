@@ -1,0 +1,3 @@
+Brand marks: Shopify and Instagram SVGs from Simple Icons (https://simpleicons.org), used to identify the named platforms. Inter variable font: @fontsource-variable/inter 5.3.0, OFL license at ../fonts/Inter-OFL.txt. Grid, headline geometry and animation constants measured from https://www.superpilot.com/index.html on 2026-10-26.
+Headline underline SVG is the public Superpilot hero asset from the referenced page.
+Thinking mark: exact three path shapes, background/filter and 2-second pulse keyframes extracted from the public Superpilot chat UI asset https://www.superpilot.com/app/assets/chat-attachment-upload-CUFJKYBL.js (activity-label component), 2026-10-26. Reduced-motion fallback added; no chat was sent.

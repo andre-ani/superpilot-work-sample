@@ -1,0 +1,32 @@
+[
+  {
+    "brand": "OLIPOP",
+    "subject": "Caramel Apple",
+    "file": "olipop.png",
+    "generationId": "ec8da9e1a56d51236c8d6486e9a79c871558b6ead02beeadccfde18a8bc0815c",
+    "createdAt": "2026-10-27T04:41:07.430Z",
+    "sha256": "67328475f865493effae4400369fe04f526b4de3f65cfcb58ee98d7b82fb7bef",
+    "model": "openai/gpt-image-2",
+    "kind": "saved base artwork; not a composed export"
+  },
+  {
+    "brand": "Our Place",
+    "subject": "Brand-led kitchen creative",
+    "file": "our-place.png",
+    "generationId": "6779147989b8514dd36c6565f996286c777ad589af29316d716b60a8ad2787f0",
+    "createdAt": "2026-10-27T07:37:37.682Z",
+    "sha256": "8838b367e7c94d779a404ac2d7b93b5dcbe8a82fd4e847ac1b62c61d0d53116f",
+    "model": "openai/gpt-image-2",
+    "kind": "saved base artwork; not a composed export"
+  },
+  {
+    "brand": "Big Star Lights",
+    "subject": "C9 Bulbs",
+    "file": "big-star-lights.png",
+    "generationId": "896d91835e62e6e42188cd5607c41483787fa43ce473052297dded0b6d017fec",
+    "createdAt": "2026-10-27T08:13:03.187Z",
+    "sha256": "0c0631f8347590fc9a736d9163498adb2c9900abac9a65c002be6a4d1500a42e",
+    "model": "openai/gpt-image-2",
+    "kind": "saved base artwork; not a composed export"
+  }
+]

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 68 68" width="68" height="68" fill="none">
+<defs>
+<filter id="inner" x="0" y="0" width="68" height="68" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/><feMorphology radius="4" operator="erode" in="SourceAlpha" result="innerShadow"/><feOffset/><feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/><feColorMatrix type="matrix" values="0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.07 0"/><feBlend mode="normal" in2="shape" result="innerShadow"/></filter>
+<linearGradient id="background" x1="34" y1="2" x2="34" y2="66" gradientUnits="userSpaceOnUse"><stop stop-color="#121827"/><stop offset="1" stop-color="#020306"/></linearGradient>
+<style>@keyframes arrowPulse1 {
+                0%, 100% { opacity: 0.3; }
+                33% { opacity: 1; }
+                66% { opacity: 0.3; }
+              }
+              @keyframes arrowPulse2 {
+                0%, 100% { opacity: 0.3; }
+                0% { opacity: 0.3; }
+                33% { opacity: 0.3; }
+                50% { opacity: 1; }
+                83% { opacity: 0.3; }
+              }
+              @keyframes arrowPulse3 {
+                0%, 66% { opacity: 0.3; }
+                83% { opacity: 1; }
+                100% { opacity: 0.3; }
+              }
+
+@media (prefers-reduced-motion: reduce) { .arrow { animation: none !important; opacity: 1; } }
+</style></defs>
+<g filter="url(#inner)"><rect x="2" y="2" width="64" height="64" rx="16" fill="url(#background)"/>
+<path class="arrow" d="M18.174 36.6309C17.6217 36.6309 17.174 37.0786 17.174 37.6309V41.448C17.174 42.0003 17.6217 42.448 18.174 42.448H25.4447C25.7209 42.448 25.9447 42.6719 25.9447 42.948V49.7483C25.9447 50.3006 26.3925 50.7483 26.9447 50.7483H30.8059C31.3582 50.7483 31.8059 50.3006 31.8059 49.7483V37.6309C31.8059 37.0786 31.3582 36.6309 30.8059 36.6309H18.174Z" fill="white" style="animation:arrowPulse1 2s ease-in-out infinite"/>
+<path class="arrow" d="M27.3769 27.2314C26.8246 27.2314 26.3769 27.6792 26.3769 28.2314V32.0486C26.3769 32.6009 26.8246 33.0486 27.3769 33.0486H34.6476C34.9238 33.0486 35.1476 33.2725 35.1476 33.5486V40.3489C35.1476 40.9012 35.5953 41.3489 36.1476 41.3489H40.0088C40.5611 41.3489 41.0088 40.9012 41.0088 40.3489V28.2314C41.0088 27.6792 40.5611 27.2314 40.0088 27.2314H27.3769Z" fill="white" style="animation:arrowPulse2 2s ease-in-out infinite"/>
+<path class="arrow" d="M36.6777 18C36.1254 18 35.6777 18.4477 35.6777 19V22.8172C35.6777 23.3694 36.1254 23.8172 36.6777 23.8172H43.9484C44.2246 23.8172 44.4484 24.041 44.4484 24.3172V31.1175C44.4484 31.6697 44.8961 32.1175 45.4484 32.1175H49.3096C49.8619 32.1175 50.3096 31.6697 50.3096 31.1175V19C50.3096 18.4477 49.8619 18 49.3096 18H36.6777Z" fill="white" style="animation:arrowPulse3 2s ease-in-out infinite"/>
+</g></svg>

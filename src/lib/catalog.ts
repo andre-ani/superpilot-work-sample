@@ -25,6 +25,8 @@ export type CatalogProduct = {
 }
 
 export type CatalogPage = {
+  totalCount?: number
+  totalCountStatus?: 'ready' | 'unavailable'
   catalogOrigin?: string
   storeUrl: string
   products: CatalogProduct[]

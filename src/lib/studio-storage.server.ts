@@ -48,7 +48,7 @@ export async function readSnapshot(id: string) {
   if (!snapshot) throw new Error('This saved scan could not be found. Scan the store again.')
   if (snapshot.enrichment?.sourceScanId && snapshot.enrichment.sourceScanId !== snapshot.id) {
     const original = await readJson<StoreSnapshot>(path.join(dataRoot, 'scans', `${safeId(snapshot.enrichment.sourceScanId)}.json`))
-    if (original?.storeUrl === snapshot.storeUrl && original.enrichment) return { ...snapshot, brand: original.brand, baseBrand: snapshot.baseBrand ?? original.baseBrand, enrichment: original.enrichment }
+    if (original?.storeUrl === snapshot.storeUrl && original.enrichment) return { ...snapshot, catalog: { ...snapshot.catalog, ...(typeof original.catalog.totalCount === 'number' ? {totalCount:original.catalog.totalCount} : {}), ...(original.catalog.totalCountStatus ? {totalCountStatus:original.catalog.totalCountStatus} : {}) }, brand: original.brand, baseBrand: snapshot.baseBrand ?? original.baseBrand, enrichment: original.enrichment }
   }
   return snapshot
 }
@@ -122,7 +122,8 @@ export async function readGeneration(id: string): Promise<Generation | null> {
   return generation
 }
 export async function saveGeneration(generation: Generation) {
-  await writeJson(path.join(jobDir(generation.id), 'job.json'), { ...generation, updatedAt: new Date().toISOString() })
+  const { cacheReuse: _receipt, ...stored } = generation
+  await writeJson(path.join(jobDir(generation.id), 'job.json'), { ...stored, updatedAt: new Date().toISOString() })
 }
 export async function finishSavedResponse(job: Generation): Promise<Generation | null> {
   const result = await readJson<{ data?: { b64_json?: string }[]; usage?: { cost?: number } }>(path.join(jobDir(job.id), 'response.json'))

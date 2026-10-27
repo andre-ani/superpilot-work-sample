@@ -1,48 +1,108 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:7c0bfcd4c6cf49c54a0d7cc2ca303383f19b9a9d8d11b388f5cd36b454a226e8",
+  "pageVersion": "sha256:84b7cb0addc6e3f6456e1a87a466649333899b828c74aa794b390e8c43dab831",
   "claims": [
-    {
-      "id": "claim_3deedbfc8a3e4eee9441209895da2f88",
-      "statement": "The initial chat trims prompts, ignores empty submissions, stores submitted prompts only in component state, and displays an explicit acknowledgement that generation is not connected.",
-      "evidence": [
-        {
-          "resource": "repo://src/routes/index.tsx",
-          "version": "repo-file-v1:sha256:df92cb399eed61e6d9a2b9528b914cc81d9ba7e6dafd4e86d7114d158d44f3fc"
-        }
-      ]
-    },
     {
       "id": "claim_85e7c920ff8a476bb754c2ee98696d38",
       "statement": "Light mode is the default; the document boot script and theme toggle persist an explicit dark preference under superpilot-theme-v1, and catch browser-storage failures.",
       "evidence": [
         {
           "resource": "repo://src/components/theme-toggle.tsx",
-          "version": "repo-file-v1:sha256:ff36638cea787fb48c619066c23f368323ebd3c091e648f94f5c4845343d086a"
+          "version": "repo-file-v1:sha256:5f9e87253a0b5c8ceb0e31bae6b2377eb7cc64bc5803374c861e5f2e51f14cc5"
         },
         {
           "resource": "repo://src/routes/__root.tsx",
-          "version": "repo-file-v1:sha256:50502c8c03efe91afe88e2bfb4739d949e981425ab7bfbaad9b4923705d701c9"
+          "version": "repo-file-v1:sha256:b54563fc8ed55571e1243b2e611eb364a51759db4afbe33c99adde7b467ef386"
         }
       ]
     },
     {
-      "id": "claim_0cbcc686f94d4b338a718f778fce6153",
-      "statement": "The local shadcn Input owns a named composer variant for the single-line prompt geometry, while styles.css owns semantic light and dark theme tokens.",
+      "id": "claim_96e91abfbd2f479b9447bcf4d46aa6cd",
+      "statement": "The root route mounts Studio and AgentWorkspace connects Eve tool results to application workspace actions.",
       "evidence": [
         {
-          "resource": "repo://src/components/ui/input.tsx",
-          "version": "repo-file-v1:sha256:8ed368ac321719ce254c32757291ffd97fe40fdd3d473361eca9e369bf6814ba"
+          "resource": "repo://src/components/agent-workspace.tsx",
+          "version": "repo-file-v1:sha256:847632f553e54c0403d47202cab6721c7ef73cfd8ea72fa8e41dfc9c3a49fc66"
+        },
+        {
+          "resource": "repo://src/components/studio.tsx",
+          "version": "repo-file-v1:sha256:d5357c5365463e4658f2276403183f7c2389627f9a2778b72d05e51170ec0286"
+        },
+        {
+          "resource": "repo://src/routes/index.tsx",
+          "version": "repo-file-v1:sha256:29095fa46510b0ee027ca3bf84c0bae3f1e33a43910b5b08fb5bec66cb7f6da7"
+        }
+      ]
+    },
+    {
+      "id": "claim_2c6f6f8f68a849baa6fc1b40551473d2",
+      "statement": "The storage adapter retains scans and generation records locally or in private Blob, reserves duplicate jobs and can recover received images without regenerating them.",
+      "evidence": [
+        {
+          "resource": "repo://src/lib/studio-storage.server.ts",
+          "version": "repo-file-v1:sha256:f0250c5a9cb62a75ebe4577d59c194d5d9d9a2f80a31f7538105bc9c02e2a0e2"
+        }
+      ]
+    },
+    {
+      "id": "claim_df0a49fa10e247f0b2a6a28dff8214eb",
+      "statement": "The durable image workflow waits for brand context, prepares and generates artwork, then performs composition analysis while recording placement failure separately.",
+      "evidence": [
+        {
+          "resource": "repo://workflows/image-generation.ts",
+          "version": "repo-file-v1:sha256:5629b3383029b5caf7976620c49f6244f967b5f67eb1a7b93293faa26bef86dc"
+        }
+      ]
+    },
+    {
+      "id": "claim_a9133532150c4d86b9d2200d5e29af1c",
+      "statement": "Saved studio review is development-only and reads validated completed executions without starting or repairing jobs on load.",
+      "evidence": [
+        {
+          "resource": "repo://src/lib/studio-preview.server.ts",
+          "version": "repo-file-v1:sha256:d8d375cf4e48a04ec7cb6b77f8ba8303d065619f82313b7500b87a4dd3f3211e"
+        },
+        {
+          "resource": "repo://src/routes/studio-review.tsx",
+          "version": "repo-file-v1:sha256:aa78e4b5b4ad4cf3a99ae6cc655a10ecd4cfe9eeb96e3b0bbb301b52d8bb0300"
+        }
+      ]
+    },
+    {
+      "id": "claim_5dfb845e4daa48a5a985727697afb570",
+      "statement": "Shared controls live under components/ui and styles.css owns semantic theme tokens while the root document owns metadata, hydration, errors and the global grid.",
+      "evidence": [
+        {
+          "resource": "repo://src/components/ui/button.tsx",
+          "version": "repo-file-v1:sha256:57a4e43c01273054611fdde66dd3fabf1c06d0b8aa65402fc4470dfc1b40bf3e"
+        },
+        {
+          "resource": "repo://src/routes/__root.tsx",
+          "version": "repo-file-v1:sha256:b54563fc8ed55571e1243b2e611eb364a51759db4afbe33c99adde7b467ef386"
         },
         {
           "resource": "repo://src/styles.css",
-          "version": "repo-file-v1:sha256:79a3ed96793459e5f08e8cab1b6b87aaed038936f0336b1f071de32192fe070b"
+          "version": "repo-file-v1:sha256:da6c38dbf7c3b66b361738b83db2bc93f47ecae46e188207c1ba41b882327e2c"
+        }
+      ]
+    },
+    {
+      "id": "claim_afedfc8e3977436b9307e425dc2ea620",
+      "statement": "The root agent uses the shared Sol transport enforcing priority service tier and low reasoning after SDK serialization.",
+      "evidence": [
+        {
+          "resource": "repo://agent/agent.ts",
+          "version": "repo-file-v1:sha256:1920f66f2c9ebacc2d6c85a3818e3bd37eef5f2bff52c33c00eb838ddc8660cb"
+        },
+        {
+          "resource": "repo://agent/lib/openrouter-model.ts",
+          "version": "repo-file-v1:sha256:939043cf243dc1b55bc6d1a5d3e175488037d982205d86cf2d080c3df05c7c4b"
         }
       ]
     }
   ],
   "verification": {
     "by": "openwiki/0.5.2",
-    "at": "2026-10-27T01:25:32.177Z"
+    "at": "2026-10-27T08:45:34.663Z"
   }
 }

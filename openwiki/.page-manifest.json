@@ -2,16 +2,18 @@
   "schemaVersion": 1,
   "pages": {
     "/openwiki/architecture/chat-shell.md": {
-      "sourceFingerprint": "sha256:fb4d468b523127421081d69d1a5d9fdf4bda8b16644ef16818bb38c3926e1261",
-      "pageVersion": "sha256:7c0bfcd4c6cf49c54a0d7cc2ca303383f19b9a9d8d11b388f5cd36b454a226e8",
+      "pageVersion": "sha256:84b7cb0addc6e3f6456e1a87a466649333899b828c74aa794b390e8c43dab831",
       "completedBy": "codex",
-      "completedRunId": "ca9f2880-6a0c-4564-b3f4-1dad93d65853"
+      "completedRunId": "15f2797d-b1e3-4c75-ae2e-43fb799e5579",
+      "gitHead": "d496af270bdc3e71f426eada64c06becc74aed17",
+      "sourceFingerprint": "sha256:8bac684ae2905feccf870a8e837f83a90c884504ad4437e0af36d128b9d19975"
     },
     "/openwiki/quickstart.md": {
-      "sourceFingerprint": "sha256:1896afdcbaac7bac872b91c03878d384ef5bb98ac708b08aca2f358bbaeb6c8a",
-      "pageVersion": "sha256:135089b002a887a84d26a47280774ff33c9ab777577f03056bf2644a4d35a7a8",
+      "pageVersion": "sha256:e7d72a4477c9bc995cbbaccc44fcd36ff135707977adea71a3b43541ec0ff176",
       "completedBy": "codex",
-      "completedRunId": "aca8ebe5-749c-4768-8e4d-99f5d02e9beb"
+      "completedRunId": "15f2797d-b1e3-4c75-ae2e-43fb799e5579",
+      "gitHead": "d496af270bdc3e71f426eada64c06becc74aed17",
+      "sourceFingerprint": "sha256:8bac684ae2905feccf870a8e837f83a90c884504ad4437e0af36d128b9d19975"
     }
   }
 }

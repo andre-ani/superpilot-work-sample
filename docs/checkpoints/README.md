@@ -4,15 +4,11 @@ Local checkpoints only. Never infer that a documentation checkpoint verifies or 
 
 ## Latest checkpoint
 
-Last successful commit: `7f760efd39eb3760a999100bb582452d92accf20`, 2026-10-26T23:52:34-07:00 (America/Vancouver). [Planning/recovery checkpoint and four views](2026-10-26-2350/README.md). Previous: `a616b9c`. Post-commit receipt retained locally for the next checkpoint.
+Last scheduled checkpoint commit: `d496af270bdc3e71f426eada64c06becc74aed17`, 2026-10-27T00:22:25-07:00 (America/Vancouver). [Readiness/progress checkpoint and current previews](2026-10-27-0020/README.md). Previous: `7f760ef`. Post-commit receipt retained locally for the next checkpoint.
 
-## Deferred groups
+## Final release
 
-- Remaining `src/` (excluding independently checkpointed catalog core/transport/tests), `agent/`, `workflows/`, `public/`, generation scripts, package/lock/build/deployment configuration: active runtime, UX, and creative ownership; no stable combined handoff yet.
-- Generated `openwiki/`: stale integrated-runtime descriptions; refresh through the installed lifecycle against stable source. Reviewer README is now included; no paid standalone runner.
-- `src/lib/brand-description.ts`: focused check drops a valid four-word sentence when boilerplate follows it; exact input/output in the 20:50 note. Do not commit until corrected by its owner.
-- `docs/PLAN.md`, extraction comparison records, `docs/time-log.json`, ignore/config changes outside this checkpoint: preserve concurrent ownership; review separately. User clock is unchanged by checkpoint work.
-- Environment files: never staged.
+The final publication includes the complete authored application, configuration, documentation and selected generated examples. Earlier deferred groups below individual snapshots describe those historical partial commits, not the final release. The fallback-description issue recorded at20:50 was corrected before publication and its original four focused checks passed. The two existing OpenWiki pages were refreshed through the lifecycle against the final source. Private environment/storage/build files remain excluded.
 
 ## Visual history (chronological)
 

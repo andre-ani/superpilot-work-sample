@@ -1,6 +1,6 @@
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://shieldcn.dev/header/transparent.svg?title=Superpilot&subtitle=Instagram+ad+studio&align=left&mode=dark" />
-  <img alt="Superpilot — Instagram ad studio" src="https://shieldcn.dev/header/transparent.svg?title=Superpilot&subtitle=Instagram+ad+studio&align=left&mode=light" />
+  <source media="(prefers-color-scheme: dark)" srcset="https://shieldcn.dev/header/grid.svg?title=Superpilot&subtitle=Shopify+storefronts+to+Instagram+ads&align=left&mode=dark&accent=%2327ADDF" />
+  <img alt="Superpilot — Instagram ad studio" src="https://shieldcn.dev/header/grid.svg?title=Superpilot&subtitle=Shopify+storefronts+to+Instagram+ads&align=left&mode=light&accent=%2327ADDF" />
 </picture>
 
 [![TanStack Start](https://shieldcn.dev/badge/stack-TanStack%20Start-blue.svg?variant=secondary)](https://tanstack.com/start)
@@ -9,11 +9,13 @@
 
 An agent-led workspace for creating Instagram image ads from a Shopify store: collect brand and product context, develop a creative brief, then generate and compose an ad.
 
-The interface combines conversation with direct controls for brand review, product references, creative direction, and saved outputs. See [WRITEUP.md](WRITEUP.md) for the approach, experiments, results, and remaining limitations.
+Conversation and direct controls share brand, product, and creative context. Generated examples cover OLIPOP, Our Place, and Big Star Lights.
+
+[Live app](https://superpilot-work-sample.vercel.app) · [Generated examples](examples/README.md) · [Final writeup](WRITEUP.md)
 
 ## Run locally
 
-Requires **Node.js 24+** and **pnpm 11.24.0**.
+Requires **Node.js 24.x** and **pnpm 11.24.0**.
 
 ```sh
 pnpm install --frozen-lockfile
@@ -32,21 +34,21 @@ OpenRouter supplies the conversational models and image generation; Firecrawl su
 pnpm dev
 ```
 
-Open [http://127.0.0.1:3000](http://127.0.0.1:3000). The server uses a strict port; stop another process on port 3000 or choose a different port explicitly.
+Open [http://127.0.0.1:3000](http://127.0.0.1:3000). Port 3000 must be available.
 
 ## Try the workflow
 
 1. Enter a public Shopify storefront URL, such as `drinkolipop.com`.
 2. Review the extracted brand identity. Basic context arrives first; visual enrichment fills in colors and typography. Correct uncertain details and add creative direction.
 3. Add product context and refine the reference images or variants.
-4. Develop the ad brief, generate artwork, and review it in the studio alongside copy and layout controls.
+4. Explore ad ideas, generate artwork, then compare and export compositions.
 
-Saved scans and outputs are reused where available. In development, `/studio-review` opens a genuine saved generation with isolated review edits and inference disabled. It requires an existing completed generation in local storage; a fresh clone does not include one.
+In development, `/studio-review` loads an existing saved generation without starting inference. Review edits are isolated; deliberate agent requests may call models. A fresh clone has no saved generations.
 
-## Project notes and evidence
+## Project documentation
 
 - [Writeup](WRITEUP.md): approach, experiments, results, tradeoffs, and unresolved problems.
-- [Session summaries](docs/SESSIONS.md): implementation chronology, decisions, ownership, and recorded verification.
+- [Development summary](docs/SESSIONS.md): readable milestones and evidence, with the detailed working log archived separately.
 - [Brief summary](docs/BRIEF.md): deliverables, scope, and constraints.
 - [Working plan](docs/PLAN.md): accepted decisions, intended workflow, and open questions.
 
@@ -56,7 +58,7 @@ Saved scans and outputs are reused where available. In development, `/studio-rev
 - **Interface:** Tailwind, shadcn/ui, Tabler icons, and Motion; light/dark preference persists.
 - **Agent:** Eve coordinates conversation and tools; native Workflow handles durable background work.
 - **Context:** Shopify's public catalog provides product data; a bounded homepage parser provides initial brand context, followed by Firecrawl enrichment.
-- **Images:** GPT Image 2 receives product references and confirmed context. The studio composes artwork with editable text and logo layers.
+- **Images:** GPT Image 2 receives product references and confirmed context. The studio combines artwork with separate text and logo layers for review and PNG export.
 - **Persistence:** local `.studio-data/` stores scan evidence, generation requests/responses, and image files. Browser storage keeps editable workspace state. Private Vercel Blob storage is also supported by the storage adapter.
 
 Original extraction evidence stays separate from merchant edits. Background enrichment preserves explicitly edited fields, and generation requests retain their input context. Keep `.studio-data/` to preserve local scans and outputs; it is excluded from Git.
@@ -80,8 +82,6 @@ pnpm build      # Production build
 pnpm check      # Typecheck followed by production build
 ```
 
-## Current limitations
+## Limitations
 
-This is an evolving prototype. One OLIPOP image-generation flow has been verified; the three-brand output set is still incomplete. The latest conversation, product-reference, and creative-studio integrations require end-to-end verification. Existing generated lettering is baked into the artwork; additional studio text remains separately editable. Composed export behavior and product fidelity still need final review.
-
-Authentication and Meta publishing are outside this prototype's scope.
+Product fidelity, text fit across brands, mobile typography, and downloaded exports require human review. Some historical artwork contains baked-in ad lettering; newer runs separate artwork from editable copy. See the [writeup](WRITEUP.md) for results and unresolved issues. Authentication and Meta publishing are outside scope.

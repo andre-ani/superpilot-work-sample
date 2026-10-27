@@ -17,3 +17,7 @@ test('actual failures remain visible, while a deliberate new submission clears s
   assert.deepEqual(generationProgress(job,true),{label:'Preparing your ad',loading:true})
   assert.equal(generationProgress({status:'interrupted',images:[]},false).loading,false)
 })
+
+test('bounded planning retry is visible instead of a stale generic placeholder',()=>{
+  assert.equal(generationProgress({status:'queued',images:[],preparation:{attempt:2,status:'retrying',message:'Retrying ad planning (2 of 2)'}},false).label,'Retrying ad planning (2 of 2)')
+})

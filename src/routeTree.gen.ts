@@ -10,33 +10,102 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ProductsRouteImport } from './routes/products'
+import { Route as StudioReviewRouteImport } from './routes/studio-review'
+import { Route as ApiBrandAssetsNameRouteImport } from './routes/api.brand-assets.$name'
+import { Route as ApiBrandFontsNameRouteImport } from './routes/api.brand-fonts.$name'
+import { Route as ApiOutputsIdIndexRouteImport } from './routes/api.outputs.$id.$index'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProductsRoute = ProductsRouteImport.update({
+  id: '/products',
+  path: '/products',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const StudioReviewRoute = StudioReviewRouteImport.update({
+  id: '/studio-review',
+  path: '/studio-review',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiBrandAssetsNameRoute = ApiBrandAssetsNameRouteImport.update({
+  id: '/api/brand-assets/$name',
+  path: '/api/brand-assets/$name',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiBrandFontsNameRoute = ApiBrandFontsNameRouteImport.update({
+  id: '/api/brand-fonts/$name',
+  path: '/api/brand-fonts/$name',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiOutputsIdIndexRoute = ApiOutputsIdIndexRouteImport.update({
+  id: '/api/outputs/$id/$index',
+  path: '/api/outputs/$id/$index',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/products': typeof ProductsRoute
+  '/studio-review': typeof StudioReviewRoute
+  '/api/brand-assets/$name': typeof ApiBrandAssetsNameRoute
+  '/api/brand-fonts/$name': typeof ApiBrandFontsNameRoute
+  '/api/outputs/$id/$index': typeof ApiOutputsIdIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/products': typeof ProductsRoute
+  '/studio-review': typeof StudioReviewRoute
+  '/api/brand-assets/$name': typeof ApiBrandAssetsNameRoute
+  '/api/brand-fonts/$name': typeof ApiBrandFontsNameRoute
+  '/api/outputs/$id/$index': typeof ApiOutputsIdIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/products': typeof ProductsRoute
+  '/studio-review': typeof StudioReviewRoute
+  '/api/brand-assets/$name': typeof ApiBrandAssetsNameRoute
+  '/api/brand-fonts/$name': typeof ApiBrandFontsNameRoute
+  '/api/outputs/$id/$index': typeof ApiOutputsIdIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/products'
+    | '/studio-review'
+    | '/api/brand-assets/$name'
+    | '/api/brand-fonts/$name'
+    | '/api/outputs/$id/$index'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/products'
+    | '/studio-review'
+    | '/api/brand-assets/$name'
+    | '/api/brand-fonts/$name'
+    | '/api/outputs/$id/$index'
+  id:
+    | '__root__'
+    | '/'
+    | '/products'
+    | '/studio-review'
+    | '/api/brand-assets/$name'
+    | '/api/brand-fonts/$name'
+    | '/api/outputs/$id/$index'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ProductsRoute: typeof ProductsRoute
+  StudioReviewRoute: typeof StudioReviewRoute
+  ApiBrandAssetsNameRoute: typeof ApiBrandAssetsNameRoute
+  ApiBrandFontsNameRoute: typeof ApiBrandFontsNameRoute
+  ApiOutputsIdIndexRoute: typeof ApiOutputsIdIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +117,51 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/products': {
+      id: '/products'
+      path: '/products'
+      fullPath: '/products'
+      preLoaderRoute: typeof ProductsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/studio-review': {
+      id: '/studio-review'
+      path: '/studio-review'
+      fullPath: '/studio-review'
+      preLoaderRoute: typeof StudioReviewRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/brand-assets/$name': {
+      id: '/api/brand-assets/$name'
+      path: '/api/brand-assets/$name'
+      fullPath: '/api/brand-assets/$name'
+      preLoaderRoute: typeof ApiBrandAssetsNameRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/brand-fonts/$name': {
+      id: '/api/brand-fonts/$name'
+      path: '/api/brand-fonts/$name'
+      fullPath: '/api/brand-fonts/$name'
+      preLoaderRoute: typeof ApiBrandFontsNameRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/outputs/$id/$index': {
+      id: '/api/outputs/$id/$index'
+      path: '/api/outputs/$id/$index'
+      fullPath: '/api/outputs/$id/$index'
+      preLoaderRoute: typeof ApiOutputsIdIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ProductsRoute: ProductsRoute,
+  StudioReviewRoute: StudioReviewRoute,
+  ApiBrandAssetsNameRoute: ApiBrandAssetsNameRoute,
+  ApiBrandFontsNameRoute: ApiBrandFontsNameRoute,
+  ApiOutputsIdIndexRoute: ApiOutputsIdIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

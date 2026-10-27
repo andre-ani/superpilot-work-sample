@@ -198,3 +198,31 @@ The brand specialist now receives actual saved PNG/JPEG/WebP pixel parts, not UR
 ## Visual style settings
 
 The compact brand card exposes Visual style as an action. It expands into an accessible modal retaining brand identity on the left and placing longer style/reference controls on the right. Outside click, Escape and Close reverse the same fast transition back to the card. Smaller screens stack the panes; saved data and edit protection use the same controls.
+
+### Context-first implementation status
+
+Implemented locally: persistent multiple-product context without a count gate; brand-only Go; exact selected product/inspiration references; cached real-pixel brand understanding; editable style/source evidence through shared UI/agent actions; cached Sonnet automatic brief and text-safe composition; durable preparation before artwork; field-aware and stale-result protection. Provider prompts use the active brief/composition/layers, not unselected concept options. Native composer uploads become persisted context before agent execution. Saved review stays model-free. Strict types, focused context/preparation checks and real model/cache probes pass; no new artwork/fidelity review was performed for this change.
+
+## Composer identity and controls
+
+Idle composer shows Message superpilot; only live processing state may replace that placeholder. Assistant replies stay in conversation/preview surfaces. The original Superpilot box mark sits left; plus/context and sidebar controls sit inside the pill on the right. No microphone or visible send button; Enter sends and Shift+Enter adds a line. Stop remains available during active work.
+
+## Final composing flow — local first pass
+
+After generation, choose artwork and one of three bounded copy options independently. Headlines are limited to 80 characters and supporting copy to 140 for generated options; manual text remains editable. Copy changes use shared actions and do not regenerate artwork. Pretext measures the loaded brand font, and the renderer finds the largest type size fitting each bounded width/height and maximum line count. Two-line headlines can grow larger than a one-line treatment. Auto-fill is the default, with manual size/alignment controls and explicit overflow recovery. Preview and export share layout; on-screen text guides do not appear in the PNG. A genuine saved copy-preparation record supports inference-free composing review. Types and focused fitting/state checks pass; visual review remains with the owner.
+
+## New flow and staged profile loading
+
+Start-screen submission begins a fresh URL-led session with empty chat/context; brand extraction cache is independent and may be reused. Previous conversations belong only to explicit session/project selection. A cached brand profile must not reopen an older failed snapshot simply because it was last remembered by the browser. Multiple retained sessions per brand are a later product decision.
+
+Cold extraction streams basics, then Firecrawl palette/font names, then image-backed visual understanding. Intermediate stages merge into untouched fields while the workflow remains running. Stable skeleton slots and short bounded reveal transitions reserve the layout. Font fetch failures caused by preview restarts may retry; failed promises do not remain cached indefinitely. The provider itself can still take many seconds, so completed profiles should be reused rather than re-extracted on a new conversation.
+
+## Composing correction — current authority
+
+The large base image sits above four complete composed variations. Selection supplies context to the existing composer; text editing/alignment stays on the selected text. No slider panel or separate image-change input. Generated artwork is text-free apart from authentic packaging. Source images are inspected for natural quiet opportunities (sky/lawn/walls/shadow) and protected products/lights; generation follows that reasoning and a separate actual-output pixel analysis chooses final placements. This supersedes fixed top/bottom template assumptions. Unsafe placements are rejected instead of silently overlaying subjects. Image, analysis and text preparation are cached; only explicit user requests start new work.
+
+The saved composing review now permits explicit manual composer turns in an isolated per-generation chat/flow. This supersedes the old blanket disabled-chat review rule: loading is still model-free, while deliberate user sends may edit copy/layout or request image revisions. No secondary image-change input is used. The agent can read actual saved artwork pixels before visual changes.
+
+## Mobile composing authority
+
+Base-left/4-grid-right on desktop; headline minimum84px and supporting minimum42px at1080px, with8% edge-safe inset. Text is shortened or omitted when necessary; the renderer never uses tiny text to force a fit. Foreground segmentation is internal: cached raw mask + hole fill + distance padding/soft penalty + vision-protected regions determine per-line Pretext spans, while the original displayed image stays unchanged. Local model worker/caches are verified; uncached deployment worker support remains a separate runtime task.

@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:135089b002a887a84d26a47280774ff33c9ab777577f03056bf2644a4d35a7a8",
+  "pageVersion": "sha256:e7d72a4477c9bc995cbbaccc44fcd36ff135707977adea71a3b43541ec0ff176",
   "claims": [
     {
       "id": "claim_e94169aed85046d3802c77e8467dbc7d",
@@ -8,33 +8,55 @@
       "evidence": [
         {
           "resource": "repo://package.json",
-          "version": "repo-file-v1:sha256:c04242bec0b4f6c598f823b49335b94df99cc0850949eb81a3bddbf5b40620f5"
+          "version": "repo-file-v1:sha256:dd62afd7b1a634c4da36b9838747b8b5cd132828bbe3e0a1da27e89f5d082c04"
         }
       ]
     },
     {
-      "id": "claim_4555253d2e8c49e5b8f5d8a2e418aace",
-      "statement": "The shared clock reports summed active intervals and provides idempotent start and pause commands; it does not infer idle intervals.",
+      "id": "claim_e92129be58114c6b93f40c48cb9bbd6b",
+      "statement": "Local runtime credentials come from the project's .env while deployed runtime credentials come from its Vercel environment.",
       "evidence": [
         {
-          "resource": "repo://scripts/clock.mjs",
-          "version": "repo-file-v1:sha256:b0aaac3f2aff5554cd284165292703fd64111daa5c7bdb49e794d8dbd1bf6675"
+          "resource": "repo://src/lib/project-env.server.ts",
+          "version": "repo-file-v1:sha256:61bea55bce86ee87852013f01210fd78ddba23bc646cce66459e8b058b05c8ba"
+        },
+        {
+          "resource": "repo://vite.config.ts",
+          "version": "repo-file-v1:sha256:6116a50c9e37a2c4767f75a184af4feda7aaad3ee0ebee7bb9cc7461c0afd317"
         }
       ]
     },
     {
-      "id": "claim_8904c21053f14413976269ebdb41096d",
-      "statement": "The optional wiki runner requires an OpenRouter API key and model ID read directly from the project's .env.local, rejects missing local values even if ambient credentials exist, and explicitly selects OpenRouter for the installed CLI.",
+      "id": "claim_e83a7a6c26a54f3bb08e41d7d1d338c4",
+      "statement": "Saved studio review is development-only and reads actual retained completed executions rather than starting new inference on load.",
       "evidence": [
         {
-          "resource": "repo://scripts/wiki.mjs",
-          "version": "repo-file-v1:sha256:91e887dde8e0aef138fd9ea8b7ac279e45151bb49ba426d9ed1dc3a2dad2d6c2"
+          "resource": "repo://src/lib/studio-preview.server.ts",
+          "version": "repo-file-v1:sha256:d8d375cf4e48a04ec7cb6b77f8ba8303d065619f82313b7500b87a4dd3f3211e"
+        },
+        {
+          "resource": "repo://src/routes/studio-review.tsx",
+          "version": "repo-file-v1:sha256:aa78e4b5b4ad4cf3a99ae6cc655a10ecd4cfe9eeb96e3b0bbb301b52d8bb0300"
+        }
+      ]
+    },
+    {
+      "id": "claim_bf215e430974490eab64bf8f2861d6d4",
+      "statement": "The example gallery contains selected original generated PNGs with provenance and distinguishes them from final composed exports.",
+      "evidence": [
+        {
+          "resource": "repo://examples/README.md",
+          "version": "repo-file-v1:sha256:9f20476e73107c94b583f6ef50c203b86e02ef96ec72c5f33387d13a20127ca8"
+        },
+        {
+          "resource": "repo://examples/provenance.json",
+          "version": "repo-file-v1:sha256:8702eb5ad1abe4a80505120ce17d895fb2996bc1918f619b9de15c1278ce860e"
         }
       ]
     }
   ],
   "verification": {
     "by": "openwiki/0.5.2",
-    "at": "2026-10-27T01:27:18.577Z"
+    "at": "2026-10-27T08:45:34.663Z"
   }
 }

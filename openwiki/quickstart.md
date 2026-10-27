@@ -1,58 +1,56 @@
 ---
 type: quickstart
-title: Quickstart
-description: Run the local ad-studio shell, find implementation owners, track active work, and configure optional OpenWiki inference.
+title: Run and review the work sample
+description: Local setup, current ownership and evidence navigation for the Superpilot Instagram ad workspace.
 tags: [setup, workflow, documentation]
 verified:
   - by: openwiki/0.5.2
-    at: 2026-10-27T01:27:18.577Z
+    at: 2026-10-27T08:45:34.663Z
 sources:
+  - id: openwiki-source-c10e48423012bb8da0ed7dd9
+    resource: repo://examples/provenance.json
+  - id: openwiki-source-c8b39dcd2a245cd9301a976a
+    resource: repo://examples/README.md
   - id: openwiki-source-5b54a58d1b51cd490b0e7162
     resource: repo://package.json
-  - id: openwiki-source-19c2f938d78b759c2275c5f8
-    resource: repo://scripts/clock.mjs
-  - id: openwiki-source-a968c4d23f2e02f9e4e8ff4e
-    resource: repo://scripts/wiki.mjs
-generated: { by: "codex", at: "2026-10-27T01:27:18.577Z" }
+  - id: openwiki-source-41f7bcdf024dd56e4fbc6834
+    resource: repo://src/lib/project-env.server.ts
+  - id: openwiki-source-e3c286acf310f336267fc752
+    resource: repo://src/lib/studio-preview.server.ts
+  - id: openwiki-source-8ff0cbecfec56f96bee55e8b
+    resource: repo://src/routes/studio-review.tsx
+  - id: openwiki-source-5e1b077422a94ae165e88e4e
+    resource: repo://vite.config.ts
+generated: { by: "codex", at: "2026-10-27T08:45:34.663Z" }
 ---
 
-# Quickstart
+# Run and review the work sample
 
-This repository currently contains the initial chat interface for an Instagram ad work sample. It does not yet generate images. See [Chat shell and theme ownership](architecture/chat-shell.md) before extending the UI.
+Start with [README](../README.md), the [final writeup](../WRITEUP.md), and the [generated examples](../examples/README.md). The examples are selected real model outputs; they are not a claim that every composed export or product detail has been independently verified.
 
-## Run and check
+## Local setup
 
-With Node.js 22.12+ and pnpm 11.24.0:
+Use Node.js 24.x and pnpm 11.24.0. Install with `pnpm install --frozen-lockfile`. Put project OpenRouter and Firecrawl credentials in Git-ignored `.env`, then run `pnpm dev`. It binds to `127.0.0.1:3000` with a strict port. Credentials stay on the server; do not use a `VITE_` prefix.
 
-```sh
-pnpm install --frozen-lockfile
-cp .env.example .env.local
-pnpm dev
-```
+`pnpm typecheck` checks TypeScript, `pnpm build` creates the production bundle, and `pnpm check` runs both. Focused existing tests are available through `pnpm test`; follow the repository's proportional-verification instructions rather than repeating broad checks for every reversible UI edit.
 
-The development script binds to `127.0.0.1:3000` with a strict port. The scaffold runs without a model key. Keep the server running for local review. `pnpm check` runs TypeScript followed by a production build; `pnpm build` also generates the TanStack route tree.
+`.studio-data/` holds local scans, requests, responses and images and is excluded from Git. A fresh clone has no saved generations. The development-only `/studio-review` route loads an actual retained execution without starting inference; deliberate manual review requests are separate actions. Production uses the configured private storage adapter.
 
 ## Find the owner
 
-| Change | Owner |
+| Concern | Source |
 | --- | --- |
-| Chat and local submission | `src/routes/index.tsx` |
-| Document shell and pre-hydration theme | `src/routes/__root.tsx` |
-| Shared button/input | `src/components/ui/` |
-| Theme preference | `src/components/theme-toggle.tsx` |
-| Colors, radii, typography | `src/styles.css` |
-| Session evidence and decisions | `docs/SESSIONS.md`, `WRITEUP.md` |
+| Workspace/context/actions | `src/components/studio.tsx`, `src/lib/studio-functions.ts` |
+| Agent connection and conversation | `src/components/agent-workspace.tsx`, `agent/` |
+| Product identity and references | `src/lib/catalog.ts`, `src/lib/product-selection.ts` |
+| Extraction and enrichment | `src/lib/brand*`, `workflows/brand-enrichment.ts` |
+| Generation and retained jobs | `src/lib/image-generation.server.ts`, `studio-storage.server.ts`, `workflows/image-generation.ts` |
+| Composition and export | `src/lib/composition*`, `src/components/composition-preview.tsx`, `export-actions.tsx` |
+| Shared UI and appearance | `src/components/ui/`, `src/styles.css`, `src/routes/__root.tsx` |
 
-## Time and checkpoints
+The [architecture page](architecture/chat-shell.md) describes current flow and persistence boundaries.
 
-`pnpm clock` reports the sum of recorded active intervals in `docs/time-log.json`. `pnpm clock pause` closes the open interval; `pnpm clock start` opens a new one only if the clock is paused. The six-hour project clock is shared across concurrent chats. Paused time is excluded, but idle time is not detected automatically. Use the user-directed work/pause boundaries.
+## Evidence
 
-The author's local Codex automation checks for safe commits about every 30 minutes. It is not installed by cloning this repository. Consult `AGENTS.md` and session ownership before editing or checkpointing.
-
-## OpenWiki and the project key
-
-The initial wiki is authored through the Codex OpenWiki lifecycle. The optional `pnpm wiki` runner reads `OPENROUTER_API_KEY` and `OPENWIKI_MODEL_ID` directly from the project's Git-ignored `.env.local`. If that file or either value is missing, it exits before launching the CLI, even when the shell contains other credentials. It then invokes the installed OpenWiki CLI with OpenRouter explicitly selected. Do not run paid generation until the project key and model are deliberately selected.
-
-The initializer's daily GitHub workflow is Git-ignored and not published. The local commit heartbeat is the only configured schedule for this project.
-
-The brief summary in `docs/BRIEF.md` identifies the still-missing deliverables: real ads for at least three brands and a final evidence-based one-page writeup. The original PDF is not part of the repository.
+<!-- openwiki: broken internal link [../docs/SESSIONS.md] file "../docs/SESSIONS.md" does not exist. Fix the href or restore the target, then delete this comment. -->
+[Development summary](../docs/SESSIONS.md) is the concise entry point. Its historical archive retains detailed notes, while the linked activity journal and visual history distinguish implementation, checks, provider calls and observed UI. Old dirty-checkout screenshots and partial checkpoints do not prove the current complete release. The private source brief and provider logs are not repository deliverables.

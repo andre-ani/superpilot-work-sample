@@ -1,45 +1,61 @@
 ---
 type: architecture
-title: Chat shell and theme ownership
-description: How the initial TanStack Start page handles prompts, shared controls, and light-first theme persistence.
-tags: [react, routing, chat, theme]
+title: Workspace, agent and durable generation
+description: Ownership and runtime flow for shared merchant context, agent actions, retained image jobs, review and appearance.
+tags: [workspace, agent, persistence, generation, theme]
 verified:
   - by: openwiki/0.5.2
-    at: 2026-10-27T01:25:32.177Z
+    at: 2026-10-27T08:45:34.663Z
 sources:
+  - id: openwiki-source-5e1a834885adddf459e37710
+    resource: repo://agent/agent.ts
+  - id: openwiki-source-0c9a20a926b61cd027fa43b2
+    resource: repo://agent/lib/openrouter-model.ts
+  - id: openwiki-source-233fd6a0c29896e7219c0df4
+    resource: repo://src/components/agent-workspace.tsx
+  - id: openwiki-source-0a9231e0b6e4334e45978f58
+    resource: repo://src/components/studio.tsx
   - id: openwiki-source-cd2a7cee601f1af75e351684
     resource: repo://src/components/theme-toggle.tsx
-  - id: openwiki-source-0abda8d16cf34054f524e294
-    resource: repo://src/components/ui/input.tsx
+  - id: openwiki-source-7d3296704b782eb684734580
+    resource: repo://src/components/ui/button.tsx
+  - id: openwiki-source-e3c286acf310f336267fc752
+    resource: repo://src/lib/studio-preview.server.ts
+  - id: openwiki-source-db982063e71038cc61af28b7
+    resource: repo://src/lib/studio-storage.server.ts
   - id: openwiki-source-85ad1858164990828940180c
     resource: repo://src/routes/__root.tsx
   - id: openwiki-source-0c6f53ed9d154e5c61b75244
     resource: repo://src/routes/index.tsx
+  - id: openwiki-source-8ff0cbecfec56f96bee55e8b
+    resource: repo://src/routes/studio-review.tsx
   - id: openwiki-source-146419bb9b2415894a6bd677
     resource: repo://src/styles.css
-generated: { by: "codex", at: "2026-10-27T01:25:32.177Z" }
+  - id: openwiki-source-e46f98928b31ee60f03ed2b5
+    resource: repo://workflows/image-generation.ts
+generated: { by: "codex", at: "2026-10-27T08:45:34.663Z" }
 ---
 
-# Chat shell and theme ownership
+# Workspace, agent and durable generation
 
-`src/router.tsx` constructs a TanStack router from the generated route tree. `src/routes/__root.tsx` owns document metadata, stylesheet loading, the document shell, and hydration scripts. The index route owns the initial ad-studio page.
+The `/` route mounts `Studio`. `src/components/studio.tsx` owns merchant context, stage/navigation, product references and generation selection; `agent-workspace.tsx` connects Eve messages and tool results to application actions. The application is no longer a local acknowledgement shell. Direct controls and agent results operate on the workspace rather than a separate demo conversation.
 
-## Prompt flow
+## Ownership and state
 
-The single-line form in `src/routes/index.tsx` trims the submitted text, ignores empty input, appends nonempty prompts to React component state, and clears the input. The conversation explicitly says generation is coming next. There is no inference request, server persistence, generated image, or export path. Reloading resets the conversation.
+`agent/` contains the root agent, brand/product/creative specialists and tools. The root model uses the shared Sol transport with priority/low settings; creative work has its own configured provider. `agent-workspace.tsx` owns live agent connections, persisted conversation projection and composer placement. `project-chats.ts` supplies the browser registry/history boundary. Shared controls remain in `src/components/ui/`; semantic appearance tokens are in `src/styles.css`.
 
-The prompt is capped at 2,000 characters. Both Enter and the send button use the form submission handler; whitespace-only text leaves the button disabled. The labeled input and live conversation log provide accessible interaction.
+`studio-storage.server.ts` stores original scans and generation records separately from browser drafts. Local storage files live under `.studio-data/`; Vercel mode uses private Blob. Exclusive reservation avoids duplicate jobs, and retained image responses can recover a paid result after worker interruption. It must not silently regenerate an image to repair placement.
 
-## Component ownership
+## Generation and review
 
-`src/components/ui/button.tsx` and `input.tsx` are the local canonical shadcn primitives. The input's named `composer` variant owns its larger geometry and clearance for the send button. `src/lib/utils.ts` merges Tailwind classes. Change reusable variants here rather than copying controls into the route. Tabler supplies the arrow and theme icons.
+`workflows/image-generation.ts` waits for usable brand context, prepares the job, invokes image generation, then analyzes generated composition. Image/preparation failure is recorded separately from unavailable placement, preserving saved artwork. Placement-only retry is a distinct path.
 
-## Theme lifecycle
+The development-only `/studio-review` loader reads an actual completed execution and validates its context and image signature. Loading the review does not start or repair a job. Deliberate manual review actions are separate from passive loading. `composition-preview.tsx` and `composition.ts` own canvas rendering; export uses the reviewed composition. Successful source/type checks do not establish visual fidelity or every font/layout case.
 
-The root document runs a small script before hydration. Only a saved `superpilot-theme-v1` value of `dark` enables dark mode; a new visitor defaults to light regardless of system preference. `src/components/theme-toggle.tsx` reads the resulting document class after mount, toggles it on click, and saves the preference. Storage failures are caught, so toggling still works for the current page. `src/styles.css` owns the semantic colors and light/dark token values.
+## Document shell and theme
 
-## Extension boundary and checks
+`__root.tsx` owns metadata, root error/not-found surfaces, hydration and the global grid. Its pre-hydration script and the theme switch persist `superpilot-theme-v1`; a new visitor defaults to light. Explicit dark and legacy system preference are handled without requiring browser storage to succeed. The conversation sidebar can have scoped dark surfaces independently of the main page.
 
-The generation workflow is intentionally unfinished. Future API work must keep the project key on the server and replace the explicit scaffold acknowledgement with actual progress, results, and recoverable failure states. `pnpm check` checks types and builds the client/server bundles. A focused browser check should cover empty input, Enter submission, truthful acknowledgement, and theme persistence.
+## Checks and navigation
 
-See [Quickstart](../quickstart.md) for commands and the project clock.
+Focused tests cover catalog safety, selection/edit preservation, generation/recovery and placement contracts. Use `pnpm typecheck` for types and `pnpm build` for the production bundle. The [quickstart](../quickstart.md) links reviewer instructions and evidence; historical checkpoints document observed states rather than complete releases.

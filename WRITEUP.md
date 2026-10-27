@@ -1,39 +1,27 @@
-# Superpilot Instagram Ads — working writeup
+# Superpilot Instagram Ads — Writeup
 
-Started October 26, 2026 at 6:20 PM Pacific. This is a live draft, updated as the work happens. Current decisions and open questions are in [the working plan](docs/PLAN.md); chronology and ownership are in [the session log](docs/SESSIONS.md).
+I built a workspace for creating Instagram ads from Shopify stores, with generated examples for OLIPOP, Our Place, and Big Star Lights. The main challenge was keeping the scope small enough to finish and validate.
 
-## What I am building
+## Where the scope grew
 
-I am building a limited demo that could introduce merchants to Superpilot: enter a Shopify URL, review the extracted brand, collect product context, and create an Instagram image ad. The persistent workspace keeps original scans, merchant edits, and generated outputs. An earlier local OLIPOP flow was live-verified; the finished sample still needs ads for at least three brands.
+I wanted an MVP that met the brief and felt like a usable app. About halfway through, I realized I was building an application rather than a bounded feature demonstration. By then, decisions such as supporting both a floating composer and sidebar chat had created substantial iteration. That consumed time needed for generation and review.
 
-## Decisions so far
+Eve seemed like the right foundation because I expected to need a full agent. In hindsight, fewer interactions and less customization could have avoided that framework and much of the session/state complexity. I made choices suited to a longer-term product, which is how I normally work. I also avoided familiar components and code from previous projects, making routine interface work more expensive than usual.
 
-I chose TanStack Start with React and TypeScript, shadcn/ui, and Tabler icons. The interface starts with a centered store input and a short explainer, uses Superpilot’s Inter/blue/grid treatment, and defaults to light mode, with a persistent dark-mode option. These are open-source building blocks that require no special commercial license. Authentication, Meta integration, and deployment would take time away from the core problem, so they are outside the initial scope.
+Making it brand-agnostic widened the problem further. Big Star Lights is headless, so testing it required discovering a backing Shopify catalog alongside conventional storefront support. Multiple brands then became workspaces with separate conversations and persistent context. The shared-context model evolved during implementation; it connects the workflow, but users may struggle to understand it.
 
-I selected GPT Image 2, direct Shopify `products.json`, and Firecrawl branding. The selected product photo, raster logo when available, and confirmed brand context guide generation. The intended flow collects brand, product, and an explicit creative brief beside the composer, then moves into a studio for comparing options and editing text/logo layout. Conversation and UI should operate on the same saved state throughout. Brand workspaces and conversations now have separate identities: switching brands resumes its selected chat, while a new conversation retains the brand context. Stream events, cursor and drafts save before a turn finishes; interrupted sessions reconnect without clearing history. Local development can retire a runtime session, which needs a separate conversation; recovery of the owner’s specific interrupted session remains unverified. Brand descriptions, visual style and reference images have direct editing controls. Product browsing now supports adding multiple products and refining their images; image choices now persist with the workspace and appear beside brand context. The agent and generation workflow now consume that exact collection; mocked provider checks confirm no selected references are omitted. Sonnet 5.5 prepares the optional brief and composition in the durable job before artwork generation. The complete agent flow remains unverified. Creative-brief and layer controls now render beside the saved output, but their edits and composed exports were not exercised in the [visual checkpoints](docs/checkpoints/README.md); existing lettering remains part of the generated image.
+## What worked, and what needed more attention
 
-Project credentials stay server-side in Git-ignored `.env`. ShieldCN supplies README graphics; Codex assists implementation and documentation; Cheerio parses HTML for the custom extraction experiment. No OpenRouter inference ran in that experiment. Its three Firecrawl branding requests reported three credits; other sessions record their own usage separately.
+The initial breakdown—extract context, generate artwork, place copy, export—was straightforward. Using Pretext with a rough foreground mask was a promising way to fit text around real image content. It needed more visual testing than I gave it. I spent too much time on frontend UX/UI instead.
 
-## What worked, and what did not
+I kept prioritizing speed, smaller model calls, and visible progress. That led to useful progressive loading, but also caching, loading-state, and orchestration rabbit holes. Generating more complete image variations, or allowing GPT Image 2 to bake in the text, would have been simpler. I wanted in-place text editing; I ultimately cut that scope because I could not properly test it alongside automatic placement.
 
-The earlier persistent-studio version passed strict types, production builds, and 14 focused checks. Current agent, storage, and creative-studio integration is still changing; those results do not verify the current combined checkout. That version used Motion with reduced-motion support; its mobile/desktop checks covered the continuous flow. In those checks, brand edits and product choice survive reload. Refresh updates untouched extracted fields while preserving merchant edits.
+Late work also exposed structured-output failures, truncated plans, classification outages, and placement recovery problems. Retaining requests and outputs made recovery possible without regenerating artwork, but the testing surface exceeded the time available.
 
-Headless stores can now disclose a backing Shopify domain for the catalog fallback; Big Star Lights returned two distinct60-product pages while retaining its original product links. Loading waits for validation, and app/framework errors have safe recovery UI. JSON catalog requests took about 0.2–0.3 seconds versus 13.3 seconds for one Firecrawl product page, with the same variants and images for the sampled product. JSON exposed test products; scraped copy included unrelated promotions. Headless storefront discovery now follows an unambiguous declared Shopify backing domain; focused discovery and safe-recovery checks pass.
+## Outcome and lesson
 
-In the [three-brand extraction comparison](docs/brand-comparison.json), custom extraction took 0.6–0.9 seconds versus Firecrawl's 5.9–7.2 seconds across three stores. Speed was not enough: it chose stale Helvetica defaults for OLIPOP and missed Our Place's colors. Firecrawl's fonts matched rendered checks, but its Glossier logo was a favicon. The app flags icon-only logos. New scans return basics before enrichment: a live local request returned in 310 ms, and the durable Firecrawl job filled colors/fonts about seven seconds later. Fixed palette/font skeleton slots keep the card usable during loading. Explicit edited-field markers protect clears, reversions, uploaded logos, and active edits. These are small samples, not general benchmarks.
+The result generates real artwork across three brands and supports composition review and PNG export. Focused checks and successful live flows establish parts of the system; they do not establish consistent product fidelity, text placement, or usability.
 
-GPT Image 2 produced a 1024×1024 Caramel Apple creative for $0.070233. Reloading and revisiting brand settings did not interrupt it. That run retained requests, raw responses, and images locally; cached replay made no new generation. A recovery test restores a received image after worker exit. Visual product fidelity still needs systematic review.
+My main lesson is to define the smallest complete, testable experience before expanding it. I learned a lot, but I would make fewer product and interaction decisions for a timed sample. My estimate is that a better version would take about eight focused hours with tighter scope and protected testing time.
 
-Saved-studio review loads real outputs without starting inference; deliberate manual agent requests are now supported. A newer OLIPOP base has no added ad lettering. The review has rendered four headline compositions; the latest checkpoint shows preview placeholders while the DOM retains supporting-copy fit warnings. Foreground exclusion has focused geometry checks, while mobile rendering and final exports remain unverified.
-
-The runtime owner reports an updated Vercel deployment with release type/build checks, cloud agent response and private saved-image readback passing. Local UI/composition continues to change; the deployed upload includes source beyond the Git checkpoints.
-
-Creation now accepts multiple products or brand-only context. Go fills a missing brief with Sonnet and plans space for editable text; cached visual-brand analysis uses real source pixels. Selected references and manual edits are preserved through shared UI/agent actions. Model/cache and focused contract checks pass; the updated artwork outcome still needs visual review.
-
-The Idea carousel keeps every source-checked idea, selection and pending request identity across reloads; fresh batches append while a genuine reserved idea reveals immediately. Copy and concept details occupy separate card panels. A restored OLIPOP request exposed a provider grammar-size rejection during planning, before image generation. A simpler provider schema with strict local validation fixes that boundary; the exact retained request now passes planning. No image request was made for that verification.
-
-## Next
-
-Generate and judge ads for two more brands, review composed exports and verify the complete creative-agent flow, then finish the submission. The six-hour clock and session recaps keep the tradeoffs visible.
-
-Font availability is explicit: downloaded originals are preserved, and unavailable typefaces resolve to a bundled fallback for downstream rendering without relabeling the extracted brand identity.
+[Implementation history](docs/SESSIONS.md) · [Visual progression](docs/checkpoints/README.md)
