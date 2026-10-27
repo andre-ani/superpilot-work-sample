@@ -1,0 +1,52 @@
+{
+  "sourceRevision": "46ca7c1dc51327bc7deabb091bcd891b7db88e4d",
+  "dirty": true,
+  "note": "Live shared checkout; active creative source changed during capture. Screenshots are not a reproducible source release.",
+  "captures": [
+    {
+      "file": "01-products.png",
+      "caption": "Cached product grid; Caramel Apple selected; persistent composer.",
+      "at": "2026-10-27T02:52:13.781Z",
+      "route": "http://127.0.0.1:3000/",
+      "viewport": "1280×720",
+      "brand": "OLIPOP",
+      "product": "Caramel Apple"
+    },
+    {
+      "file": "02-product-detail.png",
+      "caption": "Selected Caramel Apple detail: 12 Pack, reference photo 1, product copy and variant control.",
+      "at": "2026-10-27T02:52:17.807Z",
+      "route": "http://127.0.0.1:3000/",
+      "viewport": "1280×720",
+      "brand": "OLIPOP",
+      "product": "Caramel Apple"
+    },
+    {
+      "file": "03-brand.png",
+      "caption": "Brand review: original logo, editable identity, four palette colors and WindsorEF/Ano font names.",
+      "at": "2026-10-27T02:52:25.103Z",
+      "route": "http://127.0.0.1:3000/",
+      "viewport": "1280×720",
+      "brand": "OLIPOP",
+      "product": "Caramel Apple"
+    },
+    {
+      "file": "04-context.png",
+      "caption": "Composer context menu: cached brand/products and Add images control; no context or upload submitted.",
+      "at": "2026-10-27T02:52:31.119Z",
+      "route": "http://127.0.0.1:3000/",
+      "viewport": "1280×720",
+      "brand": "OLIPOP",
+      "product": "Caramel Apple"
+    },
+    {
+      "file": "05-studio.png",
+      "caption": "Create workspace: saved Caramel Apple output, creative-brief controls and composition controls; no edits or generation.",
+      "at": "2026-10-27T02:52:45.722Z",
+      "route": "http://127.0.0.1:3000/",
+      "viewport": "1280×720",
+      "brand": "OLIPOP",
+      "product": "Caramel Apple"
+    }
+  ]
+}
