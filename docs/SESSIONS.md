@@ -20,15 +20,20 @@ The owner split UX work into three chats sharing this checkout. This table super
 
 | Session | Started | Status | Ownership |
 | --- | --- | --- | --- |
+| 29 — Start-screen spacing | 2026-10-26 21:19 | checkpoint-ready | Underline stacking, higher home composer, plain arrow default |
+| 27 — Final composing flow | 2026-10-26 21:18 | active | Bounded copy options, shared copy actions, Pretext text fitting, canvas/controls, composing panel; narrow preview seed handoff to Shell |
+| 28 — Superpilot reference styling | 2026-10-26 21:04 | checkpoint-ready | HomeIntro/global grid/font assets; Shell global tokens, composer border and hero placement |
+| 27 — Clean start transition | recorded 2026-10-26 20:58 | checkpoint-ready | Root home/menu/nav visibility; Shell composer/chat centering and fades |
+| 27 — Integrated composer controls | 2026-10-26 20:57 | checkpoint-ready | AgentWorkspace idle state, mark asset, right-side integrated controls |
 | 24 — Floating chat and unified activity | 2026-10-26 20:49 | active | Individual frosted messages, 13px text, fade scrolling, minimize/optional right chat, composer activity state; action-only left timeline |
 | 26 — Expanding brand settings | 2026-10-26 20:49 | checkpoint-ready | StudioBrand visual-style modal and shared Dialog morph variant |
 | README audience correction | 2026-10-26 20:38 | checkpoint-ready | README.md reviewer-facing setup/architecture; own session/activity entries only |
-| 25 — Durable collected context | 2026-10-26 20:34 | active | Collection serialization/action helpers/tests; narrow Studio/tool ownership requested from Shell/runtime |
+| 25 — Durable collected context | 2026-10-26 20:34 | checkpoint-ready | Collection serialization/action helpers/tests; narrow Studio/tool ownership requested from Shell/runtime |
 | 25 — Visual brand understanding | 2026-10-26 20:34 | checkpoint-ready | Source-image retention, cached pinned brand-model analysis, typed brand edits and brand tools; UI/runtime integration owned elsewhere |
 | 24 — Product flip modal | 2026-10-26 20:26 | implemented; owner visual review | ProductPicker overlay transition; preserve grid geometry and selection controls |
 | 23 — Representative brand introduction | 2026-10-26 20:24 | checkpoint-ready | Brand overview paragraph and removal of detached creative-instructions fields |
 | 22 — Multiple compact context items | 2026-10-26 20:23 | UI checked; root multi-selection integration pending | Product picker/details/dock collection and editable brand visual context; Shell owns state/chat integration |
-| 21 — Context-first creative generation | 2026-10-26 20:22 | active | Creative optional-brief UI, cached Sonnet brief/composition preparation, creative actions/instructions; coordinated first-half, brand visual understanding, root and generation backend with owning chats |
+| 21 — Context-first creative generation | 2026-10-26 20:22 | checkpoint-ready | Creative optional-brief UI, cached Sonnet brief/composition preparation, creative actions/instructions; coordinated first-half, brand visual understanding, root and generation backend with owning chats |
 | 21 — Visible creative instructions | 2026-10-26 20:20 | checkpoint-ready | studio-brand.tsx: remove overflow menu/generic warning, expose existing saved direction inline |
 | 20 — Short brand overview | 2026-10-26 20:19 | checkpoint-ready | Brand description helper, extraction metadata preference, read-only card paragraph |
 | 19 — Live activity drawer | 2026-10-26 20:17 | checkpoint-ready | Dark borderless drawer, reversed header chrome, chronological Eve agent/tool timeline; no navigation list/status filler |
@@ -47,7 +52,7 @@ The owner split UX work into three chats sharing this checkout. This table super
 | 10 — Progressive extraction implementation | 2026-10-26 19:17 | checkpoint-ready | Brand basics/enrichment API, draft merge helpers/tests; coordinating durable backend with session 07 and client integration with session 08 |
 | 09 — Progressive extraction plan | 2026-10-26 19:12 | checkpoint-ready | Extraction latency probes and docs/PLAN.md; no studio/Eve/UI edits |
 | 08 — Compact in-place UX | 2026-10-26 19:08 | checkpoint-ready | studio-brand.tsx, inline editing/color/logo controls; coordinating persistent composer/nav and title removal with session 07 |
-| 07 — Agent-driven chat | 2026-10-26 18:54 | active | agent/, Eve integration, Decisions search, agent composer, Superpilot header/logo, favicon presentation |
+| 07 — Eve runtime & deployment | 2026-10-26 18:54 | checkpoint-ready | Eve provider/session plumbing, shared storage/runtime integration, Vercel deployment; UI and Go contracts handed off |
 | 01 — Initialization | 2026-10-26 18:20 | checkpoint-ready | Initial app, configuration, documentation, clock, repository setup |
 | 02 — Environment filename | 2026-10-26 18:37 | checkpoint-ready | Environment files, ignore rule, wiki runner, setup references |
 | 03 — Product picker | 2026-10-26 18:39 | checkpoint-ready | Product route, catalog fetch/normalization, shared picker controls, home entry point |
@@ -303,3 +308,41 @@ Owner requests compact brand card with Visual style button. Expand into a modal 
 **Session 26 result:** card now has one Visual style action. Shared shadcn Dialog provides focus trapping, outside/Escape/close dismissal and focus return; a scoped morph variant avoids competing zoom transforms. Motion shares the card surface into a two-pane modal (identity left, visual options/references right), with matched 240 ms reverse geometry and reduced-motion support. Details scroll; small screens stack. The minimized card popover remains mounted during the modal transition. All existing editing callbacks/markers and visual data remain. Typecheck passed; no broad UI pass.
 
 **Checkpoint 20:50:** five saved-review views archived with current source/dirty metadata. Reviewed README/contextual-link edits and historical planning/comparison records for local checkpoint. Description helper deferred after it dropped a valid four-word introduction followed by boilerplate; exact assertion recorded in checkpoint note. Other active source preserved. Deployment evidence recorded as runtime-owner report, with deployed baseline distinguished from later local changes.
+
+## 25 — Durable collected context
+
+Root state now stores all selections, uses synchronous collection persistence, migrates legacy single photos, and shares exact included images with agent tools and Go. Add/refine/remove uses shared validation without replacing other products. Generation validates every product/variant/reference, supports brand-only, reserves before durable no-retry brand/creative preparation, retains canonical input/prompt, and sends all selected photos plus manual inspiration without truncation. Prepared-result polling protects later edits and refreshes original visual evidence separately. Eve discovers select/remove tools with zero diagnostics. Nine focused checks, actual source-handler restore/save probes, and mocked real preparation/provider calls pass; no paid generation. Upload callback now persists inspiration before chat send and returns fresh same-turn context.
+
+## 27 — Clean start transition
+
+Direct owner correction: logo returns to start, no saved-brands menu, no top step links, chat or context dock; composer centers with reverse transition back into workspace. Root home menu removed, navigation/store strip fades both directions, context/sidebar hidden without clearing state. Shell owns composer/chat motion. Latest typecheck found only Shell's concurrent onReferences patch typing error and was handed back.
+
+**Session 21 completion:** coordinated path is implemented locally. Context chat completed persistent multi-product/exact-image collection, brand-only generation, shared add/remove/refine actions, provider reference mapping, durable reservation → visual understanding → Sonnet preparation → artwork ordering, and guarded prepared-result polling. Brand owner supplied real-pixel analysis, cached source evidence/uncertainty, manual-edit protection and legacy-field migration. UI exposes editable observed style, selected inspiration and distinct unselected source evidence. Composer uploads now persist into visible context before sending, with no arbitrary file-count cap; the app's 2 MiB per-image/type checks remain. Shell verified Eve's 6 MiB policy is per file, so the mistakenly introduced aggregate guard is being removed at its owner. Saved review remains inference-free.
+
+Evidence: eleven focused creative/state tests pass in this chat; Context reports nine focused checks plus mocked exact provider payload/preparation and actual root save/restore handlers, with zero tool-discovery diagnostics. Real Sonnet no-brief and brand-only calls succeeded and replayed with network disabled; brand owner verified actual pixel inspection and network-disabled replay. Final combined strict TypeScript passes and the saved studio route returns HTTP 200. No new artwork was generated for verification; final visual composition/fidelity remains for owner review. No commit/push/deployment performed by this chat.
+
+## 27 — Integrated composer controls
+
+Owner requests no duplicated assistant response in the empty composer, idle Message superpilot placeholder, no visible Send control, plus on right, existing box-only Superpilot mark on left, and sidebar control integrated in the pill. Preserve keyboard sending, attachment/menu handling, real processing state and cancel behavior.
+
+**Session 27 result:** idle composer now shows Message superpilot rather than repeating the latest assistant response. Existing box mark is extracted from the original SVG and shown on the left; plus and conversation-sidebar controls are inside the right end of the pill. Standalone chat tools and visible send control are removed; Enter/mobile send still submits through the existing AI Elements form, with stop preserved during active work. Attachment/context handling is unchanged. One typecheck passed; owner reviews appearance.
+
+**Session 25 completion:** upload persistence callback checked against actual source: canonical asset URLs save before send, explicit markers persist, and same-turn agent context carries the new revision. Final root typecheck passed after Shell callback typing repair. Core collection/Go work is complete locally; no actual image generation or browser UX pass was run. No publication performed.
+
+## 28 — Superpilot reference styling
+
+Inspected the actual Superpilot page in a task-owned in-app tab and its public CSS/JS. Measured 7px grid/#D2D5DB/45% opacity with the source radial fade; InterVariable700 headline at48px desktop/32px mobile, 1.1 line-height and -.025em tracking; blue #27ADDF; 1px rotating conic border with2s period; blur10px/y10/opacity entrance over500ms, cubic-bezier(.25,.1,.25,1),250ms line staggering. Added global grid component, local OFL Inter variable asset, inline brand marks and simplified HomeIntro with original underline graphic. Root screens use matched blur/reverse transitions. Shell owns global font/color tokens, composer border and hero placement. No local browser pass or paid inference; user visual review remains.
+
+**Thinking-logo reference:** owner explicitly authorized Chrome inspection and a plausible test message if needed. Connected Chrome session was signed out, but its loaded public chat module exposed the exact activity-label SVG: 68×68, dark rounded rectangle, three white arrows pulsing sequentially over2s. Extracted public/brand/superpilot-thinking.svg with original path/filter/keyframes and reduced-motion fallback. No message, artifact change, or inference was needed. Shell owns replacing the active composer mark with this asset.
+
+**Reference/start completion:** local Inter and #27ADDF tokens apply throughout interface; fixed grid remains behind screens. HomeIntro sits above centered URL entry with inline Shopify/Instagram marks and source blur/underline treatment. Working composer uses measured2s conic border and extracted thinking SVG; idle mark remains still. Fixed missing PromptInputSubmit import directly after owner reported runtime error. Types pass; local HTTP200; one focused in-app check confirmed heading/input render, no console errors, correct Inter/blue and heading above input. No message sent to Superpilot and no paid generation. Ready for owner main-path run-through.
+
+### Runtime deployment handoff
+
+Production is live at https://superpilot-work-sample.vercel.app (updated deployment `superpilot-work-sample-74o1ghj2s-andre-anis-projects.vercel.app`). Release type/build gates passed. Cloud health and agent inspection return 200; declared brand, product, and creative subagents are present; a real cloud agent turn returned `ready` with low reasoning configured. Saved PNG readback from private Blob returned a valid 1,726,922-byte PNG. Shared Sol transport enforces priority/low after SDK serialization and fails closed without the project key. No new paid image test was run. Local dev remains available. Further UI/product/creative changes are owned by their chats; checkpoint Git/index/screenshots/log reconciliation belongs to the dedicated checkpoint chat. No Git push was performed by this session.
+
+## 29 — Start-screen spacing
+
+Placed the brush below the text box and behind the letters in an isolated layer. Raised the home composer group by10vh (max80px), preserving keyboard-inset behavior and existing paired transition. URL submit uses the shared ghost variant: arrow only by default. Narrow source readback; owner visual review, no build/browser pass.
+
+**Checkpoint 21:20:** runtime owner released provider/storage/configuration. Reviewed and checkpointed independent Sol transport, credential loader, storage/recovery implementation/test, ignore and deployment command files. Four offline local-storage tests passed; no production mutation. Shared package/lock/Vite integration and active UI/composition remain unstaged. Five current views captured, including new start screen, at prior viewport; source subset does not reproduce whole app. Updated deployment evidence remains explicitly owner-reported.

@@ -1,0 +1,14 @@
+.git/
+.work/
+.studio-data/
+.eve/
+.workflow/
+.workflow-data/
+.output/
+.nitro/
+.tanstack/
+dist/
+node_modules/
+.env
+.env.*
+docs/checkpoints/

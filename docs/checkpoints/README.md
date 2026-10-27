@@ -4,7 +4,7 @@ Local checkpoints only. Never infer that a documentation checkpoint verifies or 
 
 ## Latest checkpoint
 
-Last successful commit: `dc079dcfbee9e904d9d3b67b2160258aaf7030c5`, 2026-10-26T20:23:11-07:00 (America/Vancouver). [Five-state saved-review checkpoint](2026-10-26-2020/README.md). Previous: `6c10a54`. Post-commit receipt retained locally for the next checkpoint.
+Last successful commit: `eac777e753f61f502c90775267862a878c1c1c14`, 2026-10-26T20:52:56-07:00 (America/Vancouver). [Five-state context-first checkpoint](2026-10-26-2050/README.md). Previous: `dc079dc`. Post-commit receipt retained locally for the next checkpoint.
 
 ## Deferred groups
 
@@ -45,3 +45,11 @@ Keep cached OLIPOP / Caramel Apple / 12 Pack / photo 1 at 1280×720 for comparis
 | Studio | Brand | Visual style | Products | Product context |
 | --- | --- | --- | --- | --- |
 | [![Context-first saved studio: collected brand/product context and optional ad direction replace mandatory brief fields.](2026-10-26-2050/01-studio.png)](2026-10-26-2050/01-studio.png) | [![Brand card now exposes editable overview and one Visual style action; product context remains above disabled review composer.](2026-10-26-2050/02-brand.png)](2026-10-26-2050/02-brand.png) | [![Two-pane Visual style modal with saved image references, visual analysis and evidence caveats; no analysis requested.](2026-10-26-2050/03-visual-style.png)](2026-10-26-2050/03-visual-style.png) | [![Cached product grid with collected Caramel Apple chip beside composer; review prevents paid actions.](2026-10-26-2050/04-products.png)](2026-10-26-2050/04-products.png) | [![Collected-product refinement popover showing current product context; no variant/reference choices changed.](2026-10-26-2050/05-product-context.png)](2026-10-26-2050/05-product-context.png) |
+
+### 2026-10-26 21:20 — runtime/storage and new start view
+
+[Scope, comparison and release distinction](2026-10-26-2120/README.md). Runtime storage/provider subset; four storage checks passed; active composition and shared manifests deferred.
+
+| Studio | Brand | Products | Selected context | Start |
+| --- | --- | --- | --- | --- |
+| [![Saved studio and collected context with integrated composer controls; no inference requested.](2026-10-26-2120/01-studio.png)](2026-10-26-2120/01-studio.png) | [![Brand review with grid background, font/palette controls and integrated disabled composer.](2026-10-26-2120/02-brand.png)](2026-10-26-2120/02-brand.png) | [![Cached product grid and collected context under the new grid/font/composer styling.](2026-10-26-2120/03-products.png)](2026-10-26-2120/03-products.png) | [![Selected product context with exact one-of-eight image inclusion and 12 Pack variant; no changes submitted.](2026-10-26-2120/04-product-context.png)](2026-10-26-2120/04-product-context.png) | [![New start screen with Shopify/Instagram heading, central website input, blue brush and grid; no URL submitted.](2026-10-26-2120/05-start.png)](2026-10-26-2120/05-start.png) |

@@ -2,14 +2,22 @@ node_modules/
 dist/
 .output/
 .tanstack/
+.eve/
+.nitro/
+.workflow/
+.workflow-data/
+.vercel/
 .env
 .env.*
-!.env.example
 *.local
 *.log
 .DS_Store
 tmp/
 .work/
+.studio-data/
 *.tsbuildinfo
 # OpenWiki's generated daily provider workflow is not part of this project.
 .github/workflows/openwiki-update.yml
+.vercel
+.env*
+/.swc
