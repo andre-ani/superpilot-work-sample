@@ -1,0 +1,322 @@
+{
+  "runId": "2026-10-27T01-51-09-671Z",
+  "method": "One request per provider/store; Firecrawl maxAge=0; custom homepage plus at most two stylesheets; different capability breadth.",
+  "results": [
+    {
+      "provider": "custom",
+      "url": "https://drinkolipop.com",
+      "ok": true,
+      "durationMs": 712,
+      "metadata": {
+        "resources": 3,
+        "htmlBytes": 1116630,
+        "stylesheetBytes": 2636021,
+        "cache": "No application cache"
+      },
+      "summary": {
+        "sourceUrl": "https://drinkolipop.com/",
+        "extractedAt": "2026-10-27T01:51:10.367Z",
+        "name": "OLIPOP",
+        "description": "Discover a new kind of soda made with plant fiber and prebiotics. Non-GMO, gluten-free, paleo, and vegan, with high fiber and 2-5g of sugar. Enjoy a variety of delicious, refreshing and classic flavors.",
+        "logoUrl": "https://drinkolipop.com/cdn/shop/files/OlipopLogo_1_560x.png?v=1778767782",
+        "logoCandidates": [
+          "https://drinkolipop.com/cdn/shop/files/OlipopLogo_1_560x.png?v=1778767782",
+          "https://drinkolipop.com/cdn/shop/files/OlipopLogo_1.png?v=1778767782",
+          "https://drinkolipop.com/cdn/shop/files/WMT-Wordmark-Small-TrueBlue-RGB_1.svg?v=1778188078",
+          "https://drinkolipop.com/cdn/shop/files/Instacart_logo_and_wordmark_1.svg?v=1778188157",
+          "https://drinkolipop.com/cdn/shop/files/Vector_4.svg?v=1778188157",
+          "https://drinkolipop.com/cdn/shop/files/Target__2018_1.svg?v=1778188157"
+        ],
+        "colors": [
+          "#3A3A3A",
+          "#212121",
+          "#FFFFFF",
+          "#606060",
+          "#333232",
+          "#FA4545"
+        ],
+        "fonts": {
+          "heading": "Helvetica",
+          "body": "Helvetica"
+        },
+        "headings": [
+          "Come sip with us",
+          "Shop our collections",
+          "Why OLIPOP?",
+          "Shop by fiber line",
+          "Made with real ingredients",
+          "Available in stores"
+        ],
+        "warnings": [
+          "Colors and fonts are static source candidates; confirm them before generation."
+        ],
+        "provenance": [
+          "Logo: Organization/WebSite structured logo; https://drinkolipop.com/cdn/shop/files/OlipopLogo_1_560x.png?v=1778767782",
+          "Name: og:site_name",
+          "Description: meta description",
+          "heading font candidate: --font-stack-header in https://drinkolipop.com/",
+          "body font candidate: --font-stack-body in https://drinkolipop.com/",
+          "Color #3A3A3A: --color-btn-primary in https://drinkolipop.com/",
+          "Color #212121: --color-btn-primary-darken in https://drinkolipop.com/",
+          "Color #FFFFFF: --color-btn-primary-text in https://drinkolipop.com/",
+          "Color #606060: --color-btn-primary-focus in https://drinkolipop.com/",
+          "Color #333232: --color-body-text in https://drinkolipop.com/",
+          "Color #FA4545: --color-sale-text in https://drinkolipop.com/",
+          "Headings: main page markup; CSS visibility has not been evaluated."
+        ]
+      }
+    },
+    {
+      "provider": "firecrawl",
+      "url": "https://drinkolipop.com",
+      "ok": true,
+      "durationMs": 7066,
+      "metadata": {
+        "cacheState": null,
+        "creditsUsed": 1,
+        "pageStatus": 200
+      },
+      "summary": {
+        "sourceUrl": "https://drinkolipop.com/",
+        "extractedAt": "2026-10-27T01:51:16.739Z",
+        "name": "OLIPOP",
+        "description": "Discover a new kind of soda made with plant fiber and prebiotics. Non-GMO, gluten-free, paleo, and vegan, with high fiber and 2-5g of sugar. Enjoy a variety of delicious, refreshing and classic flavors., Rediem, Rediem rewards system",
+        "logoUrl": "https://drinkolipop.com/cdn/shop/files/OlipopLogo_1_560x.png?v=1778767782",
+        "logoCandidates": [
+          "https://drinkolipop.com/cdn/shop/files/OlipopLogo_1_560x.png?v=1778767782"
+        ],
+        "colors": [
+          "#14433D",
+          "#E31A82",
+          "#034638",
+          "#FFFFFF"
+        ],
+        "fonts": {
+          "heading": "WindsorEF",
+          "body": "Ano"
+        },
+        "headings": [
+          "Come sip with us",
+          "Shop our collections",
+          "Why OLIPOP?",
+          "Shop by fiber line",
+          "Made with real ingredients",
+          "Available in stores"
+        ],
+        "warnings": [],
+        "provenance": [
+          "Firecrawl branding format; classifications may be model-assisted.",
+          "Name/description: page metadata.",
+          "Original response retained in the private comparison directory."
+        ]
+      }
+    },
+    {
+      "provider": "custom",
+      "url": "https://fromourplace.com",
+      "ok": true,
+      "durationMs": 580,
+      "metadata": {
+        "resources": 3,
+        "htmlBytes": 1027962,
+        "stylesheetBytes": 26735,
+        "cache": "No application cache"
+      },
+      "summary": {
+        "sourceUrl": "https://fromourplace.com/",
+        "extractedAt": "2026-10-27T01:51:17.314Z",
+        "name": "Our Place",
+        "description": "Shop Our Place for non-toxic, nonstick cookware, pans, and kitchen essentials. Free shipping on qualifying orders. Designed to bring people together.",
+        "logoUrl": "https://fromourplace.com/cdn/shop/files/ourplace_logo_2x_7a344204-3166-49a8-a98a-d46dcdd2f202.png?v=1613743996&width=100",
+        "logoCandidates": [
+          "https://fromourplace.com/cdn/shop/files/ourplace_logo_2x_7a344204-3166-49a8-a98a-d46dcdd2f202.png?v=1613743996&width=100",
+          "https://fromourplace.com/cdn/shop/t/4713/assets/logo-dark.svg?v=138355659379288794291793044909",
+          "https://fromourplace.com/cdn/shop/files/logo-BA.png?height=80&v=1664348086&width=200",
+          "https://fromourplace.com/cdn/shop/files/logo-AD.png?height=80&v=1664348043&width=200",
+          "https://fromourplace.com/cdn/shop/files/Food_Network_logo_active.jpg?height=80&v=1717018778&width=200",
+          "https://fromourplace.com/cdn/shop/files/logo-AT.png?height=80&v=1664348024&width=200"
+        ],
+        "colors": [],
+        "fonts": {
+          "heading": null,
+          "body": "Plaid-XS-Web"
+        },
+        "headings": [
+          "Non-Toxic Cookware, By Design",
+          "Over 100,000 5-star reviews for our award-winning products",
+          "Happening at Our Place"
+        ],
+        "warnings": [
+          "Colors and fonts are static source candidates; confirm them before generation.",
+          "No usable color candidates found.",
+          "One or more font roles could not be identified."
+        ],
+        "provenance": [
+          "Logo: Organization/WebSite structured logo; https://fromourplace.com/cdn/shop/files/ourplace_logo_2x_7a344204-3166-49a8-a98a-d46dcdd2f202.png?v=1613743996&width=100",
+          "Name: og:site_name",
+          "Description: meta description",
+          "body font candidate: body in https://fromourplace.com/cdn/shop/t/4713/assets/critical.css?v=79010045428076691281793044909",
+          "Headings: main page markup; CSS visibility has not been evaluated."
+        ]
+      }
+    },
+    {
+      "provider": "firecrawl",
+      "url": "https://fromourplace.com",
+      "ok": true,
+      "durationMs": 5934,
+      "metadata": {
+        "cacheState": null,
+        "creditsUsed": 1,
+        "pageStatus": 200
+      },
+      "summary": {
+        "sourceUrl": "https://fromourplace.com/",
+        "extractedAt": "2026-10-27T01:51:22.673Z",
+        "name": "Our Place",
+        "description": "Shop Our Place for non-toxic, nonstick cookware, pans, and kitchen essentials. Free shipping on qualifying orders. Designed to bring people together.",
+        "logoUrl": "https://fromourplace.com/cdn/shop/t/4713/assets/logo-dark.svg?v=138355659379288794291793044909",
+        "logoCandidates": [
+          "https://fromourplace.com/cdn/shop/t/4713/assets/logo-dark.svg?v=138355659379288794291793044909"
+        ],
+        "colors": [
+          "#465661",
+          "#6C674D",
+          "#AF5A3C",
+          "#FCFAF6",
+          "#35312E"
+        ],
+        "fonts": {
+          "heading": "Chelt",
+          "body": "Plaid-XS-Web"
+        },
+        "headings": [
+          "Non-Toxic Cookware,    By Design",
+          "Over 100,000 5-star reviews for our award-winning products",
+          "Happening at Our Place",
+          "fromourplace.com is blocked",
+          "fromourplace.com is blocked",
+          "fromourplace.com is blocked"
+        ],
+        "warnings": [],
+        "provenance": [
+          "Firecrawl branding format; classifications may be model-assisted.",
+          "Name/description: page metadata.",
+          "Original response retained in the private comparison directory."
+        ]
+      }
+    },
+    {
+      "provider": "custom",
+      "url": "https://www.glossier.com",
+      "ok": true,
+      "durationMs": 912,
+      "metadata": {
+        "resources": 3,
+        "htmlBytes": 488670,
+        "stylesheetBytes": 387696,
+        "cache": "No application cache"
+      },
+      "summary": {
+        "sourceUrl": "https://www.glossier.com/",
+        "extractedAt": "2026-10-27T01:51:23.582Z",
+        "name": "Glossier",
+        "description": "Glossier",
+        "logoUrl": null,
+        "logoCandidates": [],
+        "colors": [
+          "#E8E8E8",
+          "#000000",
+          "#EEEEEE",
+          "#B3B3B3",
+          "#D9D9D9",
+          "#F0F0F0"
+        ],
+        "fonts": {
+          "heading": "Apercu",
+          "body": "Apercu"
+        },
+        "headings": [
+          "Glossier You Duo",
+          "SHOP ALL",
+          "FEELING CHEERFUL?",
+          "GET FESTIVE"
+        ],
+        "warnings": [
+          "Colors and fonts are static source candidates; confirm them before generation.",
+          "No usable logo URL found. Confirm or supply the original logo; an inline SVG may need separate handling."
+        ],
+        "provenance": [
+          "Name: og:site_name",
+          "Description: meta description",
+          "heading font candidate: --recharge-typography-heading-font-family in https://www.glossier.com/cdn/shop/t/1475/assets/style.css?v=46583572906840937601792366712",
+          "body font candidate: --recharge-typography-body-font-family in https://www.glossier.com/cdn/shop/t/1475/assets/style.css?v=46583572906840937601792366712",
+          "Color #E8E8E8: --recharge-color-brand in https://www.glossier.com/cdn/shop/t/1475/assets/style.css?v=46583572906840937601792366712",
+          "Color #000000: --recharge-color-brand-120 in https://www.glossier.com/cdn/shop/t/1475/assets/style.css?v=46583572906840937601792366712",
+          "Color #EEEEEE: --recharge-color-brand-20 in https://www.glossier.com/cdn/shop/t/1475/assets/style.css?v=46583572906840937601792366712",
+          "Color #B3B3B3: --recharge-color-brand-40 in https://www.glossier.com/cdn/shop/t/1475/assets/style.css?v=46583572906840937601792366712",
+          "Color #D9D9D9: --recharge-color-brand-60 in https://www.glossier.com/cdn/shop/t/1475/assets/style.css?v=46583572906840937601792366712",
+          "Color #F0F0F0: --recharge-color-brand-75 in https://www.glossier.com/cdn/shop/t/1475/assets/style.css?v=46583572906840937601792366712",
+          "Headings: main page markup; CSS visibility has not been evaluated."
+        ]
+      }
+    },
+    {
+      "provider": "firecrawl",
+      "url": "https://www.glossier.com",
+      "ok": true,
+      "durationMs": 7209,
+      "metadata": {
+        "cacheState": null,
+        "creditsUsed": 1,
+        "pageStatus": 200
+      },
+      "summary": {
+        "sourceUrl": "https://www.glossier.com/",
+        "extractedAt": "2026-10-27T01:51:29.883Z",
+        "name": "Glossier",
+        "description": "Glossier",
+        "logoUrl": "https://www.glossier.com/cdn/shop/files/favicon-light_180x180.webp?v=1681821719",
+        "logoCandidates": [
+          "https://www.glossier.com/cdn/shop/files/favicon-light_180x180.webp?v=1681821719"
+        ],
+        "colors": [
+          "#F1EFD8",
+          "#F1E4C5",
+          "#9D2235",
+          "#FFFFFF",
+          "#000000"
+        ],
+        "fonts": {
+          "heading": "Apercu",
+          "body": "Apercu"
+        },
+        "headings": [
+          "a22916101539.cdn.optimizely.com is blocked",
+          "Glossier You Duo",
+          "SHOP ALL",
+          "FEELING CHEERFUL?",
+          "FEELING CHEERFUL?",
+          "GET FESTIVE"
+        ],
+        "warnings": [],
+        "provenance": [
+          "Firecrawl branding format; classifications may be model-assisted.",
+          "Name/description: page metadata.",
+          "Original response retained in the private comparison directory."
+        ]
+      }
+    }
+  ],
+  "assessment": {
+    "scope": "Three homepage pairs, one request per method per store. Firecrawl requested maxAge=0 but omitted cacheState. Different capability breadth; not a reliability or cold-start benchmark.",
+    "credits": "Three Firecrawl credits reported; no OpenRouter calls in this comparison.",
+    "browserChecks": {
+      "OLIPOP": "Rendered homepage header uses Ano and #14433D; visible headings use WindsorEF. Firecrawl matched those; custom returned Helvetica and old theme/utility colors.",
+      "Our Place": "Rendered homepage heading uses Chelt; navigation uses Plaid-XS-Web and hero body copy uses Calibre. Custom missed heading and all colors; Firecrawl found Chelt and Plaid-XS-Web, but one body-font field does not describe all text.",
+      "Glossier": "Rendered homepage text uses Apercu. Both found it. Custom returned no logo. Firecrawl returned favicon-light_180x180.webp rather than the visible wordmark. Browser redirected to en-ca, while extraction requested root; localization/campaign context may differ."
+    },
+    "decision": "Keep Firecrawl as default brand provider with merchant review. Custom static extraction remains a fallback for name/description/logo; withhold its palette/fonts from automatic draft prefilling. Flag favicon-only logo candidates.",
+    "revisionNote": "Historical measurements and original summaries below are preserved. Current adapter now sets logoUrl=null for favicon-only responses while retaining the candidate and warning."
+  }
+}

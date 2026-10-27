@@ -1,0 +1,783 @@
+{
+  "captured": "2026-10-26 America/Vancouver",
+  "method": "Two-brand bounded comparison; public JSON/homepage vs Firecrawl branding/product+markdown. Product scrapes were cached and queued; timing is not a benchmark.",
+  "samples": [
+    {
+      "id": "olipop",
+      "origin": "https://drinkolipop.com",
+      "productUrl": "https://drinkolipop.com/products/caramel-apple",
+      "basic": {
+        "seconds": 0.546,
+        "loadedProducts": 47,
+        "product": {
+          "id": 10910759354527,
+          "title": "Caramel Apple",
+          "handle": "caramel-apple",
+          "body_html": "<p>Caramel Apple layers glossy ribbons of buttery caramel flavor over the snap of crisp green apple, layering sour, sweet, and smooth into one rich irresistible pour. The result is a candy-apple moment that's smooth, juicy, and wrapped in unmistakable caramel richness.</p>",
+          "published_at": "2026-08-30T20:27:52-07:00",
+          "created_at": "2026-05-04T07:15:17-07:00",
+          "updated_at": "2026-10-26T18:42:00-07:00",
+          "vendor": "OLIPOP",
+          "product_type": "9g Fiber",
+          "tags": [],
+          "variants": [
+            {
+              "id": 62787700588703,
+              "title": "1 Can",
+              "option1": "1 Can",
+              "option2": null,
+              "option3": null,
+              "sku": null,
+              "requires_shipping": true,
+              "taxable": true,
+              "featured_image": null,
+              "available": false,
+              "price": "35.99",
+              "grams": 454,
+              "compare_at_price": null,
+              "position": 1,
+              "product_id": 10910759354527,
+              "created_at": "2026-05-04T07:15:18-07:00",
+              "updated_at": "2026-10-26T18:42:00-07:00"
+            },
+            {
+              "id": 62787700621471,
+              "title": "12 Pack",
+              "option1": "12 Pack",
+              "option2": null,
+              "option3": null,
+              "sku": "OP-CRA-12",
+              "requires_shipping": true,
+              "taxable": true,
+              "featured_image": null,
+              "available": true,
+              "price": "35.99",
+              "grams": 454,
+              "compare_at_price": null,
+              "position": 2,
+              "product_id": 10910759354527,
+              "created_at": "2026-05-04T07:15:18-07:00",
+              "updated_at": "2026-10-26T18:42:00-07:00"
+            }
+          ],
+          "images": [
+            {
+              "id": 64644591288479,
+              "created_at": "2026-08-30T19:58:40-07:00",
+              "position": 1,
+              "updated_at": "2026-08-30T19:58:42-07:00",
+              "product_id": 10910759354527,
+              "variant_ids": [],
+              "src": "https://cdn.shopify.com/s/files/1/0034/6610/0806/files/caramel-apple-9g-olipop_gallery-image_single-can_new_asset.webp?v=1788145122",
+              "width": 1500,
+              "height": 1985
+            },
+            {
+              "id": 64656652402847,
+              "created_at": "2026-09-09T08:02:40-07:00",
+              "position": 2,
+              "updated_at": "2026-09-09T08:02:42-07:00",
+              "product_id": 10910759354527,
+              "variant_ids": [],
+              "src": "https://cdn.shopify.com/s/files/1/0034/6610/0806/files/caramel-apple-9g-olipop_lifestyle03_MW_new_asset.webp?v=1788966162",
+              "width": 1400,
+              "height": 1400
+            },
+            {
+              "id": 64644591321247,
+              "created_at": "2026-08-30T19:58:40-07:00",
+              "position": 3,
+              "updated_at": "2026-09-09T08:04:12-07:00",
+              "product_id": 10910759354527,
+              "variant_ids": [],
+              "src": "https://cdn.shopify.com/s/files/1/0034/6610/0806/files/caramel-apple-9g-olipop_lifestyle01.webp?v=1788966252",
+              "width": 1600,
+              "height": 1600
+            },
+            {
+              "id": 64644591419551,
+              "created_at": "2026-08-30T19:58:40-07:00",
+              "position": 4,
+              "updated_at": "2026-08-30T19:58:42-07:00",
+              "product_id": 10910759354527,
+              "variant_ids": [],
+              "src": "https://cdn.shopify.com/s/files/1/0034/6610/0806/files/caramel-apple-9g-olipop_tile02_new_asset.webp?v=1788145122",
+              "width": 2000,
+              "height": 2000
+            },
+            {
+              "id": 64644591485087,
+              "created_at": "2026-08-30T19:58:40-07:00",
+              "position": 5,
+              "updated_at": "2026-08-30T19:58:42-07:00",
+              "product_id": 10910759354527,
+              "variant_ids": [],
+              "src": "https://cdn.shopify.com/s/files/1/0034/6610/0806/files/caramel-apple-9g-olipop_tile04_new_asset.webp?v=1788145122",
+              "width": 2200,
+              "height": 2200
+            },
+            {
+              "id": 64644591354015,
+              "created_at": "2026-08-30T19:58:40-07:00",
+              "position": 6,
+              "updated_at": "2026-08-30T19:58:42-07:00",
+              "product_id": 10910759354527,
+              "variant_ids": [],
+              "src": "https://cdn.shopify.com/s/files/1/0034/6610/0806/files/caramel-apple-9g-olipop_lifestyle02_new_asset.webp?v=1788145122",
+              "width": 1600,
+              "height": 1600
+            },
+            {
+              "id": 64644591386783,
+              "created_at": "2026-08-30T19:58:40-07:00",
+              "position": 7,
+              "updated_at": "2026-08-30T19:58:42-07:00",
+              "product_id": 10910759354527,
+              "variant_ids": [],
+              "src": "https://cdn.shopify.com/s/files/1/0034/6610/0806/files/caramel-apple-9g-olipop_tile01_new_asset.webp?v=1788145122",
+              "width": 2000,
+              "height": 2000
+            },
+            {
+              "id": 64644591452319,
+              "created_at": "2026-08-30T19:58:40-07:00",
+              "position": 8,
+              "updated_at": "2026-08-30T19:58:42-07:00",
+              "product_id": 10910759354527,
+              "variant_ids": [],
+              "src": "https://cdn.shopify.com/s/files/1/0034/6610/0806/files/caramel-apple-9g-olipop_tile03_new_asset.webp?v=1788145122",
+              "width": 2000,
+              "height": 2000
+            }
+          ],
+          "options": [
+            {
+              "name": "Size",
+              "position": 1,
+              "values": [
+                "1 Can",
+                "12 Pack"
+              ]
+            }
+          ]
+        },
+        "metadata": [
+          "<meta name=\"theme-color\" content=\"#3a3a3a\">",
+          "<meta name=\"description\" content=\"Discover a new kind of soda made with plant fiber and prebiotics. Non-GMO, gluten-free, paleo, and vegan, with high fiber and 2-5g of sugar. Enjoy a variety of delicious, refreshing and classic flavors.\">",
+          "<meta property=\"og:site_name\" content=\"OLIPOP\">",
+          "<meta property=\"og:url\" content=\"https://drinkolipop.com/\">",
+          "<meta property=\"og:title\" content=\"OLIPOP | Healthy Prebiotic Soda\">",
+          "<meta property=\"og:type\" content=\"website\">",
+          "<meta property=\"og:description\" content=\"Discover a new kind of soda made with plant fiber and prebiotics. Non-GMO, gluten-free, paleo, and vegan, with high fiber and 2-5g of sugar. Enjoy a variety of delicious, refreshing and classic flavors.\">",
+          "<meta name=\"twitter:description\" content=\"Discover a new kind of soda made with plant fiber and prebiotics. Non-GMO, gluten-free, paleo, and vegan, with high fiber and 2-5g of sugar. Enjoy a variety of delicious, refreshing and classic flavors.\">",
+          "<meta property=\"og:image\" content=\"https://cdn.shopify.com/s/files/1/0034/6610/0806/files/Website_-_Social_-_Share_-_V1.png?v=1639521624\" />",
+          "<meta property=\"og:image:secure_url\" content=\"https://cdn.shopify.com/s/files/1/0034/6610/0806/files/Website_-_Social_-_Share_-_V1.png?v=1639521624\" />",
+          "<meta property=\"og:image:width\" content=\"2400\" />",
+          "<meta property=\"og:image:height\" content=\"1256\" />"
+        ],
+        "logoCandidateCount": 5,
+        "inlineColorCount": 30
+      },
+      "firecrawl": {
+        "brandSeconds": 14.663,
+        "productSeconds": 8.294,
+        "credits": 2,
+        "branding": {
+          "colorScheme": "light",
+          "fonts": [
+            {
+              "family": "Ano",
+              "role": "body"
+            },
+            {
+              "family": "WindsorEF",
+              "role": "display"
+            }
+          ],
+          "colors": {
+            "primary": "#14433D",
+            "secondary": "#E31A82",
+            "accent": "#034638",
+            "background": "#FFFFFF",
+            "textPrimary": "#14433D",
+            "link": "#034638"
+          },
+          "typography": {
+            "fontFamilies": {
+              "primary": "Ano",
+              "heading": "WindsorEF"
+            },
+            "fontStacks": {
+              "heading": [
+                "Ano"
+              ],
+              "body": [
+                "Ano"
+              ],
+              "paragraph": [
+                "Ano"
+              ]
+            },
+            "fontSizes": {
+              "h1": "20px",
+              "h2": "40px",
+              "body": "16px"
+            }
+          },
+          "spacing": {
+            "baseUnit": 4,
+            "borderRadius": "24px"
+          },
+          "components": {
+            "buttonPrimary": {
+              "background": "#14433D",
+              "textColor": "#FFF7E5",
+              "borderRadius": "50px",
+              "borderRadiusCorners": {
+                "topLeft": "50px",
+                "topRight": "50px",
+                "bottomRight": "50px",
+                "bottomLeft": "50px"
+              },
+              "shadow": "none"
+            },
+            "buttonSecondary": {
+              "background": "#FFB8B3",
+              "textColor": "#14433D",
+              "borderRadius": "0px",
+              "borderRadiusCorners": {
+                "topLeft": "0px",
+                "topRight": "0px",
+                "bottomRight": "0px",
+                "bottomLeft": "0px"
+              },
+              "shadow": "none"
+            }
+          },
+          "images": {
+            "logo": "https://drinkolipop.com/cdn/shop/files/OlipopLogo_1_560x.png?v=1778767782",
+            "favicon": "https://drinkolipop.com/cdn/shop/files/favicon_32x32.png?v=1613174610",
+            "ogImage": "https://cdn.shopify.com/s/files/1/0034/6610/0806/files/Website_-_Social_-_Share_-_V1.png?v=1639521624",
+            "logoAlt": "OLIPOP"
+          },
+          "personality": {
+            "tone": "playful",
+            "energy": "high",
+            "targetAudience": "shoppers"
+          },
+          "designSystem": {
+            "framework": "tailwind",
+            "componentLibrary": ""
+          },
+          "confidence": {
+            "buttons": 0.5700000000000001,
+            "colors": 0.8666666666666666,
+            "overall": 0.7183333333333333
+          },
+          "brandName": "OLIPOP",
+          "logo": "https://drinkolipop.com/cdn/shop/files/OlipopLogo_1_560x.png?v=1778767782"
+        },
+        "product": {
+          "title": "Caramel Apple",
+          "brand": "OLIPOP",
+          "category": "9g Fiber",
+          "url": "https://drinkolipop.com/products/caramel-apple",
+          "description": "Caramel Apple layers glossy ribbons of buttery caramel flavor over the snap of crisp green apple, layering sour, sweet, and smooth into one rich irresistible pour. The result is a candy-apple moment that's smooth, juicy, and wrapped in unmistakable caramel richness.",
+          "variants": [
+            {
+              "id": "62787700588703",
+              "title": "1 Can",
+              "values": {
+                "size": "1 Can"
+              },
+              "price": {
+                "amount": 35.99,
+                "currency": "USD",
+                "formatted": "$35.99"
+              },
+              "availability": {
+                "inStock": false,
+                "text": "Out of stock"
+              },
+              "images": [
+                {
+                  "url": "https://cdn.shopify.com/s/files/1/0034/6610/0806/files/caramel-apple-9g-olipop_gallery-image_single-can_new_asset.webp?v=1788145122"
+                },
+                {
+                  "url": "https://cdn.shopify.com/s/files/1/0034/6610/0806/files/caramel-apple-9g-olipop_lifestyle03_MW_new_asset.webp?v=1788966162"
+                },
+                {
+                  "url": "https://cdn.shopify.com/s/files/1/0034/6610/0806/files/caramel-apple-9g-olipop_lifestyle01.webp?v=1788966252"
+                },
+                {
+                  "url": "https://cdn.shopify.com/s/files/1/0034/6610/0806/files/caramel-apple-9g-olipop_tile02_new_asset.webp?v=1788145122"
+                },
+                {
+                  "url": "https://cdn.shopify.com/s/files/1/0034/6610/0806/files/caramel-apple-9g-olipop_tile04_new_asset.webp?v=1788145122"
+                },
+                {
+                  "url": "https://cdn.shopify.com/s/files/1/0034/6610/0806/files/caramel-apple-9g-olipop_lifestyle02_new_asset.webp?v=1788145122"
+                },
+                {
+                  "url": "https://cdn.shopify.com/s/files/1/0034/6610/0806/files/caramel-apple-9g-olipop_tile01_new_asset.webp?v=1788145122"
+                },
+                {
+                  "url": "https://cdn.shopify.com/s/files/1/0034/6610/0806/files/caramel-apple-9g-olipop_tile03_new_asset.webp?v=1788145122"
+                }
+              ]
+            },
+            {
+              "id": "62787700621471",
+              "sku": "OP-CRA-12",
+              "title": "12 Pack",
+              "values": {
+                "size": "12 Pack"
+              },
+              "price": {
+                "amount": 35.99,
+                "currency": "USD",
+                "formatted": "$35.99"
+              },
+              "availability": {
+                "inStock": true,
+                "text": "In stock"
+              },
+              "images": [
+                {
+                  "url": "https://cdn.shopify.com/s/files/1/0034/6610/0806/files/caramel-apple-9g-olipop_gallery-image_single-can_new_asset.webp?v=1788145122"
+                },
+                {
+                  "url": "https://cdn.shopify.com/s/files/1/0034/6610/0806/files/caramel-apple-9g-olipop_lifestyle03_MW_new_asset.webp?v=1788966162"
+                },
+                {
+                  "url": "https://cdn.shopify.com/s/files/1/0034/6610/0806/files/caramel-apple-9g-olipop_lifestyle01.webp?v=1788966252"
+                },
+                {
+                  "url": "https://cdn.shopify.com/s/files/1/0034/6610/0806/files/caramel-apple-9g-olipop_tile02_new_asset.webp?v=1788145122"
+                },
+                {
+                  "url": "https://cdn.shopify.com/s/files/1/0034/6610/0806/files/caramel-apple-9g-olipop_tile04_new_asset.webp?v=1788145122"
+                },
+                {
+                  "url": "https://cdn.shopify.com/s/files/1/0034/6610/0806/files/caramel-apple-9g-olipop_lifestyle02_new_asset.webp?v=1788145122"
+                },
+                {
+                  "url": "https://cdn.shopify.com/s/files/1/0034/6610/0806/files/caramel-apple-9g-olipop_tile01_new_asset.webp?v=1788145122"
+                },
+                {
+                  "url": "https://cdn.shopify.com/s/files/1/0034/6610/0806/files/caramel-apple-9g-olipop_tile03_new_asset.webp?v=1788145122"
+                }
+              ]
+            }
+          ]
+        },
+        "productCache": {
+          "state": "hit",
+          "cachedAt": "2026-10-27T01:34:03.475Z"
+        },
+        "queueMs": 6394,
+        "markdownCharacters": {
+          "homepage": 32745,
+          "product": 28090
+        }
+      }
+    },
+    {
+      "id": "our-place",
+      "origin": "https://fromourplace.com",
+      "productUrl": "https://fromourplace.com/products/titanium-always-pan-pro",
+      "basic": {
+        "seconds": 0.97,
+        "loadedProducts": 133,
+        "product": {
+          "id": 15464772436162,
+          "title": "Titanium Always Pan Pro 10.5\"",
+          "handle": "titanium-always-pan-pro",
+          "body_html": "<p><meta charset=\"utf-8\"><meta charset=\"utf-8\">Non-toxic titanium and stainless steel pan</p>",
+          "published_at": "2026-10-11T13:10:53-07:00",
+          "created_at": "2026-10-07T17:35:17-07:00",
+          "updated_at": "2026-10-26T18:42:00-07:00",
+          "vendor": "Our Place",
+          "product_type": "cookware",
+          "tags": [
+            "All",
+            "igg26_gourmet_food",
+            "YGroup_TAPRegular"
+          ],
+          "variants": [
+            {
+              "id": 67704611176642,
+              "title": "Chrome",
+              "option1": "Chrome",
+              "option2": null,
+              "option3": null,
+              "sku": "PAN.TAP2.PRO.CRM",
+              "requires_shipping": true,
+              "taxable": true,
+              "featured_image": {
+                "id": 47106534441154,
+                "product_id": 15464772436162,
+                "position": 1,
+                "created_at": "2026-10-08T10:40:31-07:00",
+                "updated_at": "2026-10-08T10:40:33-07:00",
+                "alt": "A stainless steel Titanium Always Pan Pro 10.5″ 2.0 skillet with a matching lid and a long handle.",
+                "width": 864,
+                "height": 864,
+                "src": "https://cdn.shopify.com/s/files/1/0024/4137/9915/files/chrome-titanium-always-pan-pro-product-thumbnail.jpg?v=1791481233",
+                "variant_ids": [
+                  67704611176642
+                ]
+              },
+              "available": true,
+              "price": "179.00",
+              "grams": 3080,
+              "compare_at_price": null,
+              "position": 1,
+              "product_id": 15464772436162,
+              "created_at": "2026-10-07T17:35:17-07:00",
+              "updated_at": "2026-10-26T18:42:00-07:00"
+            },
+            {
+              "id": 67704611209410,
+              "title": "Chrome/Gold",
+              "option1": "Chrome/Gold",
+              "option2": null,
+              "option3": null,
+              "sku": "PAN.TAP2.PRO.GLD",
+              "requires_shipping": true,
+              "taxable": true,
+              "featured_image": {
+                "id": 47106535686338,
+                "product_id": 15464772436162,
+                "position": 2,
+                "created_at": "2026-10-08T10:40:36-07:00",
+                "updated_at": "2026-10-08T10:40:38-07:00",
+                "alt": "A silver stainless steel Titanium Always Pan Pro 10.5″ 2.0 frying pan with a matching lid and gold-toned handles and knob.",
+                "width": 864,
+                "height": 864,
+                "src": "https://cdn.shopify.com/s/files/1/0024/4137/9915/files/gold-titanium-always-pan-pro-product-thumbnail.jpg?v=1791481238",
+                "variant_ids": [
+                  67704611209410
+                ]
+              },
+              "available": true,
+              "price": "199.00",
+              "grams": 3080,
+              "compare_at_price": null,
+              "position": 2,
+              "product_id": 15464772436162,
+              "created_at": "2026-10-07T17:35:17-07:00",
+              "updated_at": "2026-10-26T18:42:00-07:00"
+            },
+            {
+              "id": 67704611242178,
+              "title": "Brushed",
+              "option1": "Brushed",
+              "option2": null,
+              "option3": null,
+              "sku": "PAN.TAP2.LTO.BRHS",
+              "requires_shipping": true,
+              "taxable": true,
+              "featured_image": {
+                "id": 47106532507842,
+                "product_id": 15464772436162,
+                "position": 3,
+                "created_at": "2026-10-08T10:40:26-07:00",
+                "updated_at": "2026-10-08T10:40:27-07:00",
+                "alt": "A stainless steel Titanium Always Pan Pro 10.5″ 2.0 skillet with a matching lid and a long handle.",
+                "width": 864,
+                "height": 864,
+                "src": "https://cdn.shopify.com/s/files/1/0024/4137/9915/files/brushed-titanium-always-pan-pro-product-thumbnail.jpg?v=1791481227",
+                "variant_ids": [
+                  67704611242178
+                ]
+              },
+              "available": true,
+              "price": "179.00",
+              "grams": 3080,
+              "compare_at_price": null,
+              "position": 3,
+              "product_id": 15464772436162,
+              "created_at": "2026-10-07T17:35:17-07:00",
+              "updated_at": "2026-10-26T18:42:00-07:00"
+            }
+          ],
+          "images": [
+            {
+              "id": 47106534441154,
+              "created_at": "2026-10-08T10:40:31-07:00",
+              "position": 1,
+              "updated_at": "2026-10-08T10:40:33-07:00",
+              "product_id": 15464772436162,
+              "variant_ids": [
+                67704611176642
+              ],
+              "src": "https://cdn.shopify.com/s/files/1/0024/4137/9915/files/chrome-titanium-always-pan-pro-product-thumbnail.jpg?v=1791481233",
+              "width": 864,
+              "height": 864
+            },
+            {
+              "id": 47106535686338,
+              "created_at": "2026-10-08T10:40:36-07:00",
+              "position": 2,
+              "updated_at": "2026-10-08T10:40:38-07:00",
+              "product_id": 15464772436162,
+              "variant_ids": [
+                67704611209410
+              ],
+              "src": "https://cdn.shopify.com/s/files/1/0024/4137/9915/files/gold-titanium-always-pan-pro-product-thumbnail.jpg?v=1791481238",
+              "width": 864,
+              "height": 864
+            },
+            {
+              "id": 47106532507842,
+              "created_at": "2026-10-08T10:40:26-07:00",
+              "position": 3,
+              "updated_at": "2026-10-08T10:40:27-07:00",
+              "product_id": 15464772436162,
+              "variant_ids": [
+                67704611242178
+              ],
+              "src": "https://cdn.shopify.com/s/files/1/0024/4137/9915/files/brushed-titanium-always-pan-pro-product-thumbnail.jpg?v=1791481227",
+              "width": 864,
+              "height": 864
+            }
+          ],
+          "options": [
+            {
+              "name": "Color",
+              "position": 1,
+              "values": [
+                "Chrome",
+                "Chrome/Gold",
+                "Brushed"
+              ]
+            }
+          ]
+        },
+        "metadata": [
+          "<meta name=\"description\" content=\"Shop Our Place for non-toxic, nonstick cookware, pans, and kitchen essentials. Free shipping on qualifying orders. Designed to bring people together.\">",
+          "<meta property=\"og:url\" content=\"https://fromourplace.com/\">",
+          "<meta property=\"og:site_name\" content=\"Our Place\">",
+          "<meta property=\"og:type\" content=\"website\">",
+          "<meta property=\"og:title\" content=\"Our Place | The Best Non-Toxic Cookware &amp; Kitchen Essentials\">",
+          "<meta property=\"og:description\" content=\"Shop Our Place for non-toxic, nonstick cookware, pans, and kitchen essentials. Free shipping on qualifying orders. Designed to bring people together.\">",
+          "<meta property=\"og:image\" content=\"//fromourplace.com/cdn/shop/t/4713/assets/opengraph.jpg?v=92520740334726131061793044909\">",
+          "<meta property=\"og:image:secure_url\" content=\"https://fromourplace.com/cdn/shop/t/4713/assets/opengraph.jpg?v=92520740334726131061793044909\">",
+          "<meta name=\"twitter:description\" content=\"Shop Our Place for non-toxic, nonstick cookware, pans, and kitchen essentials. Free shipping on qualifying orders. Designed to bring people together.\">"
+        ],
+        "logoCandidateCount": 6,
+        "inlineColorCount": 30
+      },
+      "firecrawl": {
+        "brandSeconds": 6.857,
+        "productSeconds": 9.986,
+        "credits": 2,
+        "branding": {
+          "colorScheme": "light",
+          "fonts": [
+            {
+              "family": "Plaid-XS-Web",
+              "role": "body"
+            },
+            {
+              "family": "Chelt",
+              "role": "heading"
+            }
+          ],
+          "colors": {
+            "primary": "#465661",
+            "secondary": "#6C674D",
+            "accent": "#AF5A3C",
+            "background": "#FCFAF6",
+            "textPrimary": "#35312E",
+            "link": "#AF5A3C"
+          },
+          "typography": {
+            "fontFamilies": {
+              "primary": "Plaid-XS-Web",
+              "heading": "Chelt"
+            },
+            "fontStacks": {
+              "heading": [
+                "Chelt",
+                "Georgia",
+                "Times New Roman",
+                "serif"
+              ],
+              "body": [
+                "Plaid-XS-Web",
+                "Arial",
+                "sans-serif"
+              ],
+              "paragraph": [
+                "Plaid-XS-Web",
+                "Arial",
+                "sans-serif"
+              ]
+            },
+            "fontSizes": {
+              "h1": "60px",
+              "h2": "48px",
+              "body": "16px"
+            }
+          },
+          "spacing": {
+            "baseUnit": 4,
+            "borderRadius": "4px"
+          },
+          "components": {
+            "input": {
+              "background": "transparent",
+              "textColor": "#35312E",
+              "borderColor": null,
+              "borderRadius": "4px",
+              "borderRadiusCorners": {
+                "topLeft": "4px",
+                "topRight": "4px",
+                "bottomRight": "4px",
+                "bottomLeft": "4px"
+              },
+              "shadow": "none"
+            },
+            "buttonPrimary": {
+              "background": "#AF5A3C",
+              "textColor": "#FFFFFF",
+              "borderRadius": "4px",
+              "borderRadiusCorners": {
+                "topLeft": "4px",
+                "topRight": "4px",
+                "bottomRight": "4px",
+                "bottomLeft": "4px"
+              },
+              "shadow": "none"
+            },
+            "buttonSecondary": {
+              "background": "#F6F3EB",
+              "textColor": "#35312E",
+              "borderColor": "#35312E",
+              "borderRadius": "4px",
+              "borderRadiusCorners": {
+                "topLeft": "4px",
+                "topRight": "4px",
+                "bottomRight": "4px",
+                "bottomLeft": "4px"
+              },
+              "shadow": "none"
+            }
+          },
+          "images": {
+            "logo": "https://fromourplace.com/cdn/shop/t/4713/assets/logo-dark.svg?v=138355659379288794291793044909",
+            "favicon": "https://fromourplace.com/cdn/shop/t/4713/assets/favicon.ico?v=72303717237958908581793044909",
+            "ogImage": "//fromourplace.com/cdn/shop/t/4713/assets/opengraph.jpg?v=92520740334726131061793044909",
+            "logoHref": "/",
+            "logoAlt": "Go to Home page"
+          },
+          "personality": {
+            "tone": "modern",
+            "energy": "low",
+            "targetAudience": "shoppers"
+          },
+          "designSystem": {
+            "framework": "tailwind",
+            "componentLibrary": ""
+          },
+          "confidence": {
+            "buttons": 0.68,
+            "colors": 0.7266666666666666,
+            "overall": 0.7033333333333334
+          },
+          "brandName": "Our Place",
+          "logo": "https://fromourplace.com/cdn/shop/t/4713/assets/logo-dark.svg?v=138355659379288794291793044909"
+        },
+        "product": {
+          "title": "Titanium Always Pan Pro 10.5\"",
+          "brand": "Our Place",
+          "category": "cookware",
+          "url": "https://fromourplace.com/products/titanium-always-pan-pro?_ab=0&_fd=0&_sc=1",
+          "description": "Non-toxic titanium and stainless steel pan",
+          "variants": [
+            {
+              "id": "67704611176642",
+              "sku": "PAN.TAP2.PRO.CRM",
+              "title": "Chrome",
+              "values": {
+                "color": "Chrome"
+              },
+              "price": {
+                "amount": 179,
+                "currency": "USD",
+                "formatted": "$179.00"
+              },
+              "availability": {
+                "inStock": true,
+                "text": "In stock"
+              },
+              "images": [
+                {
+                  "url": "https://cdn.shopify.com/s/files/1/0024/4137/9915/files/chrome-titanium-always-pan-pro-product-thumbnail.jpg?v=1791481233",
+                  "alt": "A stainless steel Titanium Always Pan Pro 10.5″ 2.0 skillet with a matching lid and a long handle."
+                }
+              ]
+            },
+            {
+              "id": "67704611209410",
+              "sku": "PAN.TAP2.PRO.GLD",
+              "title": "Chrome/Gold",
+              "values": {
+                "color": "Chrome/Gold"
+              },
+              "price": {
+                "amount": 199,
+                "currency": "USD",
+                "formatted": "$199.00"
+              },
+              "availability": {
+                "inStock": true,
+                "text": "In stock"
+              },
+              "images": [
+                {
+                  "url": "https://cdn.shopify.com/s/files/1/0024/4137/9915/files/gold-titanium-always-pan-pro-product-thumbnail.jpg?v=1791481238",
+                  "alt": "A silver stainless steel Titanium Always Pan Pro 10.5″ 2.0 frying pan with a matching lid and gold-toned handles and knob."
+                }
+              ]
+            },
+            {
+              "id": "67704611242178",
+              "sku": "PAN.TAP2.LTO.BRHS",
+              "title": "Brushed",
+              "values": {
+                "color": "Brushed"
+              },
+              "price": {
+                "amount": 179,
+                "currency": "USD",
+                "formatted": "$179.00"
+              },
+              "availability": {
+                "inStock": true,
+                "text": "In stock"
+              },
+              "images": [
+                {
+                  "url": "https://cdn.shopify.com/s/files/1/0024/4137/9915/files/brushed-titanium-always-pan-pro-product-thumbnail.jpg?v=1791481227",
+                  "alt": "A stainless steel Titanium Always Pan Pro 10.5″ 2.0 skillet with a matching lid and a long handle."
+                }
+              ]
+            }
+          ]
+        },
+        "productCache": {
+          "state": "hit",
+          "cachedAt": "2026-10-26T22:09:58.802Z"
+        },
+        "queueMs": 7928,
+        "markdownCharacters": {
+          "homepage": 26032,
+          "product": 25321
+        }
+      }
+    }
+  ]
+}
