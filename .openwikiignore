@@ -1,0 +1,13 @@
+.env
+.env.*
+node_modules/
+dist/
+.output/
+.tanstack/
+.work/
+tmp/
+*.log
+pnpm-lock.yaml
+src/routeTree.gen.ts
+docs/time-log.json
+docs/SESSIONS.md

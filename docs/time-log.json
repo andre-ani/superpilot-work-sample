@@ -1,0 +1,8 @@
+{
+  "timezone": "America/Vancouver",
+  "budgetMinutes": 360,
+  "deadline": "2026-10-27T12:00:00-07:00",
+  "intervals": [
+    { "start": "2026-10-26T18:20:00-07:00", "end": null }
+  ]
+}
