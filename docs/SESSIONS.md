@@ -37,3 +37,7 @@ Production enrichment failed with “The saved scan is busy” because compresse
 ## Production product-dialog positioning
 
 Production render confirmed double centering: independent Tailwind translate and animation transform each shifted the dialog by half its size. The compiled CSS had removed the local reset. Product flip keyframes now animate only card-origin offset, rotation and scale; canonical DialogContent retains centering, including reduced motion. This is a CSS-only repair; production geometry will be checked after deployment.
+
+## Saved-artwork preview continuity
+
+Four copy options were present, but a per-variant text-fit/render error left its opacity wrapper hidden and its loading placeholder running indefinitely. Variations now retain the saved base artwork with a pulse while copy is prepared/rendered, and show a terminal fit error beside that specific option. Successful options remain independently usable; no new image is generated for a text-only render failure. Strict types pass. Six authorized new production image jobs across three brands completed preparation, image generation and placement; final export review is in progress.

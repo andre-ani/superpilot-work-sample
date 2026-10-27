@@ -103,7 +103,7 @@ export function StudioCreate({ selectedExportIds = [], onExportSelection, onExpo
           <div className="grid grid-cols-2 items-start gap-4 xl:gap-6" aria-label="Composed variations">
             {Array.from({length:4},(_,index)=>{
               const option = hasArtwork&&active&&!placementPending&&!placementUnavailable ? options[index] : undefined
-              return <VariationReveal key={index} onView={option ? () => viewOption(option.id) : undefined} format={previewFormat} loading={progress.loading} label={`Variation ${index+1}`} preview={option&&active ? { id:active.id, state:copyVariationState(creative,option.id), brand, storeUrl, format:previewFormat, selected:chosen.includes(option.id), onToggleSelection:()=>toggleOption(option.id), onView:()=>viewOption(option.id), onExport:()=>{void exportImages([option.id])}, onCanvasReady:registerCanvas, onSelect:()=>onAction({op:'choose-copy',id:option.id}), onAction, label:`Variation ${index+1}`, exportRequest:creative.selectedCopy===option.id?exportRequest:0, onExported } : undefined}/>
+              return <VariationReveal key={index} artworkId={hasArtwork ? active?.id : undefined} onView={option ? () => viewOption(option.id) : undefined} format={previewFormat} loading={progress.loading} label={`Variation ${index+1}`} preview={option&&active ? { id:active.id, state:copyVariationState(creative,option.id), brand, storeUrl, format:previewFormat, selected:chosen.includes(option.id), onToggleSelection:()=>toggleOption(option.id), onView:()=>viewOption(option.id), onExport:()=>{void exportImages([option.id])}, onCanvasReady:registerCanvas, onSelect:()=>onAction({op:'choose-copy',id:option.id}), onAction, label:`Variation ${index+1}`, exportRequest:creative.selectedCopy===option.id?exportRequest:0, onExported } : undefined}/>
             })}
           </div>
         </div>
@@ -124,8 +124,8 @@ export function StudioCreate({ selectedExportIds = [], onExportSelection, onExpo
   </section>
 }
 
-function ArtworkPlaceholder({format,loading,label}:{format:'square'|'story';loading:boolean;label:string}){
-  return <div className="relative w-full overflow-hidden rounded-xl border bg-muted/20" style={{aspectRatio:format==='story'?'9 / 16':'1 / 1'}} aria-label={`${label} preview`}><Skeleton className={`absolute inset-0 size-full rounded-none motion-reduce:animate-none ${loading?'':'animate-none'}`}/><span className="absolute inset-0 flex flex-col items-center justify-center gap-2 text-muted-foreground/45"><IconPhoto className="size-7" aria-hidden="true"/><span className="text-xs">{label}</span></span></div>
+function ArtworkPlaceholder({format,loading,label,artworkId}:{format:'square'|'story';loading:boolean;label:string;artworkId?:string}){
+  return <div className="relative w-full overflow-hidden rounded-xl border bg-muted/20" style={{aspectRatio:format==='story'?'9 / 16':'1 / 1'}} aria-label={`${label} preview`}>{artworkId ? <><img src={generationImageUrl(artworkId)} alt="" className="absolute inset-0 size-full object-contain"/><div className={`absolute inset-0 bg-background/10 ${loading?'animate-pulse motion-reduce:animate-none':''}`} />{loading ? <span className="absolute right-2 bottom-2 left-2 rounded-md bg-background/85 px-2 py-1 text-center text-xs text-foreground">Adding copy…</span> : null}</> : <><Skeleton className={`absolute inset-0 size-full rounded-none motion-reduce:animate-none ${loading?'':'animate-none'}`}/><span className="absolute inset-0 flex flex-col items-center justify-center gap-2 text-muted-foreground/45"><IconPhoto className="size-7" aria-hidden="true"/><span className="text-xs">{label}</span></span></>}</div>
 }
 
 function ArtworkReveal({ id, title, format, loading, children }: { id?: string; title: string; format: 'square'|'story'; loading: boolean; children?: ReactNode }) {
@@ -143,15 +143,19 @@ function ArtworkReveal({ id, title, format, loading, children }: { id?: string; 
     {failed===source&&source?<p role="alert" className="absolute inset-x-3 bottom-3 rounded-lg bg-background/95 p-3 text-xs">Your artwork is saved, but the image could not be displayed.</p>:null}
   </div>
 }
-function VariationReveal({ preview, format, loading, label, onView }: { onView?: () => void; preview?: ComponentProps<typeof CompositionPreview>; format:'square'|'story'; loading:boolean; label:string }) {
+function VariationReveal({ preview, artworkId, format, loading, label, onView }: { artworkId?:string; onView?: () => void; preview?: ComponentProps<typeof CompositionPreview>; format:'square'|'story'; loading:boolean; label:string }) {
   const [readyId,setReadyId]=useState('')
+  const [failure,setFailure]=useState<{identity:string;message:string}|null>(null)
   const identity=preview ? `${preview.id}:${preview.state.selectedCopy}` : ''
   const ready=!!identity&&readyId===identity
+  const error=failure?.identity===identity?failure.message:''
   const reduced=useReducedMotion()
-  return <div className="min-w-0"><div className="relative w-full" style={{aspectRatio:format==='story'?'9 / 16':'1 / 1'}}>
-    <motion.div className="absolute inset-0" animate={{opacity:ready?0:1}} transition={{duration:reduced?0:.35}} aria-hidden={ready}><ArtworkPlaceholder format={format} loading={!ready && (loading || !!preview)} label={label}/></motion.div>
-    {preview?<motion.div className="absolute inset-0" initial={{opacity:0}} animate={{opacity:ready?1:0}} transition={{duration:reduced?0:.4}}><CompositionPreview {...preview} onReady={()=>setReadyId(identity)}/></motion.div>:null}
-  </div></div>
+  const markReady=useCallback(()=>{setReadyId(identity);setFailure(null)},[identity])
+  const markError=useCallback((message:string)=>setFailure({identity,message}),[identity])
+  return <div className="min-w-0 space-y-2"><div className="relative w-full" style={{aspectRatio:format==='story'?'9 / 16':'1 / 1'}}>
+    <motion.div className="absolute inset-0" animate={{opacity:ready?0:1}} transition={{duration:reduced?0:.35}} aria-hidden={ready}><ArtworkPlaceholder artworkId={artworkId} format={format} loading={!ready&&!error&&(loading||!!preview)} label={label}/></motion.div>
+    {preview?<motion.div className="absolute inset-0" initial={{opacity:0}} animate={{opacity:ready?1:0}} transition={{duration:reduced?0:.4}}><CompositionPreview {...preview} onReady={markReady} onError={markError}/></motion.div>:null}
+  </div>{error?<p role="alert" className="text-sm text-destructive">{error}</p>:null}</div>
 }
 
 function GenerationCarousel({jobs,activeId,onSelect}:{jobs:Generation[];activeId:string|null;onSelect:(id:string)=>void}){

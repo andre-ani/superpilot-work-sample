@@ -41,10 +41,10 @@ function cachedGeometry(state: CreativeState) {
 export function focusComposer() {
   document.querySelector<HTMLTextAreaElement>('textarea[aria-label="Message superpilot"]')?.focus()
 }
-export function CompositionPreview({ id, state, brand, storeUrl, format, exportRequest = 0, onExported, selected = false, onSelect, onAction, label, onReady, onCanvasReady, onView, onToggleSelection, onExport, readOnly = false }: {
+export function CompositionPreview({ id, state, brand, storeUrl, format, exportRequest = 0, onExported, selected = false, onSelect, onAction, label, onReady, onError, onCanvasReady, onView, onToggleSelection, onExport, readOnly = false }: {
   id: string; state: CreativeState; brand: BrandDraft; storeUrl: string; format: 'square' | 'story'; exportRequest?: number; onExported?: () => void
   onCanvasReady?: (artworkId:string,optionId:string,canvas:HTMLCanvasElement|null)=>void; onView?:()=>void; onToggleSelection?:()=>void; onExport?:()=>void;
-  readOnly?: boolean; onReady?: () => void; selected?: boolean; onSelect?: () => void; onAction?: (action: StudioAction) => void; label: string
+  readOnly?: boolean; onReady?: () => void; onError?: (message: string) => void; selected?: boolean; onSelect?: () => void; onAction?: (action: StudioAction) => void; label: string
 }) {
   const canvas = useRef<HTMLCanvasElement>(null)
   const handledExport = useRef(0)
@@ -74,7 +74,7 @@ export function CompositionPreview({ id, state, brand, storeUrl, format, exportR
       if (!alive || !canvas.current) return
       drawComposition(canvas.current, image, logo, state, format, { heading, body, headingWeight: fonts.heading?.fontWeight, bodyWeight: fonts.body?.fontWeight }, { foreground }); setReadyKey(renderKey)
     }
-    void render().catch(failure => { if (alive) setError(failure instanceof Error ? failure.message : 'Could not render this composition.') })
+    void render().catch(failure => { if (alive) { const message = failure instanceof Error ? failure.message : 'Could not render this composition.'; setError(message); onError?.(message) } })
     return () => { alive = false }
   }, [id, brand.logoUrl, format, heading, body, renderKey])
   useEffect(() => {
@@ -90,6 +90,6 @@ export function CompositionPreview({ id, state, brand, storeUrl, format, exportR
 
     </div>
 
-    {error ? <p role="alert" className="text-sm text-destructive">{error}</p> : null}
+    {error && !onError ? <p role="alert" className="text-sm text-destructive">{error}</p> : null}
   </article>
 }
