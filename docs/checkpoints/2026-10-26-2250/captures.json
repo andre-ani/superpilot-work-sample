@@ -1,0 +1,52 @@
+[
+  {
+    "file": "01-composing.png",
+    "caption": "Source reload recovered before capture: clean base left and four headline compositions right. Supporting-copy fit warnings remain visible.",
+    "at": "2026-10-27T05:50:55.978Z",
+    "route": "/studio-review?generation=ec8da9e1a56d51236c8d6486e9a79c871558b6ead02beeadccfde18a8bc0815c",
+    "viewport": "1280×720",
+    "selection": "OLIPOP / Caramel Apple / 12 Pack saved execution",
+    "sourceRevision": "c1435f4bd942df47bdd85d685a56705f7624ef49",
+    "dirty": true
+  },
+  {
+    "file": "02-brand.png",
+    "caption": "Brand review now opens Brand guidelines; selected product and Create remain by composer.",
+    "at": "2026-10-27T05:51:22.908Z",
+    "route": "/studio-review?generation=ec8da9e1a56d51236c8d6486e9a79c871558b6ead02beeadccfde18a8bc0815c",
+    "viewport": "1280×720",
+    "selection": "OLIPOP / Caramel Apple / 12 Pack saved execution",
+    "sourceRevision": "c1435f4bd942df47bdd85d685a56705f7624ef49",
+    "dirty": true
+  },
+  {
+    "file": "03-guidelines.png",
+    "caption": "Expanded Brand guidelines panel with section navigation and visual guidance; no edits.",
+    "at": "2026-10-27T05:51:31.671Z",
+    "route": "/studio-review?generation=ec8da9e1a56d51236c8d6486e9a79c871558b6ead02beeadccfde18a8bc0815c",
+    "viewport": "1280×720",
+    "selection": "OLIPOP / Caramel Apple / 12 Pack saved execution",
+    "sourceRevision": "c1435f4bd942df47bdd85d685a56705f7624ef49",
+    "dirty": true
+  },
+  {
+    "file": "04-products.png",
+    "caption": "Cached grid and selected-product dock; no merchant data changed.",
+    "at": "2026-10-27T05:51:40.730Z",
+    "route": "/studio-review?generation=ec8da9e1a56d51236c8d6486e9a79c871558b6ead02beeadccfde18a8bc0815c",
+    "viewport": "1280×720",
+    "selection": "OLIPOP / Caramel Apple / 12 Pack saved execution",
+    "sourceRevision": "c1435f4bd942df47bdd85d685a56705f7624ef49",
+    "dirty": true
+  },
+  {
+    "file": "05-context.png",
+    "caption": "Current product-reference picker with one context image and explicit Use these images action; no submission.",
+    "at": "2026-10-27T05:51:50.751Z",
+    "route": "/studio-review?generation=ec8da9e1a56d51236c8d6486e9a79c871558b6ead02beeadccfde18a8bc0815c",
+    "viewport": "1280×720",
+    "selection": "OLIPOP / Caramel Apple / 12 Pack saved execution",
+    "sourceRevision": "c1435f4bd942df47bdd85d685a56705f7624ef49",
+    "dirty": true
+  }
+]

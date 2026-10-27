@@ -4,7 +4,7 @@ Local checkpoints only. Never infer that a documentation checkpoint verifies or 
 
 ## Latest checkpoint
 
-Last successful commit: `796c901a6146071ee60c3ffe90e4e6c3475a0624`, 2026-10-26T21:52:32-07:00 (America/Vancouver). [Catalog/recovery checkpoint and visual progression](2026-10-26-2150/README.md). Previous: `3ddcc49`. Post-commit receipt retained locally for the next checkpoint.
+Last successful commit: `c1435f4bd942df47bdd85d685a56705f7624ef49`, 2026-10-26T22:22:06-07:00 (America/Vancouver). [Variant checkpoint and clean-base review gap](2026-10-26-2220/README.md). Previous: `796c901`. Post-commit receipt retained locally for the next checkpoint.
 
 ## Deferred groups
 
@@ -69,3 +69,11 @@ Keep cached OLIPOP / Caramel Apple / 12 Pack / photo 1 at 1280×720 for comparis
 | Clean base/status | Brand | Brand settings | Products | Product context |
 | --- | --- | --- | --- | --- |
 | [![New saved clean-base execution; status says artwork is saved and asks for more copy space; no composed variations visible. No agent request sent.](2026-10-26-2220/01-clean-base.png)](2026-10-26-2220/01-clean-base.png) | [![Updated brand card with font-role icons and Brand settings; selected product retained, no edits.](2026-10-26-2220/02-brand.png)](2026-10-26-2220/02-brand.png) | [![Brand settings modal with saved visual context and references; no settings changed.](2026-10-26-2220/03-brand-settings.png)](2026-10-26-2220/03-brand-settings.png) | [![Updated product grid selection styling and persistent context; cached catalog, no selection change.](2026-10-26-2220/04-products.png)](2026-10-26-2220/04-products.png) | [![Current exact-image selection panel: one image selected; variant-aware helper checked offline, no panel choices changed.](2026-10-26-2220/05-product-context.png)](2026-10-26-2220/05-product-context.png) |
+
+### 2026-10-26 22:50 — foreground exclusion and four visible headlines
+
+[Comparison, fit warnings and mobile limitation](2026-10-26-2250/README.md). Five distinct desktop views; two geometry checks passed.
+
+| Composing | Brand | Guidelines | Products | Reference picker |
+| --- | --- | --- | --- | --- |
+| [![Source reload recovered before capture: clean base left and four headline compositions right. Supporting-copy fit warnings remain visible.](2026-10-26-2250/01-composing.png)](2026-10-26-2250/01-composing.png) | [![Brand review now opens Brand guidelines; selected product and Create remain by composer.](2026-10-26-2250/02-brand.png)](2026-10-26-2250/02-brand.png) | [![Expanded Brand guidelines panel with section navigation and visual guidance; no edits.](2026-10-26-2250/03-guidelines.png)](2026-10-26-2250/03-guidelines.png) | [![Cached grid and selected-product dock; no merchant data changed.](2026-10-26-2250/04-products.png)](2026-10-26-2250/04-products.png) | [![Current product-reference picker with one context image and explicit Use these images action; no submission.](2026-10-26-2250/05-context.png)](2026-10-26-2250/05-context.png) |
