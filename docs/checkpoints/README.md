@@ -4,7 +4,7 @@ Local checkpoints only. Never infer that a documentation checkpoint verifies or 
 
 ## Latest checkpoint
 
-Last successful commit: `a616b9ce5608fc46517b5e0e4664e108b7ae3829`, 2026-10-26T23:23:32-07:00 (America/Vancouver). [Typography checkpoint and navigation limitation](2026-10-26-2320/README.md). Previous: `541ff48`. Post-commit receipt retained locally for the next checkpoint.
+Last successful commit: `7f760efd39eb3760a999100bb582452d92accf20`, 2026-10-26T23:52:34-07:00 (America/Vancouver). [Planning/recovery checkpoint and four views](2026-10-26-2350/README.md). Previous: `a616b9c`. Post-commit receipt retained locally for the next checkpoint.
 
 ## Deferred groups
 
@@ -93,3 +93,11 @@ Keep cached OLIPOP / Caramel Apple / 12 Pack / photo 1 at 1280×720 for comparis
 | Composing | Brand context | Product references | Composer menu |
 | --- | --- | --- | --- |
 | [![Saved compositions with separate Idea/Create navigation; supporting-copy fit warnings remain.](2026-10-26-2350/01-composing.png)](2026-10-26-2350/01-composing.png) | [![Cached brand popover in the currently saved dark theme; no preference or context edits.](2026-10-26-2350/02-brand-context.png)](2026-10-26-2350/02-brand-context.png) | [![Current exact-image product picker in dark theme; one reference retained, no submission.](2026-10-26-2350/03-product-context.png)](2026-10-26-2350/03-product-context.png) | [![Composer menu browses cached product context and media action; no option selected or upload.](2026-10-26-2350/04-context-menu.png)](2026-10-26-2350/04-context-menu.png) |
+
+### 2026-10-27 00:20 — readiness, current-job progress and checklist
+
+[Comparison, preview placeholders and scoped checks](2026-10-27-0020/README.md). Four available states; four offline tests passed.
+
+| Checklist/composing | Brand context | Product references | Composer menu |
+| --- | --- | --- | --- |
+| [![Actionable creation checklist, saved base and four variation preview placeholders. DOM still exposes supporting-copy fit warnings.](2026-10-27-0020/01-checklist-composing.png)](2026-10-27-0020/01-checklist-composing.png) | [![Current brand popover inside the unified sidebar context; original identity retained, no edits.](2026-10-27-0020/02-brand-context.png)](2026-10-27-0020/02-brand-context.png) | [![Exact-image product picker over current review: 12 Pack, one image for context; no changes.](2026-10-27-0020/03-product-context.png)](2026-10-27-0020/03-product-context.png) | [![Cached product/media menu in the unified sidebar; no new selection or media upload.](2026-10-27-0020/04-context-menu.png)](2026-10-27-0020/04-context-menu.png) |

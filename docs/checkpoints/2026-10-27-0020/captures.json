@@ -1,0 +1,42 @@
+[
+  {
+    "file": "01-checklist-composing.png",
+    "caption": "Actionable creation checklist, saved base and four variation preview placeholders. DOM still exposes supporting-copy fit warnings.",
+    "at": "2026-10-27T07:21:06.564Z",
+    "route": "/studio-review?generation=ec8da9e1a56d51236c8d6486e9a79c871558b6ead02beeadccfde18a8bc0815c",
+    "viewport": "1280×720",
+    "selection": "OLIPOP / Caramel Apple / 12 Pack",
+    "sourceRevision": "7f760efd39eb3760a999100bb582452d92accf20",
+    "dirty": true
+  },
+  {
+    "file": "02-brand-context.png",
+    "caption": "Current brand popover inside the unified sidebar context; original identity retained, no edits.",
+    "at": "2026-10-27T07:21:19.133Z",
+    "route": "/studio-review?generation=ec8da9e1a56d51236c8d6486e9a79c871558b6ead02beeadccfde18a8bc0815c",
+    "viewport": "1280×720",
+    "selection": "OLIPOP / Caramel Apple / 12 Pack",
+    "sourceRevision": "7f760efd39eb3760a999100bb582452d92accf20",
+    "dirty": true
+  },
+  {
+    "file": "03-product-context.png",
+    "caption": "Exact-image product picker over current review: 12 Pack, one image for context; no changes.",
+    "at": "2026-10-27T07:21:31.426Z",
+    "route": "/studio-review?generation=ec8da9e1a56d51236c8d6486e9a79c871558b6ead02beeadccfde18a8bc0815c",
+    "viewport": "1280×720",
+    "selection": "OLIPOP / Caramel Apple / 12 Pack",
+    "sourceRevision": "7f760efd39eb3760a999100bb582452d92accf20",
+    "dirty": true
+  },
+  {
+    "file": "04-context-menu.png",
+    "caption": "Cached product/media menu in the unified sidebar; no new selection or media upload.",
+    "at": "2026-10-27T07:21:41.210Z",
+    "route": "/studio-review?generation=ec8da9e1a56d51236c8d6486e9a79c871558b6ead02beeadccfde18a8bc0815c",
+    "viewport": "1280×720",
+    "selection": "OLIPOP / Caramel Apple / 12 Pack",
+    "sourceRevision": "7f760efd39eb3760a999100bb582452d92accf20",
+    "dirty": true
+  }
+]
