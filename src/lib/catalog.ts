@@ -23,6 +23,7 @@ export type CatalogProduct = {
 }
 
 export type CatalogPage = {
+  catalogOrigin?: string
   storeUrl: string
   products: CatalogProduct[]
   currency: string | null

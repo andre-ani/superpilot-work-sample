@@ -4,7 +4,7 @@ Local checkpoints only. Never infer that a documentation checkpoint verifies or 
 
 ## Latest checkpoint
 
-Last successful commit: `eac777e753f61f502c90775267862a878c1c1c14`, 2026-10-26T20:52:56-07:00 (America/Vancouver). [Five-state context-first checkpoint](2026-10-26-2050/README.md). Previous: `dc079dc`. Post-commit receipt retained locally for the next checkpoint.
+Last successful commit: `3ddcc4946c98c2ebe5f5b1056dab7ff593626fa0`, 2026-10-26T21:22:30-07:00 (America/Vancouver). [Runtime/storage checkpoint and five views](2026-10-26-2120/README.md). Previous: `eac777e`. Post-commit receipt retained locally for the next checkpoint.
 
 ## Deferred groups
 
@@ -53,3 +53,11 @@ Keep cached OLIPOP / Caramel Apple / 12 Pack / photo 1 at 1280×720 for comparis
 | Studio | Brand | Products | Selected context | Start |
 | --- | --- | --- | --- | --- |
 | [![Saved studio and collected context with integrated composer controls; no inference requested.](2026-10-26-2120/01-studio.png)](2026-10-26-2120/01-studio.png) | [![Brand review with grid background, font/palette controls and integrated disabled composer.](2026-10-26-2120/02-brand.png)](2026-10-26-2120/02-brand.png) | [![Cached product grid and collected context under the new grid/font/composer styling.](2026-10-26-2120/03-products.png)](2026-10-26-2120/03-products.png) | [![Selected product context with exact one-of-eight image inclusion and 12 Pack variant; no changes submitted.](2026-10-26-2120/04-product-context.png)](2026-10-26-2120/04-product-context.png) | [![New start screen with Shopify/Instagram heading, central website input, blue brush and grid; no URL submitted.](2026-10-26-2120/05-start.png)](2026-10-26-2120/05-start.png) |
+
+### 2026-10-26 21:50 — catalog discovery and recovery
+
+[Comparison, source scope and hot-reload limitation](2026-10-26-2150/README.md). Four distinct views plus one supplemental reload image; ten focused checks passed.
+
+| Composing base | Brand | Products | Product context |
+| --- | --- | --- | --- |
+| [![Large saved base artwork; DOM exposes three variation controls below the viewport. Active composition work; no edits/export.](2026-10-26-2150/01-composing.png)](2026-10-26-2150/01-composing.png) | [![Current brand card with compact fonts and context dock; review composer disabled.](2026-10-26-2150/02-brand.png)](2026-10-26-2150/02-brand.png) | [![Cached grid after shell updates, with current collected-product dock.](2026-10-26-2150/04-products.png)](2026-10-26-2150/04-products.png) | [![Selected product image/variant popover; 1 of 8 included, 12 Pack; no edits.](2026-10-26-2150/05-product-context.png)](2026-10-26-2150/05-product-context.png) |

@@ -1,3 +1,4 @@
+import { discoverShopifyOrigin } from './catalog-discovery.ts'
 import { lookup } from 'node:dns/promises'
 import { BlockList, isIP } from 'node:net'
 import { request } from 'node:https'
@@ -55,28 +56,39 @@ export async function publicResource(input: URL | string, deadline = Date.now() 
   return { body: response.bytes.toString('utf8'), bytes: response.bytes, url, contentType: response.contentType }
 }
 
-async function publicJson(url: URL): Promise<{ value: unknown; url: URL }> {
-  const response = await publicResource(url)
+async function publicJson(url: URL, deadline = Date.now() + 18000): Promise<{ value: unknown; url: URL }> {
+  const response = await publicResource(url, deadline)
   if (!/json|javascript/i.test(response.contentType)) throw new CatalogError('The store returned a page instead of product data. It may be password-protected or not support a public catalog.')
   try { return { value: JSON.parse(response.body), url: response.url } }
   catch { throw new CatalogError('The store returned unreadable product data. Try another store.') }
 }
 
-export async function getCatalogPage(storeInput: string, page: number): Promise<CatalogResult> {
+export async function getCatalogPage(storeInput: string, page: number, savedCatalogOrigin?: string): Promise<CatalogResult> {
   try {
     const storeUrl = normalizeStoreUrl(storeInput)
     if (!Number.isInteger(page) || page < 1 || page > 20) throw new CatalogError('The demo supports up to 1,200 loaded products per store.')
-    const [response, cart] = await Promise.all([
-      publicJson(new URL(`/products.json?limit=${pageSize}&page=${page}`, storeUrl)),
-      page === 1 ? publicJson(new URL('/cart.js', storeUrl)).catch(() => null) : Promise.resolve(null),
-    ])
-    const origin = response.url.origin
-    const normalized = normalizeProducts(response.value, origin)
-    if (page === 1 && normalized.rawCount > 0 && !normalized.products.length) throw new CatalogError('The catalog did not contain usable Shopify product records.')
+    const deadline = Date.now() + 22000
+    let catalogOrigin = savedCatalogOrigin ? normalizeStoreUrl(savedCatalogOrigin) : storeUrl
+    if (catalogOrigin !== storeUrl && !new URL(catalogOrigin).hostname.endsWith('.myshopify.com')) throw new CatalogError('The saved product source is not a Shopify store.')
+    let response: Awaited<ReturnType<typeof publicJson>>
+    try {
+      response = await publicJson(new URL(`/products.json?limit=${pageSize}&page=${page}`, catalogOrigin), Math.min(deadline, Date.now() + 6000))
+    } catch (error) {
+      if (savedCatalogOrigin) throw error
+      const homepage = await publicResource(storeUrl, deadline)
+      const discovered = discoverShopifyOrigin(homepage.body)
+      if (!discovered || discovered === catalogOrigin) throw new CatalogError('We couldn’t find a readable product catalog yet. Check the store address, or try again in a moment.')
+      catalogOrigin = discovered
+      response = await publicJson(new URL(`/products.json?limit=${pageSize}&page=${page}`, catalogOrigin), deadline)
+    }
+    const cart = page === 1 ? await publicJson(new URL('/cart.js', catalogOrigin), deadline).catch(() => null) : null
+    // Keep product links on the merchant's original storefront, not its headless backing shop.
+    const normalized = normalizeProducts(response.value, storeUrl)
+    if (page === 1 && !normalized.products.length) throw new CatalogError('We reached the store, but couldn’t find usable public products. Check the address or try again.')
     const cartValue = cart?.value as { currency?: unknown } | undefined
-    const currency = cart?.url.origin === origin && typeof cartValue?.currency === 'string' && /^[A-Z]{3}$/.test(cartValue.currency) ? cartValue.currency : null
-    return { ok: true, catalog: { storeUrl: origin, products: normalized.products, currency, page, hasMore: normalized.rawCount === pageSize, skipped: normalized.skipped } }
+    const currency = cart?.url.origin === response.url.origin && typeof cartValue?.currency === 'string' && /^[A-Z]{3}$/.test(cartValue.currency) ? cartValue.currency : null
+    return { ok: true, catalog: { storeUrl, catalogOrigin: response.url.origin, products: normalized.products, currency, page, hasMore: normalized.rawCount === pageSize, skipped: normalized.skipped } }
   } catch (error) {
-    return { ok: false, error: error instanceof CatalogError ? error.message : error instanceof Error && /Enter |Use |usable public/.test(error.message) ? error.message : 'Could not load this store. Check the address and try again; some storefronts block catalog access.' }
+    return { ok: false, error: error instanceof CatalogError ? error.message : error instanceof Error && /Enter |Use |usable public/.test(error.message) ? error.message : 'We couldn’t finish reading this store. Check the address or try again in a moment.' }
   }
 }

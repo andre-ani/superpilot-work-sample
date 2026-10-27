@@ -1,0 +1,53 @@
+[
+  {
+    "file": "01-composing.png",
+    "caption": "Large saved base artwork; DOM exposes three variation controls below the viewport. Active composition work; no edits/export.",
+    "at": "2026-10-27T04:50:50.462Z",
+    "route": "/studio-review?generation=781da36c0aef66bd0217b06f2b0cb99ba99789c351d93d16de484b73d16ae753",
+    "viewport": "1280×720",
+    "selection": "OLIPOP / Caramel Apple / 12 Pack",
+    "sourceRevision": "3ddcc4946c98c2ebe5f5b1056dab7ff593626fa0",
+    "dirty": true
+  },
+  {
+    "file": "02-brand.png",
+    "caption": "Current brand card with compact fonts and context dock; review composer disabled.",
+    "at": "2026-10-27T04:51:06.998Z",
+    "route": "/studio-review?generation=781da36c0aef66bd0217b06f2b0cb99ba99789c351d93d16de484b73d16ae753",
+    "viewport": "1280×720",
+    "selection": "OLIPOP / Caramel Apple / 12 Pack",
+    "sourceRevision": "3ddcc4946c98c2ebe5f5b1056dab7ff593626fa0",
+    "dirty": true
+  },
+  {
+    "file": "03-visual-style.png",
+    "caption": "Hot reload replaced the visual-style modal before capture: saved artwork view, retained as supplemental reload evidence, excluded from distinct-view count.",
+    "at": "2026-10-27T04:51:15.628Z",
+    "route": "/studio-review?generation=781da36c0aef66bd0217b06f2b0cb99ba99789c351d93d16de484b73d16ae753",
+    "viewport": "1280×720",
+    "selection": "OLIPOP / Caramel Apple / 12 Pack",
+    "sourceRevision": "3ddcc4946c98c2ebe5f5b1056dab7ff593626fa0",
+    "dirty": true,
+    "supplemental": true
+  },
+  {
+    "file": "04-products.png",
+    "caption": "Cached grid after shell updates, with current collected-product dock.",
+    "at": "2026-10-27T04:51:45.623Z",
+    "route": "/studio-review?generation=781da36c0aef66bd0217b06f2b0cb99ba99789c351d93d16de484b73d16ae753",
+    "viewport": "1280×720",
+    "selection": "OLIPOP / Caramel Apple / 12 Pack",
+    "sourceRevision": "3ddcc4946c98c2ebe5f5b1056dab7ff593626fa0",
+    "dirty": true
+  },
+  {
+    "file": "05-product-context.png",
+    "caption": "Selected product image/variant popover; 1 of 8 included, 12 Pack; no edits.",
+    "at": "2026-10-27T04:51:55.639Z",
+    "route": "/studio-review?generation=781da36c0aef66bd0217b06f2b0cb99ba99789c351d93d16de484b73d16ae753",
+    "viewport": "1280×720",
+    "selection": "OLIPOP / Caramel Apple / 12 Pack",
+    "sourceRevision": "3ddcc4946c98c2ebe5f5b1056dab7ff593626fa0",
+    "dirty": true
+  }
+]
