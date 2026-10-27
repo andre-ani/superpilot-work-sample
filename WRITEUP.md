@@ -20,7 +20,7 @@ Late work also exposed structured-output failures, truncated plans, classificati
 
 ## Outcome and lesson
 
-The result generates real artwork across three brands and supports composition review and PNG export. Focused checks and successful live flows establish parts of the system; they do not establish consistent product fidelity, text placement, or usability.
+The final examples contain six artworks and 24 composed PNG ads across three brands, in square and Story formats. Focused checks and successful live flows establish parts of the system; they do not establish consistent product fidelity, text placement, or usability.
 
 My main lesson is to define the smallest complete, testable experience before expanding it. I learned a lot, but I would make fewer product and interaction decisions for a timed sample. My estimate is that a better version would take about eight focused hours with tighter scope and protected testing time.
 

@@ -9,7 +9,7 @@
 
 An agent-led workspace for creating Instagram image ads from a Shopify store: collect brand and product context, develop a creative brief, then generate and compose an ad.
 
-Conversation and direct controls share brand, product, and creative context. Generated examples cover OLIPOP, Our Place, and Big Star Lights.
+Conversation and direct controls share brand, product, and creative context. The example gallery contains 24 composed PNG ads from six artwork runs across OLIPOP, Our Place, and Big Star Lights.
 
 [Live app](https://superpilot-work-sample.vercel.app) · [Generated examples](examples/README.md) · [Final writeup](WRITEUP.md)
 

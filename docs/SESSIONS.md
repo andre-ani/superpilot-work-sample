@@ -18,7 +18,7 @@ The project began on October 26, 2026. This page summarizes the work; detailed a
 - The latest repaired Big Star Lights execution completed planning, image generation, and four composed variations. The local gallery and full-size review rendered with export enabled; the saved base image remained unchanged during placement repair.
 - Earlier OLIPOP reviews exposed supporting-copy fit warnings and preview-loading issues. These observations are retained in the [visual history](checkpoints/README.md), with source revision and dirty-checkout context.
 - The [three-brand extraction experiment](brand-comparison.json) and [earlier two-brand comparison](EXTRACTION-COMPARISON.md) document why fast homepage parsing was insufficient for reliable visual identity.
-- Original requests, responses, and generated images remain in private project storage. They are not bundled into the repository. The gallery contains selected image artifacts only.
+- Original requests, responses, and generated images remain in private project storage. They are not bundled into the repository. The gallery contains reviewed composed exports with dimensions, copy and source-execution provenance; earlier original artwork is retained separately.
 
 ## Reading the verification record
 
@@ -36,8 +36,12 @@ Production enrichment failed with “The saved scan is busy” because compresse
 
 ## Production product-dialog positioning
 
-Production render confirmed double centering: independent Tailwind translate and animation transform each shifted the dialog by half its size. The compiled CSS had removed the local reset. Product flip keyframes now animate only card-origin offset, rotation and scale; canonical DialogContent retains centering, including reduced motion. This is a CSS-only repair; production geometry will be checked after deployment.
+Production render confirmed double centering: independent Tailwind translate and animation transform each shifted the dialog by half its size. The compiled CSS had removed the local reset. Product flip keyframes now animate only card-origin offset, rotation and scale; canonical DialogContent retains centering, including reduced motion. The CSS-only repair was checked in production: the dialog center error was zero on both axes and its entire rectangle was within the viewport.
 
 ## Saved-artwork preview continuity
 
-Four copy options were present, but a per-variant text-fit/render error left its opacity wrapper hidden and its loading placeholder running indefinitely. Variations now retain the saved base artwork with a pulse while copy is prepared/rendered, and show a terminal fit error beside that specific option. Successful options remain independently usable; no new image is generated for a text-only render failure. Strict types pass. Six authorized new production image jobs across three brands completed preparation, image generation and placement; final export review is in progress.
+Four copy options were present, but a per-variant text-fit/render error left its opacity wrapper hidden and its loading placeholder running indefinitely. Variations now retain the saved base artwork with a pulse while copy is prepared/rendered, and show a terminal fit error beside that specific option. Successful options remain independently usable; no new image is generated for a text-only render failure. Strict types pass. Six authorized new production image jobs across three brands completed preparation, image generation and placement; all 24 variants were later downloaded through Export all after copy-fit review.
+
+## Multi-brand production runs and final exports
+
+Six authorized production executions used two products/concepts each for OLIPOP, Our Place and Big Star Lights: one square and one Story per brand. All completed planning, artwork and placement with four copy options each. Editorial copy shortening/optional-body omission was applied in separate review drafts where actual font-fit checks failed; original jobs and artwork were not rewritten. All four variants in every set became exportable. The app downloaded six ZIPs containing 24 PNG files, verified at 1080×1080 or 1080×1920 with CRCs and per-file SHA256. Representative exports from all six sets were visually inspected. Image-provider cost was $0.583044, excluding planning/placement. See the example gallery; private raw provider records remain excluded.

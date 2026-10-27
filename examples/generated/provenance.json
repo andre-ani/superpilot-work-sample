@@ -1,0 +1,308 @@
+[
+  {
+    "key": "olipop-orchard",
+    "brand": "OLIPOP",
+    "storeUrl": "https://drinkolipop.com",
+    "product": "Caramel Apple",
+    "format": "square",
+    "generationId": "ddbfc4259ccf9f20955861d72edbebb702e42bc4c459386ceb6ab15e1c27693d",
+    "createdAt": "2026-10-27T09:22:04.421Z",
+    "model": "openai/gpt-image-2",
+    "imageProviderCost": 0.096527,
+    "copyEditoriallyShortened": true,
+    "export": "PNG downloaded through the app Export all action after all four variants became ready",
+    "files": [
+      {
+        "file": "generated/olipop-orchard/olipop-variation-1.png",
+        "optionId": "candy-apple",
+        "headline": "Apple pop",
+        "body": "",
+        "width": 1080,
+        "height": 1080,
+        "sha256": "cdf6931b9ca1a99519ef7316f768c8cd821571227228791ba9f5fa69c74191ae"
+      },
+      {
+        "file": "generated/olipop-orchard/olipop-variation-2.png",
+        "optionId": "caramel-snap",
+        "headline": "Caramel fizz",
+        "body": "",
+        "width": 1080,
+        "height": 1080,
+        "sha256": "d1e917f0d5ce446283fc7f461a5df78924a3aab771d8697bbfbc23adb69f9990"
+      },
+      {
+        "file": "generated/olipop-orchard/olipop-variation-3.png",
+        "optionId": "limited",
+        "headline": "Sweet & crisp",
+        "body": "",
+        "width": 1080,
+        "height": 1080,
+        "sha256": "eb93d1010257594bdf95a8d0f98605f4888c9daea2caabe50122284040c82212"
+      },
+      {
+        "file": "generated/olipop-orchard/olipop-variation-4.png",
+        "optionId": "new-soda",
+        "headline": "Sip caramel",
+        "body": "",
+        "width": 1080,
+        "height": 1080,
+        "sha256": "31ab57ba265c2bf2ead143a1cb52f964bcdb152204072464ece0e6a69dd645ed"
+      }
+    ]
+  },
+  {
+    "key": "olipop-berry",
+    "brand": "OLIPOP",
+    "storeUrl": "https://drinkolipop.com",
+    "product": "Pomegranate Sparkle",
+    "format": "story",
+    "generationId": "255d134144d3ac68844df26b580b650eec348f79c00c22de5781e95559759d35",
+    "createdAt": "2026-10-27T09:22:04.916Z",
+    "model": "openai/gpt-image-2",
+    "imageProviderCost": 0.07495,
+    "copyEditoriallyShortened": false,
+    "export": "PNG downloaded through the app Export all action after all four variants became ready",
+    "files": [
+      {
+        "file": "generated/olipop-berry/olipop-variation-1.png",
+        "optionId": "copy-1",
+        "headline": "Come sip with us",
+        "body": "Pomegranate Sparkle",
+        "width": 1080,
+        "height": 1920,
+        "sha256": "feb59cdd1fc175d4e25743bbfef0e7cadbe968e2b45b52178f08103a0417e4b1"
+      },
+      {
+        "file": "generated/olipop-berry/olipop-variation-2.png",
+        "optionId": "copy-2",
+        "headline": "Sip the sparkle",
+        "body": "Quince + passion fruit",
+        "width": 1080,
+        "height": 1920,
+        "sha256": "3d6c8ed4d4414c35199baf8311f340153d6939ec40e50c81cd098e732e58aa9f"
+      },
+      {
+        "file": "generated/olipop-berry/olipop-variation-3.png",
+        "optionId": "copy-3",
+        "headline": "Limited-edition fizz",
+        "body": "Pomegranate Sparkle",
+        "width": 1080,
+        "height": 1920,
+        "sha256": "e0144096c31e516ee8a679896d48645b03ce0dda9bb259013b5b54070ee4f627"
+      },
+      {
+        "file": "generated/olipop-berry/olipop-variation-4.png",
+        "optionId": "copy-4",
+        "headline": "Pomegranate, popped",
+        "body": "Sweet-tart sparkle",
+        "width": 1080,
+        "height": 1920,
+        "sha256": "6f94ac4437d08eff622e5a37f78b5ba4b4304a094bbb5bc274ae9f8e96e0ce1e"
+      }
+    ]
+  },
+  {
+    "key": "ourplace-everyday",
+    "brand": "Our Place",
+    "storeUrl": "https://fromourplace.com",
+    "product": "Titanium Always Pan Pro 10.5\"",
+    "format": "square",
+    "generationId": "903c8c412cc5ba4985971aeffee4c8809714dfb8a8832ebf040ae80a2928d782",
+    "createdAt": "2026-10-27T09:22:06.083Z",
+    "model": "openai/gpt-image-2",
+    "imageProviderCost": 0.111201,
+    "copyEditoriallyShortened": true,
+    "export": "PNG downloaded through the app Export all action after all four variants became ready",
+    "files": [
+      {
+        "file": "generated/ourplace-everyday/our-place-variation-1.png",
+        "optionId": "copy-1",
+        "headline": "Cook at Our Place",
+        "body": "Made for everyday meals",
+        "width": 1080,
+        "height": 1080,
+        "sha256": "5084345b0b408c0334fa2849c19f086019ce4272d76886043643e1577213dc23"
+      },
+      {
+        "file": "generated/ourplace-everyday/our-place-variation-2.png",
+        "optionId": "copy-2",
+        "headline": "Everyday, Elevated",
+        "body": "Made for home cooks",
+        "width": 1080,
+        "height": 1080,
+        "sha256": "80a0a4d6ce40d491ef4dfa26747204ef9002bf153a7e3469d3190384f0418d86"
+      },
+      {
+        "file": "generated/ourplace-everyday/our-place-variation-3.png",
+        "optionId": "copy-3",
+        "headline": "Cook well",
+        "body": "Start with this pan",
+        "width": 1080,
+        "height": 1080,
+        "sha256": "1d81a49bfaece5d68d56ad6fee92a226f6e742d338ae27d0c06f442cc52a03bb"
+      },
+      {
+        "file": "generated/ourplace-everyday/our-place-variation-4.png",
+        "optionId": "copy-4",
+        "headline": "Gather Round",
+        "body": "One pan, one table",
+        "width": 1080,
+        "height": 1080,
+        "sha256": "033e26afc778c52c65503549362a6b9ab52d00caab3b8a08bd0d3c125cfdd9f4"
+      }
+    ]
+  },
+  {
+    "key": "ourplace-gather",
+    "brand": "Our Place",
+    "storeUrl": "https://fromourplace.com",
+    "product": "Titanium Perfect Pot Pro 7 qt.",
+    "format": "story",
+    "generationId": "2b31c417908e882b9afe6393876fe8bd0fbe92b63d4c4567ff9434f2a4887ba3",
+    "createdAt": "2026-10-27T09:22:06.711Z",
+    "model": "openai/gpt-image-2",
+    "imageProviderCost": 0.091041,
+    "copyEditoriallyShortened": false,
+    "export": "PNG downloaded through the app Export all action after all four variants became ready",
+    "files": [
+      {
+        "file": "generated/ourplace-gather/our-place-variation-1.png",
+        "optionId": "copy-1",
+        "headline": "Room for Everyone",
+        "body": "Meals shared, by design.",
+        "width": 1080,
+        "height": 1920,
+        "sha256": "9c3860ffce51e685c06cafc3143b29850e50ecf8f2623db6bb6cf08a504032fc"
+      },
+      {
+        "file": "generated/ourplace-gather/our-place-variation-2.png",
+        "optionId": "copy-2",
+        "headline": "Pull Up a Chair",
+        "body": "Made for shared meals.",
+        "width": 1080,
+        "height": 1920,
+        "sha256": "623bce5ea5e3838ddf136b3d0fdbc864ae23f04bf64975c4f8e29a8fd3f82179"
+      },
+      {
+        "file": "generated/ourplace-gather/our-place-variation-3.png",
+        "optionId": "copy-3",
+        "headline": "Made for the Table",
+        "body": "Cook it. Bring it over.",
+        "width": 1080,
+        "height": 1920,
+        "sha256": "64fd2f1ab60181d589516d399affd82a26500f56fd8e7999bb2f7eef41d3d43a"
+      },
+      {
+        "file": "generated/ourplace-gather/our-place-variation-4.png",
+        "optionId": "copy-4",
+        "headline": "A Bigger Table",
+        "body": "Together, by design.",
+        "width": 1080,
+        "height": 1920,
+        "sha256": "3f6fb21f036d6b7167994c07222c592e7389593a21c873cdbb177bd5e572be59"
+      }
+    ]
+  },
+  {
+    "key": "bsl-warm-exterior",
+    "brand": "Big Star Lights",
+    "storeUrl": "https://bigstarlights.com",
+    "product": "Twinkly PRO Single Line String, 250 light, AWW (82 ft)",
+    "format": "square",
+    "generationId": "6bfebddf0a3359f7881a8ec74b803b12c43c0ee288b05e2abf0204d3aba47918",
+    "createdAt": "2026-10-27T09:22:07.689Z",
+    "model": "openai/gpt-image-2",
+    "imageProviderCost": 0.11538,
+    "copyEditoriallyShortened": true,
+    "export": "PNG downloaded through the app Export all action after all four variants became ready",
+    "files": [
+      {
+        "file": "generated/bsl-warm-exterior/big-star-lights-variation-1.png",
+        "optionId": "copy-1",
+        "headline": "Glow",
+        "body": "",
+        "width": 1080,
+        "height": 1080,
+        "sha256": "22f8a570f2befb9bf3a3f445ee4011a45d44f347fcc6a31abd8f38aed5b917f8"
+      },
+      {
+        "file": "generated/bsl-warm-exterior/big-star-lights-variation-2.png",
+        "optionId": "copy-2",
+        "headline": "Light",
+        "body": "",
+        "width": 1080,
+        "height": 1080,
+        "sha256": "6ba0d1db0a549b47a3fb351fc9f7d994f9c00856c569f98014507d62275152bf"
+      },
+      {
+        "file": "generated/bsl-warm-exterior/big-star-lights-variation-3.png",
+        "optionId": "copy-3",
+        "headline": "Shine",
+        "body": "",
+        "width": 1080,
+        "height": 1080,
+        "sha256": "60ac6d87f8b5c3be7b8dc727898306d76de7051bad92b983fccc8ff7df99c63a"
+      },
+      {
+        "file": "generated/bsl-warm-exterior/big-star-lights-variation-4.png",
+        "optionId": "copy-4",
+        "headline": "Dusk",
+        "body": "",
+        "width": 1080,
+        "height": 1080,
+        "sha256": "75ab78c30f063f8493d8275270de8e4b9620e914fa9d7e39843e1870b7a19939"
+      }
+    ]
+  },
+  {
+    "key": "bsl-seasonal",
+    "brand": "Big Star Lights",
+    "storeUrl": "https://bigstarlights.com",
+    "product": "C9 Bulbs (Case of 500)",
+    "format": "story",
+    "generationId": "409b9d8d807a4c1eacde4288a6346af4c76003f77543e39dfe87d792c8777942",
+    "createdAt": "2026-10-27T09:22:08.290Z",
+    "model": "openai/gpt-image-2",
+    "imageProviderCost": 0.093945,
+    "copyEditoriallyShortened": true,
+    "export": "PNG downloaded through the app Export all action after all four variants became ready",
+    "files": [
+      {
+        "file": "generated/bsl-seasonal/big-star-lights-variation-1.png",
+        "optionId": "copy-1",
+        "headline": "Glow",
+        "body": "C9 color",
+        "width": 1080,
+        "height": 1920,
+        "sha256": "2793eff581af931ff000f918fc7a7c15e29047402bcf9e63693ca26c8ed5b02e"
+      },
+      {
+        "file": "generated/bsl-seasonal/big-star-lights-variation-2.png",
+        "optionId": "copy-2",
+        "headline": "Bright",
+        "body": "C9 bulbs",
+        "width": 1080,
+        "height": 1920,
+        "sha256": "c9202ed0ec2beee16b51ccbf4807576210ef62a0b79015ba7de50835a68f5486"
+      },
+      {
+        "file": "generated/bsl-seasonal/big-star-lights-variation-3.png",
+        "optionId": "copy-3",
+        "headline": "Night",
+        "body": "Festive C9",
+        "width": 1080,
+        "height": 1920,
+        "sha256": "040d4004922b54a4ed6bad88d3403558da9b698f3451659fd14e061a731ac46e"
+      },
+      {
+        "file": "generated/bsl-seasonal/big-star-lights-variation-4.png",
+        "optionId": "copy-4",
+        "headline": "Color",
+        "body": "Light the night",
+        "width": 1080,
+        "height": 1920,
+        "sha256": "5d48fd9e285499b6ce79732d388ca67f2a24887415449ba259fe777d40b3ce3d"
+      }
+    ]
+  }
+]
